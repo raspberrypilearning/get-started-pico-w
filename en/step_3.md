@@ -189,4 +189,34 @@ connect()
 --- /code ---
 --- /task ---
 
+--- task ---
+
+You can now return the value for the IP address of your Raspberry Pi Pico, and store it when you call your function.
+
+--- code ---
+---
+language: python
+filename: web_server.py
+line_numbers: true
+line_number_start: 12
+line_highlights: 20-21
+---
+def connect():
+    #Connect to WLAN
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+    wlan.connect(ssid, password)
+    while wlan.isconnected() == False:
+        print('Waiting for connection...')
+        sleep(1)
+    ip = wlan.ifconfig()[0]
+    print(f'Connected on {ip}')
+    return ip
+    
+
+ip = connect()
+--- /code ---
+
+--- /task ---
+
 --- save ---

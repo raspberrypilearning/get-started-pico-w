@@ -15,6 +15,7 @@ You will need:
 + A Raspberry Pi Pico W and microUSB cable
 + A computer connected to your network
 + The Thonny Python IDE
++ A text editor
 
 [[[thonny-install]]]
 
