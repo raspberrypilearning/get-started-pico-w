@@ -2,10 +2,10 @@
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step you will start up your web server so that it can be connected to by a client, and start to serve the HTML you have written.
+In this step you will start up your web server so that it can be connected to by a client, and control your LED and read the temperature.
 </div>
 <div>
-![screenshot from chrome showing a web page with two buttons for turning on and off an LED, and some boiler plate text](images/index.png)
+![screenshot from chrome showing a web page with two buttons for turning on and off an LED](images/web_light_on.png)
 </div>
 </div>
 
