@@ -77,9 +77,11 @@ def open_socket(ip):
     connection.listen(1)
     print(connection)
 
-
-ip = connect()
-open_socket(ip)
+try:
+    ip = connect()
+    open_socket(ip)
+except KeyboardInterrupt:
+        machine.reset()
 
 --- /code ---
 
@@ -132,8 +134,11 @@ def open_socket(ip):
     return connection
 
 
-ip = connect()
-connection = open_socket(ip)
+try:
+    ip = connect()
+    connection = open_socket(ip)
+except KeyboardInterrupt:
+        machine.reset()
 
 --- /code ---
 

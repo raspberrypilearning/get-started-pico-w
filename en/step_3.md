@@ -102,7 +102,7 @@ def connect():
 
 --- task ---
 
-You can now print out your WLAN configuration, and test it all. You'll need to call your function. Keep all your function calls at the bottom of your file, so they are the last lines of code that are run.
+You can now print out your WLAN configuration, and test it all. You'll need to call your function. Keep all your function calls at the bottom of your file, so they are the last lines of code that are run. Because the Wi-Fi connection can stay up, even when you stop the code, you can add a `try`/`except` that will reset Raspberry Pi Pico when the script is stopped.
 
 --- code ---
 ---
@@ -122,8 +122,10 @@ def connect():
         sleep(1)
     print(wlan.ifconfig())
 
-    
-connect()
+try:    
+    connect()
+except KeyboardInterrupt:
+        machine.reset()
 --- /code ---
 
 --- /task ---
@@ -185,7 +187,10 @@ def connect():
     print(f'Connected on {ip}')
     
 
-connect()
+try:
+    connect()
+except KeyboardInterrupt:
+        machine.reset()
 --- /code ---
 --- /task ---
 
@@ -214,7 +219,10 @@ def connect():
     return ip
     
 
-ip = connect()
+try:
+    ip = connect()
+except KeyboardInterrupt:
+        machine.reset()
 --- /code ---
 
 --- /task ---
