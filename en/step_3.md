@@ -154,7 +154,7 @@ Waiting for connection...
 
 --- collapse ---
 ---
-title: **Debug** - Raspberry Pi Pico won't connect.
+title: Debug Raspberry Pi Pico won't connect.
 ---
 1. Make sure that you are using the correct SSID and password.
 2. If you are on a school or work WLAN, unauthorised devices might not be permitted access to the Wi-Fi
