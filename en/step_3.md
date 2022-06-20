@@ -110,7 +110,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 12
-line_highlights: 20, 23
+line_highlights: 22-25
 ---
 def connect():
     #Connect to WLAN
@@ -142,7 +142,6 @@ line_numbers: false
 line_number_start: 
 line_highlights: 
 ---
->>> %Run -c $EDITOR_CONTENT
 Waiting for connection...
 Waiting for connection...
 Waiting for connection...
@@ -205,7 +204,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 12
-line_highlights: 20-21
+line_highlights: 22, 26
 ---
 def connect():
     #Connect to WLAN
