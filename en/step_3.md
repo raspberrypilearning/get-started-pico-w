@@ -110,7 +110,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 
-line_highlights: 20,23
+line_highlights: 20, 23
 ---
 def connect():
     #Connect to WLAN
