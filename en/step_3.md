@@ -125,7 +125,7 @@ def connect():
 try:    
     connect()
 except KeyboardInterrupt:
-        machine.reset()
+    machine.reset()
 --- /code ---
 
 --- /task ---
@@ -189,7 +189,7 @@ def connect():
 try:
     connect()
 except KeyboardInterrupt:
-        machine.reset()
+    machine.reset()
 --- /code ---
 
 --- /task ---
@@ -222,7 +222,7 @@ def connect():
 try:
     ip = connect()
 except KeyboardInterrupt:
-        machine.reset()
+    machine.reset()
 --- /code ---
 
 --- /task ---

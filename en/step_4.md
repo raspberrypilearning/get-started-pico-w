@@ -5,13 +5,7 @@
 In this step you will use the connection to your WLAN to open a socket
 </div>
 <div>
-```python
->>> %Run -c $EDITOR_CONTENT
-Waiting for connection...
-Waiting for connection...
-Waiting for connection...
-Connected on 192.168.1.143
-<socket state=1 timeout=-1 incoming=0 off=0>```
+![MicroPython shell showing connection to a WLAN and a socket connection](images/socket.png){:width="300px"}
 </div>
 </div>
 
@@ -81,7 +75,7 @@ try:
     ip = connect()
     open_socket(ip)
 except KeyboardInterrupt:
-        machine.reset()
+    machine.reset()
 
 --- /code ---
 
@@ -138,7 +132,7 @@ try:
     ip = connect()
     connection = open_socket(ip)
 except KeyboardInterrupt:
-        machine.reset()
+    machine.reset()
 
 --- /code ---
 

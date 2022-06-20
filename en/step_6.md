@@ -101,7 +101,7 @@ try:
     connection = open_socket(ip)
     serve(connection)
 except KeyboardInterrupt:
-        machine.reset()
+    machine.reset()
 --- /code ---
 
 --- /task ---
@@ -148,7 +148,7 @@ try:
     connection = open_socket(ip)
     serve(connection)
 except KeyboardInterrupt:
-        machine.reset()
+    machine.reset()
 --- /code ---
 
 --- /task ---
