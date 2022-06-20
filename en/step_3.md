@@ -109,7 +109,7 @@ You can now print out your WLAN configuration, and test it all. You'll need to c
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 
+line_number_start: 12
 line_highlights: 20, 23
 ---
 def connect():
