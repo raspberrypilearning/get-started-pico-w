@@ -11,25 +11,7 @@ In this step you will start up your web server so that it can be connected to by
 
 --- task ---
 
-Create a function that will start your web server, using the `connection` object you had saved as a parameter.
-
---- code ---
----
-language: python
-filename: web_server.py
-line_numbers: true
-line_number_start: 53
-line_highlights: 
----
-def serve(connection):
-    #Start a webserver
---- /code ---
-
---- /task ---
-
---- task ---
-
-The `state` and `temperature` variables needs to be set for your HTML data. The state going to start as being set to `'OFF'`, and the temperature `0` which means you should also ensure that the LED is off when the server starts.
+Create a function that will start your web server, using the `connection` object you had saved as a parameter.The `state` and `temperature` variables needs to be set for your HTML data. The state is going to start as being set to `'OFF'`, and the temperature `0` which means you should also ensure that the LED is off when the server starts.
 
 --- code ---
 ---
@@ -44,29 +26,6 @@ def serve(connection):
     state = 'OFF'
     led.off()
     temperature = 0
---- /code ---
-
---- /task ---
-
---- task ---
-
-You want to keep the web server up and listening all the time, so that any client can connect to it. add a `while True:` loop.
-
---- code ---
----
-language: python
-filename: web_server.py
-line_numbers: true
-line_number_start: 53
-line_highlights: 57-58
----
-def serve(connection):
-    #Start a webserver
-    state = 'OFF'
-    led.off()
-    temperature = 0
-    while True:
-
 --- /code ---
 
 --- /task ---
@@ -75,7 +34,7 @@ When your web browser asks for a connection to your Raspberry Pi Pico, the conne
 
 --- task ---
 
-Add these four lines of code so that you can accept a request, and `print()` to see what the request was. Add a call to your `serve` function in your calls at the bottom of your code.
+You want to keep the web server up and listening all the time, so that any client can connect to it. add a `while True:` loop. Add these four lines of code so that you can accept a request, and `print()` to see what the request was. Add a call to your `serve` function in your calls at the bottom of your code.
 
 --- code ---
 ---
@@ -83,7 +42,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 53
-line_highlights: 58-61, 67
+line_highlights: 57-61, 67
 ---
 def serve(connection):
     #Start a webserver
@@ -106,7 +65,11 @@ except KeyboardInterrupt:
 
 --- /task ---
 
-When you run your program and then type in the IP address into a webrowser address bar you should see something like this:
+**Test: ** Run your program and then type in the IP address into a webrowser address bar on your computer.
+
+![image of a browser address bar with the IP of the Pico typed in](images/browser_ip.png)
+
+You should see something like this in the shell output in Thonny.
 
 ```python
 >>> %Run -c $EDITOR_CONTENT
@@ -156,7 +119,7 @@ except KeyboardInterrupt:
 
 --- task ---
 
-Refresh your page when you've run the code again. Click on the buttons that are displayed. You should then see that their are two different outputs from your shell.
+Refresh your page when you've run the code again. Click on the buttons that are displayed. In Thonny you should then see that their are two different outputs from your shell.
 
 ```python
 b'GET /lighton? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8\r\nAccept-Language: en-GB,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\nConnection: keep-alive\r\nReferer: http://192.168.1.143/\r\nUpgrade-Insecure-Requests: 1\r\n\r\n'
@@ -283,3 +246,10 @@ def serve(connection):
 --- /code ---
 
 --- /task ---
+
+--- task ---
+
+**Test:** You can hold your hand over your Raspberry Pi Pico W to increase it's temperature, then refresh the web page on your computer to see the new value that is displayed.
+
+--- /task ---
+

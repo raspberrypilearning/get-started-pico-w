@@ -2,18 +2,18 @@
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step you will create a web page that your web server can send to the client.
+In this step you will create a web page that the web server, running on your Raspberry Pi Pico W, can send to a client web browser. You're going to test the web page on your computer first though, to make sure it displays as it should. In the next step you can add the code to your Python script, so that your Raspberry Pi Pico W can serve the web page.
 </div>
 <div>
 ![screenshot from chrome showing a web page with two buttons for turning on and off an LED, and some boiler plate text](images/index.png)
 </div>
 </div>
 
-A web page can be as simple as some text, formatted in such a way that a web browser will render it and provide some interactivity. Although Thonny is not designed to write HTML, it can be used for this purpose. However, you can use your preferred, be that VSCode, TextEdit or Notepad.
+A web page can be as simple as some text, formatted in such a way that a web browser will render it and provide some interactivity. Although Thonny is not designed to write HTML, it can be used for this purpose. However, you can use your preferred text editor if you like, be that VSCode, TextEdit or Notepad.
 
 --- task ---
 
-In your text editor or in Thonny, create a new file. You can call it whatever you like, but `index.html` is the standard name for the first page that a user interacts with. Make sure you add the `.html` file extension.
+In your text editor or in Thonny, create a new file. You can call it whatever you like, but `index.html` is the standard name for the first page that a user interacts with. Make sure you add the `.html` file extension. If using Thonny make sure to save to **This computer**.
 
 --- /task ---
 
@@ -219,6 +219,8 @@ def webpage(temperature, state):
 
 --- /task ---
 
-You can't test this code yet, as you're program is not yet serving the HTML. That will be tackled in the next step.
-
 --- save ---
+
+You can't test this code yet, as your program is not yet serving the HTML. That will be tackled in the next step.
+The simple HTML code you have just written will be stored used in your MicroPython script and served to the browser of computers that connect to it over your network, just like a webpage stored on any other server in the world. An important difference is that only devices connected to your WiFi network can access the webpage or control your Raspberry Pi Pico W. This page is a very simple demonstration of what is possible; to learn more about HTML coding and creating websites, see some of our other projects on this site!
+

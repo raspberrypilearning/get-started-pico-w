@@ -9,11 +9,18 @@ In this step you will use the connection to your WLAN to open a socket
 </div>
 </div>
 
-A socket is the way a **server** can listen for **client** that want to connect to it. The webpage you are currently looking at is hosted on Raspberry Pi Foundation servers. These servers have an open socket that waits for your web browser to make a connection, at which point the contents of the web page are sent to your computer. In this case your server is going to be your Raspberry Pi Pico and the client will be a web browser on another computer.
+<div style="display: flex; flex-wrap: wrap">
+<div style="flex-basis: 200px; flex-grow: 1; margin-right: 10px;">
+<div style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px; display:flex; margin-bottom: 27px;"><p><span style="color: #0faeb0">A socket </spand> is the way a **server** can listen for a **client** that wants to connect to it. The webpage you are currently looking at is hosted on Raspberry Pi Foundation servers. These servers have an open socket that waits for your web browser to make a connection, at which point the contents of the web page are sent to your computer. In this case your server is going to be your Raspberry Pi Pico and the client will be a web browser on another computer.</p>
+</div>
+</div>
+</div>
+
+To open a socket you need to provide the IP address, and a port number. Port numbers are used by computers to identify where requests should be sent. For instance port `80` is normally used for web traffic. Stardew Valley uses port `24642` when you're playing a multiplayer game. As you are setting up a web server you will be using port `80`
 
 --- task ---
 
-Create a new function that can be called to open a socket.
+Create a new function that can be called to open a socket. It should be above your `try`/`except`. Start by giving the socket an IP address and a port number. 
 
 --- code ---
 ---
@@ -25,35 +32,20 @@ line_highlights:
 ---
 def open_socket(ip):
     # Open a socket
---- /code ---
-
---- /task ---
-
-To open a socket you need to provide the IP address, and a port number. Port numbers are used by computers to identify where requests should be sent. For instance port `80` is normally used for web traffic. Stardew Valley uses port `24642` when you're playing a multiplayer game. As you are setting up a web server you will be using port `80`
-
---- task ---
-
-Add code to your function to create an address for your socket.
-
---- code ---
----
-language: python
-filename: web_server.py
-line_numbers: true
-line_number_start: 25
-line_highlights: 27
----
-def open_socket(ip):
-    # Open a socket
     address = (ip, 80)
 
+
+try:
+    connect()
+except KeyboardInterrupt:
+    machine.reset()
 --- /code ---
 
 --- /task ---
 
 --- task ---
 
-Now you can create your socket, and then have it listen for requests on port `80`. Don't forget to call your function at the bottom of your code.
+Now create your socket, and then have it listen for requests on port `80`. Don't forget to call your function at the bottom of your code.
 
 --- code ---
 ---
@@ -83,7 +75,7 @@ except KeyboardInterrupt:
 
 --- task ---
 
-Run your code, and you should see output that looks something like this. 
+**Test:** Run your code, and you should see output that looks something like this. 
 
 --- code ---
 ---
@@ -109,7 +101,7 @@ Connected on 192.168.1.143
 
 --- task ---
 
-Lastly you can replace your `print` with a `return` and then store the returned socket connection as a variable.
+Lastly replace your `print` with a `return` and then store the returned socket connection as a variable.
 
 --- code ---
 ---
@@ -117,7 +109,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 25
-line_highlights: 31, 35
+line_highlights: 31, 36
 ---
 def open_socket(ip):
     # Open a socket
@@ -138,4 +130,5 @@ except KeyboardInterrupt:
 
 --- /task ---
 
+You now have your Raspberry Pi Pico W listening for connections to its IP address on port 80. This means that it is ready to start serving HTML code, so that a connected web browser can see a web page.
 --- save ---
