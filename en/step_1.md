@@ -2,6 +2,8 @@
 
 Raspberry Pi Pico W is a new Raspberry Pi product that adds Wi-Fi capability to Raspberry Pi Pico, allowing you to connect the device to a Wi-Fi network. In this guide, you will learn how to use Raspberry Pi Pico W connect to a WiFi network and then how to turn it into a web server to control digital outputs from a browser, and receive sensor data.
 
+![Raspberry Pi Pico W being controlled from a web page](images/web-server.gif)
+
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 <span style="color: #0faeb0">**WiFi**</span> enabled devices allow for easy communication between computers and the Internet. The technology helped kick start the Internet Of Things (IOT) revolution.
 </p>
@@ -20,20 +22,3 @@ You will need:
 
 [[[change-theme-thonny]]]
 
---- no-print ---
---- task ---
-### Try it
-<div style="display: flex; flex-wrap: wrap">
-<div style="flex-basis: 175px; flex-grow: 1">  
-Description of what to do or think about when looking at the example.
-</div>
-<div class="scratch-preview" style="margin-left: 15px;">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/485673032/?autostart=false" frameborder="0"></iframe>
-</div>
-</div>
---- /task ---
---- /no-print ---
-
---- print-only ---
-![Completed project](images/showcase_static.png)
---- /print-only ---
