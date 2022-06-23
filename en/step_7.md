@@ -13,5 +13,3 @@ In the [Party popper](https://projects.raspberrypi.org/en/projects/party-popper)
 ![banner image from beating heart project](images/beating-heart.png)
 
 In [Beating heart](https://projects.raspberrypi.org/en/projects/beating-heart) you learn to use a potentiometer to control a pulsing LED, but you could also use your browser to control the pulse rate, and the potentiometer could be used to change the appearance of your web page.
-
-ADD LINK AND REFERENCE TO WEB PATH HERE.
