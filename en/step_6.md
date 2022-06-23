@@ -137,7 +137,9 @@ Notice that you have `/lighton?` and `lightoff?` in the requests. These can be u
 
 --- task ---
 
-Split the request string and then fetch the first item in the list. If it is `lighton?` then you can switch the LED on. If it is `lightoff?` then you can switch the LED off.
+Split the request string and then fetch the first item in the list. Some times the request string might not be able to be split, so it's best to handle this in a `try`/`except`.
+
+If the 1st item in the split is `lighton?` then you can switch the LED on. If it is `lightoff?` then you can switch the LED off.
 
 --- code ---
 ---
@@ -145,7 +147,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 53
-line_highlights: 61-65
+line_highlights: 62-69
 ---
 def serve(connection):
     #Start a webserver
@@ -156,7 +158,10 @@ def serve(connection):
         client = connection.accept()[0]
         request = client.recv(1024)
         request = str(request)
-        request = request.split()[1]
+        try:
+            request = request.split()[1]
+        except IndexError:
+            pass
         if request == '/lighton?':
             led.on()
         elif request =='/lightoff?':
@@ -184,7 +189,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 53
-line_highlights: 61-65
+line_highlights: 68, 71
 ---
 def serve(connection):
     #Start a webserver
@@ -195,7 +200,10 @@ def serve(connection):
         client = connection.accept()[0]
         request = client.recv(1024)
         request = str(request)
-        request = request.split()[1]
+        try:
+            request = request.split()[1]
+        except IndexError:
+            pass
         if request == '/lighton?':
             led.on()
             state = 'ON'
@@ -221,7 +229,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 53
-line_highlights: 68
+line_highlights: 72
 ---
 def serve(connection):
     #Start a webserver
@@ -232,7 +240,10 @@ def serve(connection):
         client = connection.accept()[0]
         request = client.recv(1024)
         request = str(request)
-        request = request.split()[1]
+        try:
+            request = request.split()[1]
+        except IndexError:
+            pass
         if request == '/lighton?':
             led.on()
             state = 'ON'
