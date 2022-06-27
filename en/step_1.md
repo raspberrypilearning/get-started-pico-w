@@ -14,7 +14,7 @@ You will:
 + Use your web page to control the Raspberry Pi Pico onboard LED and to receive temperature data from it
 
 You will need:
-+ A Raspberry Pi Pico W and microUSB data cable
++ A Raspberry Pi Pico W and micro USB data cable
 + A computer connected to your network
 + The Thonny Python IDE
 
