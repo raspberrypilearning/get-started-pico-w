@@ -1,17 +1,17 @@
-## Serve your web page
+## Serve your webpage
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step you will start up your web server so that it can be connected to by a client, and control your LED and read the temperature.
+In this step, you will start up your web server so that it can be connected to by a client, and control your LED and read the temperature.
 </div>
 <div>
-![screenshot from chrome showing a web page with two buttons for turning on and off an LED](images/web_light_on.png)
+![Screenshot from Chrome showing a webpage with two buttons for turning an LED on and off.](images/web_light_on.png)
 </div>
 </div>
 
 --- task ---
 
-Create a function that will start your web server, using the `connection` object you had saved as a parameter.The `state` and `temperature` variables needs to be set for your HTML data. The state is going to start as being set to `'OFF'`, and the temperature `0` which means you should also ensure that the LED is off when the server starts.
+Create a function that will start your web server, using the `connection` object you saved as a parameter. The `state` and `temperature` variables need to be set for your HTML data. The state is going to start as being set to `'OFF'`, and the temperature to `0`, which means you should also ensure that the LED is off when the server starts.
 
 --- code ---
 ---
@@ -22,7 +22,7 @@ line_number_start: 53
 line_highlights: 57-58
 ---
 def serve(connection):
-    #Start a webserver
+    #Start a web server
     state = 'OFF'
     led.off()
     temperature = 0
@@ -30,11 +30,11 @@ def serve(connection):
 
 --- /task ---
 
-When your web browser asks for a connection to your Raspberry Pi Pico, the connection needs to be accepted. After that, the data that is sent from your web browser must be done in specific chunks (in this case 1024 bytes). You also need to know what the request your web browser is making - is it asking for just a simple page, is it asking for a page that doesn't exist?
+When your web browser asks for a connection to your Raspberry Pi Pico W, the connection needs to be accepted. After that, the data that is sent from your web browser must be done in specific chunks (in this case, 1024 bytes). You also need to know what request your web browser is making — is it asking for just a simple page? Is it asking for a page that doesn't exist?
 
 --- task ---
 
-You want to keep the web server up and listening all the time, so that any client can connect to it. add a `while True:` loop. Add these four lines of code so that you can accept a request, and `print()` to see what the request was. Add a call to your `serve` function in your calls at the bottom of your code.
+You want to keep the web server up and listening all the time, so that any client can connect to it. You can do this by adding a `while True:` loop. Add these four lines of code so that you can accept a request, and `print()` to see what the request was. Add a call to your `serve` function in your calls at the bottom of your code.
 
 --- code ---
 ---
@@ -45,7 +45,7 @@ line_number_start: 53
 line_highlights: 57-61, 67
 ---
 def serve(connection):
-    #Start a webserver
+    #Start a web server
     state = 'OFF'
     led.off()
     while True:
@@ -65,9 +65,9 @@ except KeyboardInterrupt:
 
 --- /task ---
 
-**Test: ** Run your program and then type in the IP address into a webrowser address bar on your computer.
+**Test:** Run your program and then type in the IP address into a web browser's address bar on your computer.
 
-![image of a browser address bar with the IP of the Pico typed in](images/browser_ip.png)
+![A browser address bar with the IP of the Pico typed in.](images/browser_ip.png)
 
 You should see something like this in the shell output in Thonny.
 
@@ -83,7 +83,7 @@ b'GET /favicon.ico HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (W
 
 --- task ---
 
-Next you need to send the HTML code you have written to the client web browser.
+Next, you need to send the HTML code you have written to the client web browser.
 
 --- code ---
 ---
@@ -94,7 +94,7 @@ line_number_start: 53
 line_highlights: 58-61, 67
 ---
 def serve(connection):
-    #Start a webserver
+    #Start a web server
     state = 'OFF'
     led.off()
     while True:
@@ -119,7 +119,7 @@ except KeyboardInterrupt:
 
 --- task ---
 
-Refresh your page when you've run the code again. Click on the buttons that are displayed. In Thonny you should then see that their are two different outputs from your shell.
+Refresh your page when you've run the code again. Click on the buttons that are displayed. In Thonny, you should then see that there are two different outputs from your shell.
 
 ```python
 b'GET /lighton? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8\r\nAccept-Language: en-GB,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\nConnection: keep-alive\r\nReferer: http://192.168.1.143/\r\nUpgrade-Insecure-Requests: 1\r\n\r\n'
@@ -133,13 +133,13 @@ b'GET /lightoff? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Win
 
 --- /task ---
 
-Notice that you have `/lighton?` and `lightoff?` in the requests. These can be used to control the onboard LED of Raspberry Pi Pico.
+Notice that you have `/lighton?` and `lightoff?` in the requests. These can be used to control the onboard LED of your Raspberry Pi Pico W.
 
 --- task ---
 
-Split the request string and then fetch the first item in the list. Some times the request string might not be able to be split, so it's best to handle this in a `try`/`except`.
+Split the request string and then fetch the first item in the list. Sometimes the request string might not be able to be split, so it's best to handle this in a `try`/`except`.
 
-If the 1st item in the split is `lighton?` then you can switch the LED on. If it is `lightoff?` then you can switch the LED off.
+If the first item in the split is `lighton?` then you can switch the LED on. If it is `lightoff?` then you can switch the LED off.
 
 --- code ---
 ---
@@ -150,7 +150,7 @@ line_number_start: 53
 line_highlights: 62-69
 ---
 def serve(connection):
-    #Start a webserver
+    #Start a web server
     state = 'OFF'
     led.off()
 
@@ -192,7 +192,7 @@ line_number_start: 53
 line_highlights: 68, 71
 ---
 def serve(connection):
-    #Start a webserver
+    #Start a web server
     state = 'OFF'
     led.off()
 
@@ -221,7 +221,7 @@ Now when you run the code, the text for the state of the LED should also change 
 
 --- task ---
 
-Lastly you can use the onboard temperature sensor to get an approximate reading of the CPU temperature, and display that on your webpage as well.
+Lastly, you can use the onboard temperature sensor to get an approximate reading of the CPU temperature, and display that on your webpage as well.
 
 --- code ---
 ---
@@ -232,7 +232,7 @@ line_number_start: 53
 line_highlights: 72
 ---
 def serve(connection):
-    #Start a webserver
+    #Start a web server
     state = 'OFF'
     led.off()
 
@@ -260,7 +260,7 @@ def serve(connection):
 
 --- task ---
 
-**Test:** You can hold your hand over your Raspberry Pi Pico W to increase it's temperature, then refresh the web page on your computer to see the new value that is displayed.
+**Test:** You can hold your hand over your Raspberry Pi Pico W to increase its temperature, then refresh the webpage on your computer to see the new value that is displayed.
 
 --- /task ---
 
