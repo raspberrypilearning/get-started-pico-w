@@ -1,4 +1,4 @@
-## Set up Raspberry Pi Pico W
+## Set up your Raspberry Pi Pico W
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
@@ -11,9 +11,9 @@ Connect your Raspberry Pi Pico W and set up MicroPython.
 
 --- task ---
 
-**Connect** the small end of your USB cable to the Raspberry Pi Pico.
+**Connect** the small end of your micro USB cable to the Raspberry Pi Pico W.
 
-![An image of a Raspberry Pi Pico connected to the small end of a USB cable.](images/pico-top-plug.png)
+![A Raspberry Pi Pico W connected to the small end of a micro USB cable.](images/pico-top-plug.png)
 
 --- /task ---
 
@@ -21,7 +21,7 @@ Connect your Raspberry Pi Pico W and set up MicroPython.
 
 **Connect** the other end to your computer, laptop, or Raspberry Pi.
 
-![An image of a Raspberry Pi Pico connected to a laptop with a USB cable.](images/plug-in-pico.png)
+![A Raspberry Pi Pico W connected to a laptop via a micro USB cable.](images/plug-in-pico.png)
 
 --- /task ---
 
@@ -53,9 +53,9 @@ If you have never used MicroPython on your Raspberry Pi Pico, then Thonny will p
 title: There was an error installing the firmware
 ---
 
-If you see an error message during the install then:
-+ Disconnect your Raspberry Pi Pico
-+ Reconnect your Raspberry Pi Pico
+If you see an error message during the install, then:
++ Disconnect your Raspberry Pi Pico W
++ Reconnect your Raspberry Pi Pico W
 + Try to install the firmware again (you might need to press the stop button first)
 
 ![A screenshot of an error message showing that the firmware cannot install correctly.](images/pico-firmware-error.PNG)
@@ -67,11 +67,11 @@ If you see an error message during the install then:
 title: I don't know if the firmware is installed and cannot connect to my Pico
 ---
 
-Make sure your Raspberry Pi Pico is connected to your computer with a micro USB cable. Click on the list in the bottom-right corner of your Thonny window. A pop-up menu will appear, which lists the available interpreters. 
+Make sure your Raspberry Pi Pico W is connected to your computer with a micro USB cable. Click on the list in the bottom-right corner of your Thonny window. A pop-up menu will appear, which lists the available interpreters. 
 
 ![A pop-up menu that shows an option saying configure interpreter.](images/no-pico-interpreter.png) 
 
-If you cannot see the Pico in the list (like in the picture), you will need to reconnect your Raspberry Pi Pico while holding the BOOTSEL button to mount it as a storage volume, and reinstall the firmware by following the instructions in the section above.
+If you cannot see the Pico in the list (like in the picture), you will need to reconnect your Raspberry Pi Pico W while holding the BOOTSEL button to mount it as a storage volume, and then reinstall the firmware by following the instructions in the section above.
 
 --- /collapse ---
 
@@ -80,7 +80,7 @@ If you cannot see the Pico in the list (like in the picture), you will need to r
 title: Firmware is installed but I still cannot connect to my Pico
 ---
 
-You may be using the wrong kind of micro USB cable. Your current micro USB cable may be damaged, or designed only to carry power to devices and cannot transfer data. Try swapping your cable if nothing else has worked. 
+You may be using the wrong kind of micro USB cable. Your current micro USB cable may be damaged, or designed to only carry power to devices and cannot transfer data. Try swapping your cable for another if nothing else has worked. 
 
 If your Pico still won't connect after trying all these things, it may **itself** be damaged and unable to connect. 
 
@@ -122,6 +122,6 @@ When installation has completed, close the package window, then exit and reopen 
 
 --- /task ---
 
-If you have difficulties installing the `picozero` library in Thonny, you can download the library file and save it to your Raspberry Pi Pico. 
+If you have difficulties installing the `picozero` library in Thonny, you can download the library file and save it to your Raspberry Pi Pico W. 
 
 [[[picozero-offline-install]]]
