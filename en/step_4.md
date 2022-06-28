@@ -16,7 +16,7 @@ In this step, you will use the connection to your WLAN to open a socket.
 </div>
 </div>
 
-To open a socket, you need to provide the IP address and a port number. Port numbers are used by computers to identify where requests should be sent. For instance, port `80` is normally used for web traffic. Stardew Valley uses port `24642` when you're playing a multiplayer game. As you are setting up a web server, you will be using port `80`.
+To open a socket, you need to provide the IP address and a port number. Port numbers are used by computers to identify where requests should be sent. For instance, port `80` is normally used for web traffic; Stardew Valley uses port `24642` when you're playing a multiplayer game. As you are setting up a web server, you will be using port `80`.
 
 --- task ---
 
