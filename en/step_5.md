@@ -156,7 +156,7 @@ def webpage(temperature, state):
 
 --- task ---
 
-You can now store all your HTML code that you have written and tested in a variable. Using **f-strings** for the text means that the placeholders you have in the HTML for `temperature` and `state` can be inserted into your string.
+You can now store all your HTML code that you have written and tested in a variable. Using **fstrings** for the text means that the placeholders you have in the HTML for `temperature` and `state` can be inserted into your string.
 
 --- code ---
 ---
