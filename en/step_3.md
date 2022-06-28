@@ -1,4 +1,4 @@
-## Connect Raspberry Pi Pico W to a WLAN
+## Connect your Raspberry Pi Pico W to a WLAN
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
@@ -12,7 +12,7 @@ Here, you will learn to use MicroPython to connect your Raspberry Pi Pico W to a
 <p style='border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;'>
 <span style="color: #0faeb0">Passwords</span> need to be kept securely and privately. In this step, you will add your WiFi password into your Python file. Make sure you don't share your file with anyone that you wouldn't want to tell your password to.</p>
 
-To connect to a WiFi network, you will need to know your Service Set Identifier (SSID). This is the name of your WiFi network. You will also need your WiFi password. These can usually be found written on your wireless router, although you should have changed the default password to something unique.
+To connect to a WiFi network, you will need to know your service set identifier (SSID). This is the name of your WiFi network. You will also need your WiFi password. These can usually be found written on your wireless router, although you should have changed the default password to something unique.
 
 --- task ---
 
@@ -155,7 +155,7 @@ Waiting for connection...
 
 --- collapse ---
 ---
-title: The Raspberry Pi Pico W won't connect.
+title: The Raspberry Pi Pico W won't connect
 ---
 1. Make sure that you are using the correct SSID and password.
 2. If you are on a school or work WLAN, unauthorised devices might not be permitted access to the WiFi.
