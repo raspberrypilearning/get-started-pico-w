@@ -38,7 +38,7 @@ Look at the text in the bottom-right corner of the Thonny editor. It will show y
 
 If it does not say "MicroPython (Raspberry Pi Pico)", then click on the text and select "MicroPython (Raspberry Pi Pico)".
 
-If you have never used MicroPython on your Raspberry Pi Pico, then Thonny will prompt you to add the MicroPython firmware. Click **Install**. 
+If you have never used MicroPython on your Raspberry Pi Pico W before, then Thonny will prompt you to add the MicroPython firmware. Click **Install**. 
 
 ![MicroPython installation window with the Install button highlighted.](images/thonny-install-micropython-pico.png)
 
@@ -80,7 +80,7 @@ If you cannot see the Pico in the list (like in the picture), you will need to r
 title: Firmware is installed but I still cannot connect to my Pico
 ---
 
-You may be using the wrong kind of micro USB cable. Your current micro USB cable may be damaged, or designed to only carry power to devices and cannot transfer data. Try swapping your cable for another if nothing else has worked. 
+You may be using the wrong kind of micro USB cable. Your current micro USB cable may be damaged, or designed to only carry power to devices and not transfer data. Try swapping your cable for another if nothing else has worked. 
 
 If your Pico still won't connect after trying all these things, it may **itself** be damaged and unable to connect. 
 
@@ -90,7 +90,7 @@ You can find further information in the [Raspberry Pi Pico Guide](https://projec
 
 --- /task ---
 
-`picozero` is a MicroPython library for beginners to the Raspberry Pi Pico. 
+For newcomers to the Raspberry Pi Pico, `picozero` is a MicroPython library that's beginner-friendly. 
 
 --- task ---
 
