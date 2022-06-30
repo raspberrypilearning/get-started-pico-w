@@ -9,6 +9,13 @@ Connect your Raspberry Pi Pico W and set up MicroPython.
 <p style='border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;'>
 <span style="color: #0faeb0">MicroPython</span> is a version of the Python programming language for microcontrollers, such as your Raspberry Pi Pico W. MicroPython lets you use your Python knowledge to write code to interact with electronics components.</p>
 
+
+--- task ---
+
+Download the latest version of Raspberry Pi Pico W firmware at [https://rpf.io/pico-w-firmware](https://rpf.io/pico-w-firmware)
+
+--- /task ---
+
 --- task ---
 
 **Connect** the small end of your micro USB cable to the Raspberry Pi Pico W.
@@ -19,9 +26,23 @@ Connect your Raspberry Pi Pico W and set up MicroPython.
 
 --- task ---
 
+Hold down the **BOOTSEL** button on your Raspberry Pi Pico W.
+
+![A Raspberry Pi Pico W with the BOOTSEL button highlighted](images/bootsel.png)
+
+--- /task ---
+
+--- task ---
+
 **Connect** the other end to your computer, laptop, or Raspberry Pi.
 
 ![A Raspberry Pi Pico W connected to a laptop via a micro USB cable.](images/plug-in-pico.png)
+
+--- /task ---
+
+--- task ---
+
+Your file manager should open up, with Raspberry Pi Pico being show as an externally connected drive. Drag and drop the firmware file you downloaded into the file manager. Your Raspberry Pi Pico should disconnect and the file manager will close.
 
 --- /task ---
 
@@ -38,8 +59,6 @@ Look at the text in the bottom-right corner of the Thonny editor. It will show y
 
 If it does not say "MicroPython (Raspberry Pi Pico)", then click on the text and select "MicroPython (Raspberry Pi Pico)".
 
-If you have never used MicroPython on your Raspberry Pi Pico W before, then Thonny will prompt you to add the MicroPython firmware. Click **Install**. 
-
 ![MicroPython installation window with the Install button highlighted.](images/thonny-install-micropython-pico.png)
 
 --- /task ---
@@ -47,20 +66,6 @@ If you have never used MicroPython on your Raspberry Pi Pico W before, then Thon
 --- task ---
 
 **Debug:** 
-
---- collapse ---
----
-title: There was an error installing the firmware
----
-
-If you see an error message during the install, then:
-+ Disconnect your Raspberry Pi Pico W
-+ Reconnect your Raspberry Pi Pico W
-+ Try to install the firmware again (you might need to press the stop button first)
-
-![A screenshot of an error message showing that the firmware cannot install correctly.](images/pico-firmware-error.PNG)
-
---- /collapse ---
 
 --- collapse ---
 ---
@@ -85,8 +90,6 @@ You may be using the wrong kind of micro USB cable. Your current micro USB cable
 If your Pico still won't connect after trying all these things, it may **itself** be damaged and unable to connect. 
 
 --- /collapse ---
-
-You can find further information in the [Raspberry Pi Pico Guide](https://projects.raspberrypi.org/en/projects/introduction-to-the-pico){:target="_blank"}.
 
 --- /task ---
 
