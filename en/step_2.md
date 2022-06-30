@@ -94,7 +94,7 @@ If your Pico still won't connect after trying all these things, it may **itself*
 
 --- /task ---
 
-For newcomers to the Raspberry Pi Pico, `picozero` is a MicroPython library that's beginner-friendly. 
+For newcomers to the Raspberry Pi Pico W, `picozero` is a MicroPython library that's beginner-friendly. 
 
 --- task ---
 
