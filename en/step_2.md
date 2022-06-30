@@ -44,8 +44,9 @@ Hold down the **BOOTSEL** button on your Raspberry Pi Pico W.
 
 Your file manager should open up, with Raspberry Pi Pico being show as an externally connected drive. Drag and drop the firmware file you downloaded into the file manager. Your Raspberry Pi Pico should disconnect and the file manager will close.
 
---- /task ---
+![image of the Windows file manager opened, showing Raspberry Pi Pico connected as an external drive](images/file_manager.png)
 
+--- /task ---
 
 --- task ---
 
@@ -59,7 +60,7 @@ Look at the text in the bottom-right corner of the Thonny editor. It will show y
 
 If it does not say "MicroPython (Raspberry Pi Pico)", then click on the text and select "MicroPython (Raspberry Pi Pico)".
 
-![MicroPython installation window with the Install button highlighted.](images/thonny-install-micropython-pico.png)
+![MicroPython selected as the interpreter for Thonny.](images/thonny-select-interpreter.png)
 
 --- /task ---
 
