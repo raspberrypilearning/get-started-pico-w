@@ -29,8 +29,8 @@ line_highlights:
 import network
 import socket
 from time import sleep
-from picozero import pico_temp_sensor
-from machine import Pin
+from picozero import pico_temp_sensor, pico_led
+import machine
 --- /code ---
 
 Save this code now, and choose the option to save to **This computer**
@@ -48,7 +48,6 @@ line_numbers: true
 line_number_start: 7
 line_highlights: 
 ---
-led = Pin("LED", machine.Pin.OUT)
 ssid = 'NAME OF YOUR WIFI NETWORK'
 password = 'YOUR SECRET PASSWORD'
 --- /code ---

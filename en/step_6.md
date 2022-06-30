@@ -24,7 +24,7 @@ line_highlights: 57-58
 def serve(connection):
     #Start a webserver
     state = 'OFF'
-    led.off()
+    pico_led.off()
     temperature = 0
 --- /code ---
 
@@ -47,7 +47,7 @@ line_highlights: 57-61, 67
 def serve(connection):
     #Start a webserver
     state = 'OFF'
-    led.off()
+    pico_led.off()
     while True:
         client = connection.accept()[0]
         request = client.recv(1024)
@@ -96,7 +96,7 @@ line_highlights: 58-61, 67
 def serve(connection):
     #Start a webserver
     state = 'OFF'
-    led.off()
+    pico_led.off()
     while True:
         client = connection.accept()[0]
         request = client.recv(1024)
@@ -152,7 +152,7 @@ line_highlights: 62-69
 def serve(connection):
     #Start a webserver
     state = 'OFF'
-    led.off()
+    pico_led.off()
 
     while True:
         client = connection.accept()[0]
@@ -163,9 +163,9 @@ def serve(connection):
         except IndexError:
             pass
         if request == '/lighton?':
-            led.on()
+            pico_led.on()
         elif request =='/lightoff?':
-            led.off()
+            pico_led.off()
         html = webpage(temperature, state)
         client.send(html)
 
@@ -194,7 +194,7 @@ line_highlights: 68, 71
 def serve(connection):
     #Start a webserver
     state = 'OFF'
-    led.off()
+    pico_led.off()
 
     while True:
         client = connection.accept()[0]
@@ -205,10 +205,10 @@ def serve(connection):
         except IndexError:
             pass
         if request == '/lighton?':
-            led.on()
+            pico_led.on()
             state = 'ON'
         elif request =='/lightoff?':
-            led.off()
+            pico_led.off()
             state = 'OFF'
         html = webpage(temperature, state)
         client.send(html)
@@ -234,7 +234,7 @@ line_highlights: 72
 def serve(connection):
     #Start a webserver
     state = 'OFF'
-    led.off()
+    pico_led.off()
 
     while True:
         client = connection.accept()[0]
@@ -245,10 +245,10 @@ def serve(connection):
         except IndexError:
             pass
         if request == '/lighton?':
-            led.on()
+            pico_led.on()
             state = 'ON'
         elif request =='/lightoff?':
-            led.off()
+            pico_led.off()
             state = 'OFF'
         temperature = pico_temp_sensor.temp
         html = webpage(temperature, state)
