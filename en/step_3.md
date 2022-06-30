@@ -1,22 +1,22 @@
-## Connect Raspberry Pi Pico W to a WLAN
+## Connect your Raspberry Pi Pico W to a WLAN
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-Here you will learn to use MicroPython to connect Raspberry Pi Pico W to a Wireless Local Area Network (WLAN), or what is more commonly known as a Wi-Fi network.
+Here, you will learn to use MicroPython to connect your Raspberry Pi Pico W to a wireless local area network (WLAN), more commonly known as a WiFi network.
 </div>
 <div>
-![MicroPython shell showing connection to a WLAN](images/WiFi_connect.png){:width="300px"}
+![MicroPython shell showing connection to a WLAN.](images/WiFi_connect.png){:width="300px"}
 </div>
 </div>
 
 <p style='border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;'>
-<span style="color: #0faeb0">Passwords</span> need to be kept securely and privately. In this step you will add your Wi-Fi password into your Python file. Make sure you don't share your file with anyone that you wouldn't want to tell your password to.</p>
+<span style="color: #0faeb0">Passwords</span> need to be kept securely and privately. In this step, you will add your WiFi password into your Python file. Make sure you don't share your file with anyone that you wouldn't want to tell your password to.</p>
 
-To connect to a Wi-Fi network, you will need to know your Service Set Identifier (SSID). This is the name of your Wi-Fi network. You will also need your Wi-Fi password. These can usually be found written on your wireless router, although you should have changed the default password to something unique.
+To connect to a WiFi network, you will need to know your service set identifier (SSID). This is the name of your WiFi network. You will also need your WiFi password. These can usually be found written on your wireless router, although you should have changed the default password to something unique.
 
 --- task ---
 
-In Thonny, import the packages you will need to connect to your Wi-Fi network, read the onboard temperature sensor and light the onboard LED.
+In Thonny, import the packages you will need to connect to your WiFi network, read the onboard temperature sensor, and light the onboard light-emitting diode (LED).
 
 --- code ---
 ---
@@ -38,7 +38,7 @@ Save this code now, and choose the option to save to **This computer**
 
 --- task ---
 
-Next set up Raspberry Pi Pico to use the onboard LED, and additionally add in the SSID and password for your network.
+Next, set up your Raspberry Pi Pico W to use the onboard LED, and additionally add in the SSID and password for your network.
 
 --- code ---
 ---
@@ -56,7 +56,7 @@ password = 'YOUR SECRET PASSWORD'
 
 --- task ---
 
-Now begin to build a function to connect to your WLAN. You need to set up a `wlan` object, activate the wireless and provide the object with your `ssid` and `password`.
+Now, begin to build a function to connect to your WLAN. You need to set up a `wlan` object, activate the wireless, and provide the object with your `ssid` and `password`.
 
 --- code ---
 ---
@@ -78,7 +78,7 @@ def connect():
 
 --- task ---
 
-If you've ever connected a device to a Wi-Fi network, you will know that it doesn't happen instantly. Your device will send requests to your Wi-Fi router to connect, and when the router responds they will perform what is called a handshake to establish a connection. To do this with Python, you can set up a loop that will keep sending requests each second until the connection handshake has been performed.
+If you've ever connected a device to a WiFi network, you will know that it doesn't happen instantly. Your device will send requests to your WiFi router to connect, and when the router responds, they will perform what is called a handshake to establish a connection. To do this with Python, you can set up a loop that will keep sending requests each second until the connection handshake has been performed.
 
 --- code ---
 ---
@@ -102,7 +102,7 @@ def connect():
 
 --- task ---
 
-Now print out your WLAN configuration, and test it all. You'll need to call your function. Keep all your function calls at the bottom of your file, so they are the last lines of code that are run. Because the Wi-Fi connection can stay up, even when you stop the code, you can add a `try`/`except` that will reset Raspberry Pi Pico when the script is stopped.
+Now print out your WLAN configuration, and test it all. You'll need to call your function. Keep all your function calls at the bottom of your file, so they are the last lines of code that are run. Because the WiFi connection can stay up, even when you stop the code, you can add a `try`/`except` that will reset the Raspberry Pi Pico W when the script is stopped.
 
 --- code ---
 ---
@@ -132,7 +132,7 @@ except KeyboardInterrupt:
 
 --- task ---
 
-**Test:** Save and run your code, and you should see some output in the shell that looks something like this, although the specific IP addresses will be different.
+**Test:** Save and run your code. You should see some output in the shell that looks something like this, although the specific IP addresses will be different.
 
 --- code ---
 ---
@@ -154,17 +154,17 @@ Waiting for connection...
 
 --- collapse ---
 ---
-title: Raspberry Pi Pico won't connect.
+title: The Raspberry Pi Pico W won't connect
 ---
 1. Make sure that you are using the correct SSID and password.
-2. If you are on a school or work WLAN, unauthorised devices might not be permitted access to the Wi-Fi
-3. Unplug your Raspberry Pi Pico from your computer to power it off, then plug it back in. This can be a problem when you have connected once, and then try and connect again.
+2. If you are on a school or work WLAN, unauthorised devices might not be permitted access to the WiFi.
+3. Unplug your Raspberry Pi Pico W from your computer to power it off, then plug it back in. This can be a problem when you have connected once, and then try to connect again.
 
 --- /collapse ---
 
 --- task ---
 
-You don't need all the information provided by `wlan.ifconfig()`. The key information you need is the IP address of Raspberry Pi Pico, which is the first piece of information. You can use an **fstring** to output the **IP** address. By placing an `f` in front of your string, variables can be printed when they are surrounded by `{}`.
+You don't need all the information provided by `wlan.ifconfig()`. The key information you need is the IP address of the Raspberry Pi Pico W, which is the first piece of information. You can use an **fstring** to output the **IP address**. By placing an `f` in front of your string, variables can be printed when they are surrounded by `{}`.
 
 --- code ---
 ---
@@ -196,7 +196,7 @@ except KeyboardInterrupt:
 
 --- task ---
 
-You can now return the value for the IP address of your Raspberry Pi Pico, and store it when you call your function.
+You can now return the value for the IP address of your Raspberry Pi Pico W, and store it when you call your function.
 
 --- code ---
 ---
