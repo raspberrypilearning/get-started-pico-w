@@ -34,7 +34,7 @@ Hold down the **BOOTSEL** button on your Raspberry Pi Pico W.
 
 --- task ---
 
-**Connect** the other end to your computer, laptop, or Raspberry Pi.
+**Connect** the other end to your desktop computer, laptop, or Raspberry Pi.
 
 ![A Raspberry Pi Pico W connected to a laptop via a micro USB cable.](images/plug-in-pico.png)
 
@@ -56,9 +56,9 @@ Open the Thonny editor.
 
 --- task ---
 
-Look at the text in the bottom-right corner of the Thonny editor. It will show you the version of Python that is being used.
+Look at the text in the bottom right-hand corner of the Thonny editor. It will show you the version of Python that is being used.
 
-If it does not say "MicroPython (Raspberry Pi Pico)", then click on the text and select "MicroPython (Raspberry Pi Pico)".
+If it does **not** say 'MicroPython (Raspberry Pi Pico)' there, then click on the text and select 'MicroPython (Raspberry Pi Pico)' from the options.
 
 ![MicroPython selected as the interpreter for Thonny.](images/thonny-select-interpreter.png)
 
@@ -73,11 +73,11 @@ If it does not say "MicroPython (Raspberry Pi Pico)", then click on the text and
 title: I don't know if the firmware is installed and cannot connect to my Pico
 ---
 
-Make sure your Raspberry Pi Pico W is connected to your computer with a micro USB cable. Click on the list in the bottom-right corner of your Thonny window. A pop-up menu will appear, which lists the available interpreters. 
+Make sure your Raspberry Pi Pico W is connected to your computer with a micro USB cable. Click on the list in the bottom right-hand corner of your Thonny window. A pop-up menu will appear, which lists the available interpreters. 
 
 ![A pop-up menu that shows an option saying configure interpreter.](images/no-pico-interpreter.png) 
 
-If you cannot see the Pico in the list (like in the picture), you will need to reconnect your Raspberry Pi Pico W while holding the BOOTSEL button to mount it as a storage volume, and then reinstall the firmware by following the instructions in the section above.
+If you cannot see Pico in the list (as shown in the picture), you need to reconnect your Raspberry Pi Pico W while holding the BOOTSEL button to mount it as a storage volume, and then reinstall the firmware by following the instructions in the section above.
 
 --- /collapse ---
 
@@ -94,11 +94,11 @@ If your Pico still won't connect after trying all these things, it may **itself*
 
 --- /task ---
 
-For newcomers to the Raspberry Pi Pico W, `picozero` is a MicroPython library that's beginner-friendly. 
+For newcomers to Raspberry Pi Pico, `picozero` is a MicroPython library that's beginner-friendly. 
 
 --- task ---
 
-To complete the projects in this path, you will need to install the `picozero` library as a Thonny package.
+To complete the projects in this path, you need to install the `picozero` library as a Thonny package.
 
 In Thonny, choose **Tools** > **Manage packages**.
 
@@ -122,7 +122,7 @@ Click on **Install**.
 
 ![The picozero information with 'Install' button highlighted.](images/thonny-install-package.jpg)
 
-When installation has completed, close the package window, then exit and reopen Thonny.
+When installation has completed, close the package window, then quit and reopen Thonny.
 
 --- /task ---
 
