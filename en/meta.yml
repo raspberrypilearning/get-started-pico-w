@@ -3,9 +3,9 @@ title: Getting started with your Raspberry Pi Pico W
 hero_image: images/banner.png
 description: Get started with your Raspberry Pi Pico W
 version: 4
-listed: false
-copyedit: false
-last_tested: '2021-03-26'
+listed: true
+copyedit: true
+last_tested: '2022-06-30'
 steps:
 - title: Introduction
 - title: Set up your Raspberry Pi Pico W
