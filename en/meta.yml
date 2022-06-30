@@ -1,0 +1,16 @@
+---
+title: Getting started with your Raspberry Pi Pico W
+hero_image: images/banner.png
+description: Get started with your Raspberry Pi Pico W
+version: 4
+listed: false
+copyedit: false
+last_tested: '2021-03-26'
+steps:
+- title: Introduction
+- title: Set up your Raspberry Pi Pico W
+- title: Connect your Raspberry Pi Pico to a WLAN
+- title: Open a socket
+- title: Create a webpage
+- title: Serve your webpage
+- title: What next?
