@@ -34,7 +34,7 @@ When your web browser asks for a connection to your Raspberry Pi Pico W, the con
 
 --- task ---
 
-You want to keep the web server up and listening all the time, so that any client can connect to it. You can do this by adding a `while True:` loop. Add these four lines of code so that you can accept a request, and `print()` to see what the request was. Add a call to your `serve` function in your calls at the bottom of your code.
+You want to keep the web server up and listening all the time, so that any client can connect to it. You can do this by adding a `while True:` loop. Add these five lines of code so that you can accept a request, and `print()` to see what the request was. Add a call to your `serve` function in your calls at the bottom of your code.
 
 --- code ---
 ---
@@ -42,7 +42,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 53
-line_highlights: 57-61, 67
+line_highlights: 57-62, 67
 ---
 def serve(connection):
     #Start a web server
@@ -53,6 +53,7 @@ def serve(connection):
         request = client.recv(1024)
         request = str(request)
         print(request)
+        client.close()
 
 
 try:
@@ -104,6 +105,7 @@ def serve(connection):
         print(request)
         html = webpage(temperature, state)
         client.send(html)
+        client.close()
 
 
 try:
@@ -168,6 +170,7 @@ def serve(connection):
             pico_led.off()
         html = webpage(temperature, state)
         client.send(html)
+        client.close()
 
 --- /code ---
 
@@ -212,6 +215,7 @@ def serve(connection):
             state = 'OFF'
         html = webpage(temperature, state)
         client.send(html)
+        client.close()
 
 --- /code ---
 
@@ -253,6 +257,7 @@ def serve(connection):
         temperature = pico_temp_sensor.temp
         html = webpage(temperature, state)
         client.send(html)
+        client.close()
 
 --- /code ---
 
