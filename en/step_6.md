@@ -92,7 +92,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 53
-line_highlights: 62,63
+line_highlights: 62-63
 ---
 def serve(connection):
     #Start a web server
