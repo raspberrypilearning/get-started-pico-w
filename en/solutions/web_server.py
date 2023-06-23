@@ -5,8 +5,8 @@ from picozero import pico_temp_sensor, pico_led
 import machine
 
 
-ssid = 'Client Limit Exceeded'
-password = 'yCAvoAu5Qh'
+ssid = 'SSID here'
+password = 'psk_here'
 
 
 def connect():
