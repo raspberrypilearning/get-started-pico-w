@@ -35,10 +35,8 @@ def open_socket(ip):
     address = (ip, 80)
 
 
-try:
-    connect()
-except KeyboardInterrupt:
-    machine.reset()
+connect()
+
 --- /code ---
 
 --- /task ---
@@ -63,11 +61,9 @@ def open_socket(ip):
     connection.listen(1)
     print(connection)
 
-try:
-    ip = connect()
-    open_socket(ip)
-except KeyboardInterrupt:
-    machine.reset()
+
+ip = connect()
+open_socket(ip)
 
 --- /code ---
 
@@ -120,11 +116,8 @@ def open_socket(ip):
     return connection
 
 
-try:
-    ip = connect()
-    connection = open_socket(ip)
-except KeyboardInterrupt:
-    machine.reset()
+ip = connect()
+connection = open_socket(ip)
 
 --- /code ---
 

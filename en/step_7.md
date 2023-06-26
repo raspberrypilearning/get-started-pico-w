@@ -1,5 +1,9 @@
 ## What next?
 
+One last thing to try is to run your Raspberry Pi Pico webserver without using Thonny. Save your program as `main.py` and this time save it to the Raspberry Pi Pico.
+
+Now when the Raspberry Pi Pico is powered, even without a connection to a computer, the webserver should start. Remember, you can use the **bootsel** button to close the server, or the button on the served webpage, if you need to reconnect to Thonny and make alterations to your code.
+
 If you have a look at [Introduction to Raspberry Pi Pico: LEDs, buzzers, switches, and dials](https://projects.raspberrypi.org/en/pathways/pico-intro), you can find plenty of ideas for how to improve on your Raspberry Pi Pico web server.
 
 ![Banner image from firefly project.](images/fire_fly.png)

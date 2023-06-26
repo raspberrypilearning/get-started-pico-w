@@ -57,12 +57,10 @@ def serve(connection):
         client.close()
 
 
-try:
-    ip = connect()
-    connection = open_socket(ip)
-    serve(connection)
-except KeyboardInterrupt:
-    machine.reset()
+ip = connect()
+connection = open_socket(ip)
+serve(connection)
+
 --- /code ---
 
 --- /task ---
@@ -110,12 +108,10 @@ def serve(connection):
         client.close()
 
 
-try:
-    ip = connect()
-    connection = open_socket(ip)
-    serve(connection)
-except KeyboardInterrupt:
-    machine.reset()
+ip = connect()
+connection = open_socket(ip)
+serve(connection)
+
 --- /code ---
 
 --- /task ---
@@ -137,13 +133,13 @@ b'GET /lightoff? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Win
 
 --- /task ---
 
-Notice that you have `/lighton?` and `lightoff?` in the requests. These can be used to control the onboard LED of your Raspberry Pi Pico W.
+Notice that you have `/lighton?`, `lightoff?`, and `close?` in the requests. These can be used to control the onboard LED of your Raspberry Pi Pico W and close your server.
 
 --- task ---
 
 Split the request string and then fetch the first item in the list. Sometimes the request string might not be able to be split, so it's best to handle this in a `try`/`except`.
 
-If the first item in the split is `lighton?` then you can switch the LED on. If it is `lightoff?` then you can switch the LED off.
+If the first item in the split is `lighton?` then you can switch the LED on. If it is `lightoff?` then you can switch the LED off. If it is `close?` you can perform a `sys.exit()`
 
 --- code ---
 ---
@@ -170,6 +166,8 @@ def serve(connection):
             pico_led.on()
         elif request =='/lightoff?':
             pico_led.off()
+        elif request == '/close?':
+            sys.exit()  
         html = webpage(temperature, state)
         client.send(html)
         client.close()
@@ -180,7 +178,7 @@ def serve(connection):
 
 --- task ---
 
-Run your code again. This time, when you refresh your browser window and click on the buttons, the onboard LED should turn on and off.
+Run your code again. This time, when you refresh your browser window and click on the buttons, the onboard LED should turn on and off. If you click on the **Stop Server** button, your server should shutdown.
 
 --- /task ---
 
@@ -215,6 +213,8 @@ def serve(connection):
         elif request =='/lightoff?':
             pico_led.off()
             state = 'OFF'
+        elif request == '/close?':
+            sys.exit() 
         html = webpage(temperature, state)
         client.send(html)
         client.close()
@@ -256,6 +256,8 @@ def serve(connection):
         elif request =='/lightoff?':
             pico_led.off()
             state = 'OFF'
+        elif request == '/close?':
+            sys.exit() 
         temperature = pico_temp_sensor.temp
         html = webpage(temperature, state)
         client.send(html)
