@@ -233,7 +233,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 14
-highlight_lines: 20, 21
+line_highlights: 20, 21
 ---
 def connect():
     #Connect to WLAN
@@ -262,7 +262,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 14
-highlight_lines: 23, 24, 25, 26, 29 
+line_highlights: 23, 24, 25, 26, 29 
 ---
 def connect():
     #Connect to WLAN

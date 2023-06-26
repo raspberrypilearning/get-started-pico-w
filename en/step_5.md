@@ -109,7 +109,7 @@ language: html
 filename: index.html
 line_numbers: true
 line_number_start: 
-highlight_lines: 
+line_highlights: 
 ---
 language: html
 filename: index.html
