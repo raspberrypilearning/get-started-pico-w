@@ -20,7 +20,7 @@ To open a socket, you need to provide the IP address and a port number. Port num
 
 --- task ---
 
-Create a new function that can be called to open a socket. It should be above your `try`/`except`. Start by giving the socket an IP address and a port number. 
+Create a new function that can be called to open a socket. Start by giving the socket an IP address and a port number. 
 
 --- code ---
 ---
@@ -118,6 +118,7 @@ def open_socket(ip):
 
 ip = connect()
 connection = open_socket(ip)
+
 
 --- /code ---
 
