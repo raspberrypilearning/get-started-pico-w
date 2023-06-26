@@ -102,15 +102,20 @@ line_highlights: 7-9
 
 --- task ---
 
-To finish off the webpage, you can add in some extra data, such as the state of the LED and the temperature of your Raspberry Pi Pico W.
-
+An additional button can be added to close the webserver, without having to use Thonny.
 --- code ---
 ---
 language: html
 filename: index.html
 line_numbers: true
 line_number_start: 
-line_highlights: 10-11
+highlight_lines: 
+---
+language: html
+filename: index.html
+line_numbers: true
+line_number_start: 
+line_highlights: 10-12
 ---
 <!DOCTYPE html>
 <html>
@@ -120,6 +125,41 @@ line_highlights: 10-11
 </form>
 <form action="./lightoff">
 <input type="submit" value="Light off" />
+</form>
+<form action="./close">
+<input type="submit" value="Stop server" />
+</form>
+</body>
+</html>
+--- /code ---
+
+
+--- /task ---
+
+
+--- task ---
+
+To finish off the webpage, you can add in some extra data, such as the state of the LED and the temperature of your Raspberry Pi Pico W.
+
+--- code ---
+---
+language: html
+filename: index.html
+line_numbers: true
+line_number_start: 
+line_highlights: 13-14
+---
+<!DOCTYPE html>
+<html>
+<body>
+<form action="./lighton">
+<input type="submit" value="Light on" />
+</form>
+<form action="./lightoff">
+<input type="submit" value="Light off" />
+</form>
+<form action="./close">
+<input type="submit" value="Stop server" />
 </form>
 <p>LED is {state}</p>
 <p>Temperature is {temperature}</p>
@@ -164,7 +204,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 34
-line_highlights: 36-49
+line_highlights: 36-51
 ---
 def webpage(temperature, state):
     #Template HTML
@@ -176,6 +216,9 @@ def webpage(temperature, state):
             </form>
             <form action="./lightoff">
             <input type="submit" value="Light off" />
+            </form>
+            <form action="./close">
+            <input type="submit" value="Stop server" />
             </form>
             <p>LED is {state}</p>
             <p>Temperature is {temperature}</p>
@@ -196,7 +239,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 34
-line_highlights: 50
+line_highlights: 53
 ---
 def webpage(temperature, state):
     #Template HTML
