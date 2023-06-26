@@ -103,13 +103,8 @@ line_highlights: 7-9
 --- task ---
 
 An additional button can be added to close the webserver, without having to use Thonny.
+
 --- code ---
----
-language: html
-filename: index.html
-line_numbers: true
-line_number_start: 
-line_highlights: 
 ---
 language: html
 filename: index.html
