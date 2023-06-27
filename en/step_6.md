@@ -42,7 +42,7 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 66
-line_highlights: 70-75, 80
+line_highlights: 71-76, 81
 ---
 def serve(connection):
     #Start a web server
@@ -95,8 +95,8 @@ line_highlights: 76, 77
 ---
 def serve(connection):
     #Start a web server
-    state = 'OFF'
-    pico_led.off()
+    state = 'ON'
+    pico_led.on()
     temperature = 0
     while True:
         client = connection.accept()[0]
@@ -147,12 +147,12 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 66
-line_highlights: 74-87
+line_highlights: 75-85
 ---
 def serve(connection):
     #Start a web server
-    state = 'OFF'
-    pico_led.off()
+    state = 'ON'
+    pico_led.on()
     temperature = 0
     while True:
         client = connection.accept()[0]
@@ -192,12 +192,12 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 66
-line_highlights: 81, 85
+line_highlights: 81, 84
 ---
 def serve(connection):
     #Start a web server
-    state = 'OFF'
-    pico_led.off()
+    state = 'ON'
+    pico_led.on()
     temperature = 0
     while True:
         client = connection.accept()[0]
@@ -235,12 +235,12 @@ language: python
 filename: web_server.py
 line_numbers: true
 line_number_start: 66
-line_highlights: 88
+line_highlights: 87
 ---
 def serve(connection):
     #Start a web server
-    state = 'OFF'
-    pico_led.off()
+    state = 'ON'
+    pico_led.on()
     temperature = 0
     while True:
         client = connection.accept()[0]
