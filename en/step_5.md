@@ -180,7 +180,7 @@ Create a new function called `webpage`, that has two parameters. These are `temp
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 34
+line_number_start: 44
 line_highlights: 
 ---
 def webpage(temperature, state):
@@ -198,8 +198,8 @@ You can now store all your HTML code that you have written and tested in a varia
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 34
-line_highlights: 36-51
+line_number_start: 44
+line_highlights: 46-62
 ---
 def webpage(temperature, state):
     #Template HTML
@@ -233,8 +233,8 @@ Lastly, you can return the `html` string from your function.
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 34
-line_highlights: 53
+line_number_start: 44
+line_highlights: 63
 ---
 def webpage(temperature, state):
     #Template HTML

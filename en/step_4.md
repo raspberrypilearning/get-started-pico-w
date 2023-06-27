@@ -27,7 +27,7 @@ Create a new function that can be called to open a socket. Start by giving the s
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 25
+line_number_start: 35
 line_highlights: 
 ---
 def open_socket(ip):
@@ -50,8 +50,8 @@ Now create your socket, and then have it listen for requests on port `80`. Don't
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 25
-line_highlights: 28-31
+line_number_start: 35
+line_highlights: 38-41
 ---
 def open_socket(ip):
     # Open a socket
@@ -104,8 +104,8 @@ Lastly, replace your `print` with a `return` and then store the returned socket 
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 25
-line_highlights: 31, 36
+line_number_start: 35
+line_highlights: 41, 46
 ---
 def open_socket(ip):
     # Open a socket

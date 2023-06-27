@@ -18,8 +18,8 @@ Create a function that will start your web server, using the `connection` object
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 57-58
+line_number_start: 66
+line_highlights:
 ---
 def serve(connection):
     #Start a web server
@@ -41,8 +41,8 @@ You want to keep the web server up and listening all the time, so that any clien
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 58-63, 69
+line_number_start: 66
+line_highlights: 70-75, 80
 ---
 def serve(connection):
     #Start a web server
@@ -90,8 +90,8 @@ Next, you need to send the HTML code you have written to the client web browser.
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 63-64
+line_number_start: 66
+line_highlights: 76, 77
 ---
 def serve(connection):
     #Start a web server
@@ -146,8 +146,8 @@ If the first item in the split is `lighton?` then you can switch the LED on. If 
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 62-69
+line_number_start: 66
+line_highlights: 74-87
 ---
 def serve(connection):
     #Start a web server
@@ -191,8 +191,8 @@ You can also tell the user of the webpage what the state of the LED is.
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 68, 71
+line_number_start: 66
+line_highlights: 81, 85
 ---
 def serve(connection):
     #Start a web server
@@ -234,8 +234,8 @@ Lastly, you can use the onboard temperature sensor to get an approximate reading
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 72
+line_number_start: 66
+line_highlights: 88
 ---
 def serve(connection):
     #Start a web server
