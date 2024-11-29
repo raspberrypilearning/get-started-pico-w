@@ -28,14 +28,14 @@ filename: index.html
 line_numbers: true
 line_number_start:
 line_highlights:
--------------------------------------
+-----------------------------------------------------
 
 <!DOCTYPE html>
 
-
-
-
-
+<html>
+<body>
+</body>
+</html>
 
 \--- /code ---
 
@@ -52,17 +52,17 @@ filename: index.html
 line_numbers: true
 line_number_start:
 line_highlights: 4-6
------------------------------------------
+---------------------------------------------------------
 
 <!DOCTYPE html>
 
-
-
+<html>
+<body>
 <form action="./lighton">
 <input type="submit" value="Light on" />
 </form>
-
-
+</body>
+</html>
 
 \--- /code ---
 
@@ -87,21 +87,20 @@ filename: index.html
 line_numbers: true
 line_number_start:
 line_highlights: 7-9
------------------------------------------
+---------------------------------------------------------
 
 <!DOCTYPE html>
 
-
-
+<html>
+<body>
 <form action="./lighton">
 <input type="submit" value="Light on" />
 </form>
 <form action="./lightoff">
 <input type="submit" value="Light off" />
 </form>
-
-
-
+</body>
+</html>
 
 \--- /code ---
 
@@ -118,12 +117,12 @@ filename: index.html
 line_numbers: true
 line_number_start:
 line_highlights: 10-11
--------------------------------------------
+-----------------------------------------------------------
 
 <!DOCTYPE html>
 
-
-
+<html>
+<body>
 <form action="./lighton">
 <input type="submit" value="Light on" />
 </form>
@@ -132,11 +131,8 @@ line_highlights: 10-11
 </form>
 <p>LED is {state}</p>
 <p>Temperature is {temperature}</p>
-
-
-
-
-
+</body>
+</html>
 
 \--- /code ---
 
@@ -159,7 +155,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 34
 line_highlights:
--------------------------------------
+-----------------------------------------------------
 
 def webpage(temperature, state):
 \#Template HTML
@@ -178,7 +174,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 34
 line_highlights: 36-49
--------------------------------------------
+-----------------------------------------------------------
 
 def webpage(temperature, state):
 \#Template HTML
@@ -209,7 +205,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 34
 line_highlights: 50
-----------------------------------------
+--------------------------------------------------------
 
 def webpage(temperature, state):
 \#Template HTML
