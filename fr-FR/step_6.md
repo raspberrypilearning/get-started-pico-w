@@ -20,7 +20,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 53
 line_highlights: 57-58
--------------------------------------------
+-----------------------------------------------------------
 
 def serve(connection):
 \#Start a web server
@@ -44,7 +44,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 53
 line_highlights: 58-63, 69
------------------------------------------------
+---------------------------------------------------------------
 
 def serve(connection):
 \#Start a web server
@@ -95,7 +95,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 53
 line_highlights: 63-64
--------------------------------------------
+-----------------------------------------------------------
 
 def serve(connection):
 \#Start a web server
@@ -152,7 +152,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 53
 line_highlights: 62-69
--------------------------------------------
+-----------------------------------------------------------
 
 def serve(connection):
 \#Start a web server
@@ -196,7 +196,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 53
 line_highlights: 68, 71
---------------------------------------------
+------------------------------------------------------------
 
 def serve(connection):
 \#Start a web server
@@ -238,7 +238,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 53
 line_highlights: 72
-----------------------------------------
+--------------------------------------------------------
 
 def serve(connection):
 \#Start a web server
