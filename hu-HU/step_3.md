@@ -25,7 +25,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start:
 line_highlights:
--------------------------------------
+-----------------------------------------------------
 
 import network
 import socket
@@ -48,7 +48,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 7
 line_highlights:
--------------------------------------
+-----------------------------------------------------
 
 ssid = 'NAME OF YOUR WIFI NETWORK'
 password = 'YOUR SECRET PASSWORD'
@@ -67,7 +67,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 12
 line_highlights:
--------------------------------------
+-----------------------------------------------------
 
 def connect():
 \#Connect to WLAN
@@ -90,7 +90,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 12
 line_highlights: 17-19
--------------------------------------------
+-----------------------------------------------------------
 
 def connect():
 \#Connect to WLAN
@@ -115,7 +115,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 12
 line_highlights: 22-25
--------------------------------------------
+-----------------------------------------------------------
 
 def connect():
 \#Connect to WLAN
@@ -146,7 +146,7 @@ filename:
 line_numbers: false
 line_number_start:
 line_highlights:
--------------------------------------
+-----------------------------------------------------
 
 Waiting for connection...
 Waiting for connection...
@@ -179,7 +179,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 12
 line_highlights: 20-21
--------------------------------------------
+-----------------------------------------------------------
 
 def connect():
 \#Connect to WLAN
@@ -211,7 +211,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 12
 line_highlights: 22, 26
---------------------------------------------
+------------------------------------------------------------
 
 def connect():
 \#Connect to WLAN
