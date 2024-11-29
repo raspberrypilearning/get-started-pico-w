@@ -29,7 +29,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 25
 line_highlights:
--------------------------------------
+-----------------------------------------------------
 
 def open_socket(ip):
 \# Open a socket
@@ -54,7 +54,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 25
 line_highlights: 28-31
--------------------------------------------
+-----------------------------------------------------------
 
 def open_socket(ip):
 \# Open a socket
@@ -85,7 +85,7 @@ filename:
 line_numbers: false
 line_number_start:
 line_highlights:
--------------------------------------
+-----------------------------------------------------
 
 > > > %Run -c $EDITOR_CONTENT
 > > > Waiting for connection...
@@ -114,7 +114,7 @@ filename: web_server.py
 line_numbers: true
 line_number_start: 25
 line_highlights: 31, 36
---------------------------------------------
+------------------------------------------------------------
 
 def open_socket(ip):
 \# Open a socket
