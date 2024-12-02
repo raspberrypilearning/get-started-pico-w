@@ -1,15 +1,15 @@
-## What next?
+## Vad kommer härnäst?
 
-If you have a look at [Introduction to Raspberry Pi Pico: LEDs, buzzers, switches, and dials](https://projects.raspberrypi.org/en/pathways/pico-intro), you can find plenty of ideas for how to improve on your Raspberry Pi Pico web server.
+Om du tittar på [Introduktion till Raspberry Pi Pico: LED, summer, tryckknappar och rattar](https://projects.raspberrypi.org/en/pathways/pico-intro), kan du hitta massor av idéer för hur för att förbättra din Raspberry Pi Pico-webbserver.
 
-![Banner image from firefly project.](images/fire_fly.png)
+![Bannerbild från Firefly-projektet.](images/fire_fly.png)
 
-In the [LED firefly](https://projects.raspberrypi.org/en/projects/led-firefly) project, you can learn how to wire up external LEDs to a Raspberry Pi Pico, then you could use a web interface to change the pattern your firefly blinks with.
+I projektet [LED firefly](https://projects.raspberrypi.org/en/projects/led-firefly) kan du lära dig hur du kopplar externa lysdioder till en Raspberry Pi Pico, sedan kan du använda ett webbgränssnitt för att ändra mönstret som din eldfluga blinkar med.
 
-![Banner image from party popper project.](images/party-popper.png)
+![Bannerbild från partypopperprojekt.](images/party-popper.png)
 
-In the [Party popper](https://projects.raspberrypi.org/en/projects/party-popper) project, you can learn how to use a switch to control an RGB LED and a buzzer. You could use a web form with this project to control the colour of the LED and the tone that the buzzer plays.
+I projektet [Partypopper](https://projects.raspberrypi.org/en/projects/party-popper) kan du lära dig hur du använder en switch för att styra en RGB-LED och en summer. Du kan använda ett webbformulär med detta projekt för att styra färgen på lysdioden och tonen som summern spelar.
 
-![Banner image from beating heart project.](images/beating-heart.png)
+![Bannerbild från projektet beating heart.](images/beating-heart.png)
 
-In [Beating heart](https://projects.raspberrypi.org/en/projects/beating-heart), you learn to use a potentiometer to control a pulsing LED, but you could also use your browser to control the pulse rate, and the potentiometer could be used to change the appearance of your webpage.
+I [Beating heart](https://projects.raspberrypi.org/en/projects/beating-heart) lär du dig att använda en potentiometer för att styra en pulserande lysdiod, men du kan också använda din webbläsare för att styra pulsfrekvensen, och potentiometern kan användas för att ändra utseendet på din webbsida.
