@@ -47,7 +47,7 @@ def webpage(temperature, state):
             </body>
             </html>
             """
-    return str(html)
+    returnera str(html)
 
 
 def serve(connection):
