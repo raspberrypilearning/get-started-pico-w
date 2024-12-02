@@ -1,25 +1,25 @@
-## Create a webpage
+## Skapa en webbsida
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will create a webpage that the web server, running on your Raspberry Pi Pico W, can send to a client web browser. You're going to test the webpage on your computer first though, to make sure it displays as it should. In the next step, you can add the code to your Python script, so that your Raspberry Pi Pico W can serve the webpage.
+I det här steget skapar du en webbsida som webbservern, som körs på din Raspberry Pi Pico W, kan skicka till en klientwebbläsare. Du ska dock testa webbsidan på din dator först, för att se till att den visas som den ska. I nästa steg kan du lägga till koden i ditt Python-skript, så att din Raspberry Pi Pico W kan leverera webbsidan.
 </div>
 <div>
-![Screenshot from Chrome showing a webpage with two buttons for turning an LED on and off, and some boiler plate text.](images/index.png)
+![Skärmdump från Chrome som visar en webbsida med två knappar för att tända och släcka en lysdiod, och lite text.](images/index.png)
 </div>
 </div>
 
-A webpage can be as simple as some text, formatted in such a way that a web browser will render it and provide some interactivity. Although Thonny is not designed to write HTML, it can be used for this purpose. However, you can use your preferred text editor if you like, be that VSCode, TextEdit, or Notepad.
+En webbsida kan vara så enkel som lite text, formaterad på ett sådant sätt att en webbläsare renderar den och ger viss interaktivitet. Även om Thonny inte är designad för att skriva HTML, kan den användas för detta ändamål. Du kan dock använda din favorit-textredigerare om du vill, vare sig det är VSCode, TextEdit eller Notepad.
 
 \--- task ---
 
-In your text editor or in Thonny, create a new file. You can call it whatever you like, but `index.html` is the standard name for the first page that a user interacts with. Make sure you add the `.html` file extension. If using Thonny, make sure to save to **This computer**.
+Skapa en ny fil i din textredigerare eller i Thonny. Du kan kalla det vad du vill, men `index.html` är standardnamnet för den första sidan som en användare interagerar med. Se till att du lägger till filtillägget `.html`. Om du använder Thonny, se till att spara till **This computer**.
 
 \--- /task ---
 
 \--- task ---
 
-There is some standard HTML code that you will need to include to begin with.
+Det finns en del standard HTML-kod som du måste inkludera till att börja med.
 
 ## --- code ---
 
@@ -43,7 +43,7 @@ line_highlights:
 
 \--- task ---
 
-Next, you can create a button that will be used to turn the onboard LED on or off.
+Därefter kan du skapa en knapp som kommer att användas för att slå på eller av den inbyggda lysdioden.
 
 ## --- code ---
 
@@ -70,15 +70,15 @@ line_highlights: 4-6
 
 \--- task ---
 
-Save your file and then find it in your file manager. When you double click the file, it should open in your default web browser. Here is what the webpage looks like in Google Chrome.
+Spara din fil och hitta den sedan i din filhanterare. När du dubbelklickar på filen bör den öppnas i din standardwebbläsare. Så här ser webbsidan ut i Google Chrome.
 
-![Google Chrome showing a page with a single button labelled Light on.](images/button.png)
+![Google Chrome visar en sida med en enda knapp märkt Light on.](images/button.png)
 
 \--- /task ---
 
 \--- task ---
 
-Add a second button to turn the LED off.
+Lägg till en andra knapp för att stänga av lysdioden.
 
 ## --- code ---
 
@@ -108,7 +108,7 @@ line_highlights: 7-9
 
 \--- task ---
 
-To finish off the webpage, you can add in some extra data, such as the state of the LED and the temperature of your Raspberry Pi Pico W.
+För att avsluta webbsidan kan du lägga till lite extra data, såsom status för lysdioden och temperaturen på din Raspberry Pi Pico W.
 
 ## --- code ---
 
@@ -136,17 +136,17 @@ line_highlights: 10-11
 
 \--- /code ---
 
-Your webpage should look like this:
+Din webbsida bör se ut så här:
 
-![Webpage in Google Chrome showing two buttons and text regarding the LED's state and the Pico's temperature.](images/button_and_state.png)
+![Webbsida i Google Chrome som visar två knappar och text som visar lysdiodens status och Picos temperatur.](images/button_and_state.png)
 
 \--- /task ---
 
-Now that you have a working webpage, you can add this code into your Python script. You'll need to switch back to your Python code in Thonny first.
+Nu när du har en fungerande webbsida kan du lägga till den här koden i ditt Python-skript. Du måste byta tillbaka till din Python-kod i Thonny först.
 
 \--- task ---
 
-Create a new function called `webpage`, that has two parameters. These are `temperature` and `state`.
+Skapa en ny funktion som heter `webpage`, som har två parametrar. Dessa är `temperatur` och `state`.
 
 ## --- code ---
 
@@ -165,7 +165,7 @@ def webpage(temperature, state):
 
 \--- task ---
 
-You can now store all your HTML code that you have written and tested in a variable. Using **fstrings** for the text means that the placeholders you have in the HTML for `temperature` and `state` can be inserted into your string.
+Du kan nu lagra all din HTML-kod som du har skrivit och testat i en variabel. Att använda **fstrings** för texten innebär att platshållarna du har i HTML-koden för `temperatur` och `tillstånd` kan infogas i din sträng.
 
 ## --- code ---
 
@@ -196,7 +196,7 @@ html = f"""<!DOCTYPE html><html>
 
 \--- task ---
 
-Lastly, you can return the `html` string from your function.
+Slutligen kan du returnera `html`-strängen från din funktion.
 
 ## --- code ---
 
@@ -228,6 +228,6 @@ html = f"""<!DOCTYPE html><html>
 
 \--- save ---
 
-You can't test this code yet, as your program is not yet serving the HTML. That will be tackled in the next step.
+Du kan inte testa den här koden ännu, eftersom ditt program ännu inte levererar HTML. Det kommer att åtgärdas i nästa steg.
 
-The simple HTML code you have just written will be stored used in your MicroPython script and served to the browser of any computers that connect to it over your network, just like a webpage stored on any other server in the world. An important difference is that only devices connected to your WiFi network can access the webpage or control your Raspberry Pi Pico W. This page is a very simple demonstration of what is possible. To learn more about HTML coding and creating websites, see some of our other projects on this site!
+Den enkla HTML-koden du just har skrivit kommer att lagras i ditt MicroPython-skript och visas i webbläsaren på alla datorer som ansluter till den över ditt nätverk, precis som en webbsida som lagras på vilken annan server som helst i världen. En viktig skillnad är att endast enheter anslutna till ditt WiFi-nätverk kan komma åt webbsidan eller styra din Raspberry Pi Pico W. Den här sidan är en mycket enkel demonstration av vad som är möjligt. För att lära dig mer om HTML-kodning och skapa webbplatser, se några av våra andra projekt på den här webbplatsen!
