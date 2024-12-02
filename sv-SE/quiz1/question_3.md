@@ -2,7 +2,7 @@
 
 ---
 
-## legend: Question 3 of 3
+## legend: Fråga 3 av 3
 
 \--- choices ---
 
