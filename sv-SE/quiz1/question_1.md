@@ -1,18 +1,18 @@
-## Reflection
+## Reflektion
 
-Well done, you have learned a lot! Now it's time to reflect - reflecting is an important part of learning because it helps make new connections in your brain.
+Bra jobbat, du har lärt dig mycket! Nu är det dags att reflektera – att reflektera är en viktig del av lärandet eftersom det hjälper till att skapa nya kopplingar i din hjärna.
 
-Answer the three questions below to reflect on what you've learned.
+Svara på de tre frågorna nedan för att reflektera över vad du har lärt dig.
 
-After each question, press submit. You will be guided towards the correct answer. You can do this activity as many times as you want to.
+Efter varje fråga, tryck på skicka. Du kommer att guidas mot rätt svar. Du kan göra denna aktivitet så många gånger du vill.
 
-Have fun!
+Ha roligt!
 
 \--- question ---
 
 ---
 
-## legend: Question 1 of 3
+## legend: Fråga 1 av 3
 
 \--- choices ---
 
