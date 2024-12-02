@@ -1,22 +1,22 @@
-## Connect your Raspberry Pi Pico W to a WLAN
+## Anslut din Raspberry Pi Pico W till ett WLAN
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-Here, you will learn to use MicroPython to connect your Raspberry Pi Pico W to a wireless local area network (WLAN), more commonly known as a WiFi network.
+Här kommer du att lära dig att använda MicroPython för att ansluta din Raspberry Pi Pico W till ett trådlöst lokalt nätverk (WLAN), mer känt som ett WiFi-nätverk.
 </div>
 <div>
-![MicroPython shell showing connection to a WLAN.](images/WiFi_connect.png){:width="300px"}
+![MicroPython-skal som visar anslutning till ett WLAN.](images/WiFi_connect.png){:width="300px"}
 </div>
 </div>
 
 <p style='border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;'>
-<span style="color: #0faeb0">Passwords</span> need to be kept securely and privately. In this step, you will add your WiFi password into your Python file. Make sure you don't share your file with anyone that you wouldn't want to tell your password to.</p>
+<span style="color: #0faeb0">Lösenord</span> måste förvaras säkert och privat. I det här steget lägger du till ditt WiFi-lösenord i din Python-fil. Se till att du inte delar din fil med någon som du inte vill berätta ditt lösenord för.</p>
 
-To connect to a WiFi network, you will need to know your service set identifier (SSID). This is the name of your WiFi network. You will also need your WiFi password. These can usually be found written on your wireless router, although you should have changed the default password to something unique.
+För att ansluta till ett WiFi-nätverk måste du känna till din nätverksnamn (SSID). Detta är namnet på ditt WiFi-nätverk. Du behöver också ditt WiFi-lösenord. Dessa kan vanligtvis hittas skrivna på din trådlösa router, även om du borde ha ändrat standardlösenordet till något unikt.
 
 \--- task ---
 
-In Thonny, import the packages you will need to connect to your WiFi network, read the onboard temperature sensor, and light the onboard light-emitting diode (LED).
+I Thonny importerar du paketen du behöver för att ansluta till ditt WiFi-nätverk, läser den inbyggda temperatursensorn och tänder den inbyggda lysdioden (LED).
 
 ## --- code ---
 
@@ -34,12 +34,12 @@ from picozero import pico_temp_sensor, pico_led
 import machine
 \--- /code ---
 
-Save this code now, and choose the option to save to **This computer**
+Spara den här koden nu och välj alternativet att spara till **This computer**
 \--- /task ---
 
 \--- task ---
 
-Next, set up your Raspberry Pi Pico W to use the onboard LED, and additionally add in the SSID and password for your network.
+Ställ sedan in din Raspberry Pi Pico W för att använda den inbyggda lysdioden och lägg till SSID och lösenord för ditt nätverk.
 
 ## --- code ---
 
@@ -50,15 +50,15 @@ line_number_start: 7
 line_highlights:
 -----------------------------------------------------
 
-ssid = 'NAME OF YOUR WIFI NETWORK'
-password = 'YOUR SECRET PASSWORD'
+ssid = 'NAMN PÅ DITT WIFI-NÄTVERK'
+lösenord = 'DITT HEMLIGA LÖSENORD'
 \--- /code ---
 
 \--- /task ---
 
 \--- task ---
 
-Now, begin to build a function to connect to your WLAN. You need to set up a `wlan` object, activate the wireless, and provide the object with your `ssid` and `password`.
+Börja nu att bygga en funktion för att ansluta till ditt WLAN. Du måste ställa in ett `wlan`-objekt, aktivera det trådlösa och förse objektet med ditt `ssid` och `lösenord`.
 
 ## --- code ---
 
@@ -81,7 +81,7 @@ wlan.connect(ssid, password)
 
 \--- task ---
 
-If you've ever connected a device to a WiFi network, you will know that it doesn't happen instantly. Your device will send requests to your WiFi router to connect, and when the router responds, they will perform what is called a handshake to establish a connection. To do this with Python, you can set up a loop that will keep sending requests each second until the connection handshake has been performed.
+Om du har anslutit en enhet till ett WiFi-nätverk tidigare så vet du att det tar lite tid. Din enhet kommer att skicka förfrågningar till din WiFi-router om att ansluta, och när routern svarar kommer de att utföra vad som kallas en handskakning för att upprätta en anslutning. För att göra detta med Python kan du ställa in en loop som fortsätter att skicka förfrågningar varje sekund tills anslutningshandskakningen har utförts.
 
 ## --- code ---
 
@@ -106,7 +106,7 @@ sleep(1)
 
 \--- task ---
 
-Now print out your WLAN configuration, and test it all. You'll need to call your function. Keep all your function calls at the bottom of your file, so they are the last lines of code that are run. Because the WiFi connection can stay up, even when you stop the code, you can add a `try`/`except` that will reset the Raspberry Pi Pico W when the script is stopped.
+Skriv nu ut din WLAN-konfiguration och testa allt. Du måste anropa din funktion. Behåll alla dina funktionsanrop längst ner i filen, så att de är de sista kodraderna som körs. Eftersom WiFi-anslutningen kan vara uppe, även när du stoppar koden, kan du lägga till ett `try`/`except` som återställer din Raspberry Pi Pico W när skriptet stoppas.
 
 ## --- code ---
 
@@ -137,7 +137,7 @@ machine.reset()
 
 \--- task ---
 
-**Test:** Save and run your code. You should see some output in the shell that looks something like this, although the specific IP addresses will be different.
+**Testa:** Spara och kör din kod. Du bör se en del utdata i rutan som ser ut ungefär så här, även om de specifika IP-adresserna kommer att vara annorlunda.
 
 ## --- code ---
 
@@ -160,17 +160,17 @@ Waiting for connection...
 
 ## --- collapse ---
 
-## title: The Raspberry Pi Pico W won't connect
+## titel: Raspberry Pi Pico W ansluter inte
 
-1. Make sure that you are using the correct SSID and password.
-2. If you are on a school or work WLAN, unauthorised devices might not be permitted access to the WiFi.
-3. Unplug your Raspberry Pi Pico W from your computer to power it off, then plug it back in. This can be a problem when you have connected once, and then try to connect again.
+1. Se till att du använder rätt SSID och lösenord.
+2. Om du är på en skola eller arbetar med WLAN kan det hända att obehöriga enheter inte tillåts åtkomst till WiFi.
+3. Koppla ur din Raspberry Pi Pico W från din dator för att stänga av den och anslut den sedan igen. Detta kan vara ett problem när du har anslutit en gång och sedan försöker ansluta igen.
 
 \--- /collapse ---
 
 \--- task ---
 
-You don't need all the information provided by `wlan.ifconfig()`. The key information you need is the IP address of the Raspberry Pi Pico W, which is the first piece of information. You can use an **fstring** to output the **IP address**. By placing an `f` in front of your string, variables can be printed when they are surrounded by `{}`.
+Du behöver inte all information som tillhandahålls av `wlan.ifconfig()`. Den viktigaste informationen du behöver är IP-adressen för Raspberry Pi Pico W, som är den första informationen. Du kan använda en **fstring** för att visa **IP-adressen**. Genom att placera ett `f` framför din sträng kan variabler skrivas ut när de är omgivna av `{}`.
 
 ## --- code ---
 
@@ -202,7 +202,7 @@ machine.reset()
 
 \--- task ---
 
-You can now return the value for the IP address of your Raspberry Pi Pico W, and store it when you call your function.
+Du kan nu returnera värdet för IP-adressen för din Raspberry Pi Pico W och lagra det när du anropar din funktion.
 
 ## --- code ---
 
