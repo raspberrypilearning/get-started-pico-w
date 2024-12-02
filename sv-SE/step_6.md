@@ -1,17 +1,17 @@
-## Serve your webpage
+## Visa din webbsida
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will start up your web server so that a client can connect to it, and control your LED and read the temperature.
+I det här steget kommer du att starta upp din webbserver så att en klient kan ansluta till den, och styra din LED och läsa av temperaturen.
 </div>
 <div>
-![Screenshot from Chrome showing a webpage with two buttons for turning an LED on and off.](images/web_light_on.png)
+![Skärmdump från Chrome som visar en webbsida med två knappar för att slå på och av en lysdiod.](images/web_light_on.png)
 </div>
 </div>
 
 \--- task ---
 
-Create a function that will start your web server, using the `connection` object you saved as a parameter. The `state` and `temperature` variables need to be set for your HTML data. The state is going to start as being set to `'OFF'`, and the temperature to `0`, which means you should also ensure that the LED is off when the server starts.
+Skapa en funktion som startar din webbserver, med hjälp av `connection`-objektet du sparade som en parameter. Variablerna `state` och `temperature` måste ställas in för dina HTML-data. Tillståndet kommer att börja som inställt på "OFF" och temperaturen till "0", vilket betyder att du också bör se till att lysdioden är släckt när servern startar.
 
 ## --- code ---
 
@@ -31,11 +31,11 @@ temperature = 0
 
 \--- /task ---
 
-When your web browser asks for a connection to your Raspberry Pi Pico W, the connection needs to be accepted. After that, the data that is sent from your web browser must be done in specific chunks (in this case, 1024 bytes). You also need to know what request your web browser is making — is it asking for just a simple page? Is it asking for a page that doesn't exist?
+När din webbläsare ber om en anslutning till din Raspberry Pi Pico W måste anslutningen accepteras. Därefter måste de data som skickas från din webbläsare göras i specifika bitar (i detta fall, 1024 bytes). Du måste också veta vilken begäran din webbläsare gör – ber den bara om en enkel sida? Frågar det efter en sida som inte finns?
 
 \--- task ---
 
-You want to keep the web server up and listening all the time, so that any client can connect to it. You can do this by adding a `while True:` loop. Add these five lines of code so that you can accept a request, and `print()` to see what the request was. Add a call to your `serve` function in your calls at the bottom of your code.
+Du vill hålla webbservern uppe och lyssna hela tiden, så att vilken klient som helst kan ansluta till den. Du kan göra detta genom att lägga till en `while True:`-loop. Lägg till dessa fem rader kod så att du kan acceptera en begäran, och `print()` för att se vad begäran var. Lägg till ett anrop till din `serve`-funktion i dina anrop längst ner i din kod.
 
 ## --- code ---
 
@@ -68,11 +68,11 @@ machine.reset()
 
 \--- /task ---
 
-**Test:** Run your program and then type in the IP address into a web browser's address bar on your computer.
+**Test:** Kör ditt program och skriv sedan in IP-adressen i en webbläsares adressfält på din dator.
 
-![A browser address bar with the IP of the Pico typed in.](images/browser_ip.png)
+![Ett webbläsaradressfält med IP-adressen för Pico inskriven.](images/browser_ip.png)
 
-You should see something like this in the shell output in Thonny.
+Du borde se något liknande i utdata i Thonny.
 
 ```python
 >>> %Run -c $EDITOR_CONTENT
@@ -86,7 +86,7 @@ b'GET /favicon.ico HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (W
 
 \--- task ---
 
-Next, you need to send the HTML code you have written to the client web browser.
+Därefter måste du skicka HTML-koden du har skrivit till klientens webbläsare.
 
 ## --- code ---
 
@@ -123,13 +123,13 @@ machine.reset()
 
 \--- task ---
 
-Refresh your page when you've run the code again. Click on the buttons that are displayed. In Thonny, you should then see that there are two different outputs from your shell.
+Uppdatera din sida när du har kört koden igen. Klicka på knapparna som visas. I Thonny bör du då se att det blir två olika resultat.
 
 ```python
 b'GET /lighton? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8\r\nAccept-Language: en-GB,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\nConnection: keep-alive\r\nReferer: http://192.168.1.143/\r\nUpgrade-Insecure-Requests: 1\r\n\r\n'
 ```
 
-and
+och
 
 ```python
 b'GET /lightoff? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8\r\nAccept-Language: en-GB,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\nConnection: keep-alive\r\nReferer: http://192.168.1.143/lighton?\r\nUpgrade-Insecure-Requests: 1\r\n\r\n'
@@ -137,13 +137,13 @@ b'GET /lightoff? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Win
 
 \--- /task ---
 
-Notice that you have `/lighton?` and `lightoff?` in the requests. These can be used to control the onboard LED of your Raspberry Pi Pico W.
+Lägg märke till att du har `/lighton?` och `lightoff?` i förfrågningarna. Dessa kan användas för att styra den inbyggda lysdioden på din Raspberry Pi Pico W.
 
 \--- task ---
 
-Split the request string and then fetch the first item in the list. Sometimes the request string might not be able to be split, so it's best to handle this in a `try`/`except`.
+Dela förfrågningssträngen och hämta sedan det första objektet i listan. Ibland kan förfrågningssträngen kanske inte delas, så det är bäst att hantera detta i ett `try`/`except`.
 
-If the first item in the split is `lighton?` then you can switch the LED on. If it is `lightoff?` then you can switch the LED off.
+Om det första objektet i uppdelningen är `lighton?` kan du slå på lysdioden. Om det är `lightoff?` kan du stänga av lysdioden.
 
 ## --- code ---
 
@@ -181,13 +181,13 @@ client.close()
 
 \--- task ---
 
-Run your code again. This time, when you refresh your browser window and click on the buttons, the onboard LED should turn on and off.
+Kör din kod igen. Den här gången, när du uppdaterar ditt webbläsarfönster och klickar på knapparna, bör den inbyggda LED-lampan tändas och släckas.
 
 \--- /task ---
 
 \--- task ---
 
-You can also tell the user of the webpage what the state of the LED is.
+Du kan också berätta för användaren av webbsidan vad statusen för lysdioden är.
 
 ## --- code ---
 
@@ -223,13 +223,13 @@ client.close()
 
 \--- /code ---
 
-Now when you run the code, the text for the state of the LED should also change on the refreshed webpage.
+Nu när du kör koden bör texten för statusen för lysdioden också ändras på den uppdaterade webbsidan.
 
 \--- /task ---
 
 \--- task ---
 
-Lastly, you can use the onboard temperature sensor to get an approximate reading of the CPU temperature, and display that on your webpage as well.
+Slutligen kan du använda den inbyggda temperatursensorn för att få en ungefärlig avläsning av CPU-temperaturen och visa den på din webbsida också.
 
 ## --- code ---
 
@@ -270,6 +270,6 @@ client.close()
 
 \--- task ---
 
-**Test:** You can hold your hand over your Raspberry Pi Pico W to increase its temperature, then refresh the webpage on your computer to see the new value that is displayed.
+**Test:** Du kan hålla handen över din Raspberry Pi Pico W för att höja dess temperatur och sedan uppdatera webbsidan på din dator för att se det nya värdet som visas.
 
 \--- /task ---
