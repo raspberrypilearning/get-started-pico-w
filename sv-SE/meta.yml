@@ -1,0 +1,16 @@
+---
+title: Komma igång med din Raspberry Pi Pico W
+hero_image: images/banner.png
+description: Kom igång med din Raspberry Pi Pico W
+version: 4
+listed: true
+copyedit: true
+last_tested: '2022-06-30'
+steps:
+  - title: Introduktion
+  - title: Ställ in din Raspberry Pi Pico W
+  - title: Anslut din Raspberry Pi Pico till ett WLAN
+  - title: Öppna en socket
+  - title: Skapa en webbsida
+  - title: Visa din webbsida
+  - title: Vad härnäst?
