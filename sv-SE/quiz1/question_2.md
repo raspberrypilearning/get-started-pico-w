@@ -2,15 +2,15 @@
 
 ---
 
-## legend: Question 2 of 3
+## legend: Fråga 2 av 3
 
-You made Pico say hello in a speech bubble.
+Du fick Pico att säga hej i en pratbubbla.
 
 ```blocks3
-say [Hello!] for [2] secs
+säg [Hello!] i [2] sekunder
 ```
 
-Where would you go to find this block?
+Var skulle du gå för att hitta det här blocket?
 
 \--- choices ---
 
