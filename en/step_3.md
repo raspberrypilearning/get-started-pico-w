@@ -31,6 +31,8 @@ import socket
 from time import sleep
 from picozero import pico_temp_sensor, pico_led
 import machine
+import rp2
+import sys
 --- /code ---
 
 Save this code now, and choose the option to save to **This computer**
@@ -45,7 +47,7 @@ Next, set up your Raspberry Pi Pico W to use the onboard LED, and additionally a
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 7
+line_number_start: 9
 line_highlights: 
 ---
 ssid = 'NAME OF YOUR WIFI NETWORK'
@@ -63,7 +65,7 @@ Now, begin to build a function to connect to your WLAN. You need to set up a `wl
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 12
+line_number_start: 14
 line_highlights: 
 ---
 def connect():
@@ -85,8 +87,8 @@ If you've ever connected a device to a WiFi network, you will know that it doesn
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 12
-line_highlights: 17-19
+line_number_start: 14
+line_highlights: 19-21
 ---
 def connect():
     #Connect to WLAN
@@ -102,15 +104,15 @@ def connect():
 
 --- task ---
 
-Now print out your WLAN configuration, and test it all. You'll need to call your function. Keep all your function calls at the bottom of your file, so they are the last lines of code that are run. Because the WiFi connection can stay up, even when you stop the code, you can add a `try`/`except` that will reset the Raspberry Pi Pico W when the script is stopped.
+Now print out your WLAN configuration, and test it all. You'll need to call your function. Keep all your function calls at the bottom of your file, so they are the last lines of code that are run.
 
 --- code ---
 ---
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 12
-line_highlights: 22-25
+line_number_start: 14
+line_highlights: 25, 22
 ---
 def connect():
     #Connect to WLAN
@@ -122,10 +124,9 @@ def connect():
         sleep(1)
     print(wlan.ifconfig())
 
-try:    
-    connect()
-except KeyboardInterrupt:
-    machine.reset()
+
+connect()
+
 --- /code ---
 
 --- /task ---
@@ -171,8 +172,8 @@ You don't need all the information provided by `wlan.ifconfig()`. The key inform
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 12
-line_highlights: 20-21
+line_number_start: 14
+line_highlights: 22, 23
 ---
 def connect():
     #Connect to WLAN
@@ -186,10 +187,7 @@ def connect():
     print(f'Connected on {ip}')
     
 
-try:
-    connect()
-except KeyboardInterrupt:
-    machine.reset()
+connect()
 --- /code ---
 
 --- /task ---
@@ -203,8 +201,8 @@ You can now return the value for the IP address of your Raspberry Pi Pico W, and
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 12
-line_highlights: 22, 26
+line_number_start: 14
+line_highlights: 23, 26
 ---
 def connect():
     #Connect to WLAN
@@ -214,17 +212,79 @@ def connect():
     while wlan.isconnected() == False:
         print('Waiting for connection...')
         sleep(1)
-    ip = wlan.ifconfig()[0]
     print(f'Connected on {ip}')
     return ip
     
 
-try:
-    ip = connect()
-except KeyboardInterrupt:
-    machine.reset()
+ip = connect()
 --- /code ---
 
 --- /task ---
+
+You might want to run this file without using Thonny, which will be covered later in this project. It would be useful to have some indication that the the Raspberry Pi Pico has connected to the WLAN, and also to be able to quit the program without having to have the Raspberry Pi Pico connected to a computer.
+
+--- task ---
+
+Add a condition, where if the bootsel button is pressed, the program will quit.
+
+--- code ---
+---
+language: python
+filename: web_server.py
+line_numbers: true
+line_number_start: 14
+line_highlights: 20, 21
+---
+def connect():
+    #Connect to WLAN
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+    wlan.connect(ssid, password)
+    while wlan.isconnected() == False:
+        if rp2.bootsel_button() == 1:
+            sys.exit()
+        print('Waiting for connection...')
+    ip = wlan.ifconfig()[0]
+    print(f'Connected on {ip}')
+    return ip
+--- /code ---
+
+
+--- /task ---
+
+--- task ---
+
+Then make the onboard LED blink each time it attempts a connection, and then stay on once connected.
+
+--- code ---
+---
+language: python
+filename: web_server.py
+line_numbers: true
+line_number_start: 14
+line_highlights: 23, 24, 25, 26, 29 
+---
+def connect():
+    #Connect to WLAN
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+    wlan.connect(ssid, password)
+    while wlan.isconnected() == False:
+        if rp2.bootsel_button() == 1:
+            sys.exit()
+        print('Waiting for connection...')
+        pico_led.on()
+        sleep(0.5)
+        pico_led.off()
+        sleep(0.5)
+    ip = wlan.ifconfig()[0]
+    print(f'Connected on {ip}')
+    pico_led.on()
+    return ip
+--- /code ---
+
+
+--- /task ---
+
 
 --- save ---

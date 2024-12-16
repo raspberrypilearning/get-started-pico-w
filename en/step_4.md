@@ -20,14 +20,14 @@ To open a socket, you need to provide the IP address and a port number. Port num
 
 --- task ---
 
-Create a new function that can be called to open a socket. It should be above your `try`/`except`. Start by giving the socket an IP address and a port number. 
+Create a new function that can be called to open a socket. Start by giving the socket an IP address and a port number. 
 
 --- code ---
 ---
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 25
+line_number_start: 35
 line_highlights: 
 ---
 def open_socket(ip):
@@ -35,10 +35,8 @@ def open_socket(ip):
     address = (ip, 80)
 
 
-try:
-    connect()
-except KeyboardInterrupt:
-    machine.reset()
+connect()
+
 --- /code ---
 
 --- /task ---
@@ -52,8 +50,8 @@ Now create your socket, and then have it listen for requests on port `80`. Don't
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 25
-line_highlights: 28-31
+line_number_start: 35
+line_highlights: 38-41
 ---
 def open_socket(ip):
     # Open a socket
@@ -63,11 +61,9 @@ def open_socket(ip):
     connection.listen(1)
     print(connection)
 
-try:
-    ip = connect()
-    open_socket(ip)
-except KeyboardInterrupt:
-    machine.reset()
+
+ip = connect()
+open_socket(ip)
 
 --- /code ---
 
@@ -108,8 +104,8 @@ Lastly, replace your `print` with a `return` and then store the returned socket 
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 25
-line_highlights: 31, 36
+line_number_start: 35
+line_highlights: 41, 46
 ---
 def open_socket(ip):
     # Open a socket
@@ -120,11 +116,9 @@ def open_socket(ip):
     return connection
 
 
-try:
-    ip = connect()
-    connection = open_socket(ip)
-except KeyboardInterrupt:
-    machine.reset()
+ip = connect()
+connection = open_socket(ip)
+
 
 --- /code ---
 

@@ -1,6 +1,6 @@
 ## Introduction
 
-Raspberry Pi Pico W is a new Raspberry Pi product that adds WiFi capability to the Raspberry Pi Pico, allowing you to connect the device to a WiFi network. In this guide, you will learn how to use a Raspberry Pi Pico W, how to connect it to a WiFi network, and then how to turn it into a web server to control digital outputs from a browser, and to receive sensor data.
+Raspberry Pi Pico W is a Raspberry Pi product that adds WiFi capability to the Raspberry Pi Pico, allowing you to connect the device to a WiFi network. In this guide, you will learn how to use a Raspberry Pi Pico W, how to connect it to a WiFi network, and then how to turn it into a web server to control digital outputs from a browser, and to receive sensor data.
 
 ![Raspberry Pi Pico W being controlled from a web page.](images/web-server.gif)
 
