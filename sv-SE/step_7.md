@@ -1,12 +1,16 @@
 ## Vad kommer härnäst?
 
-Om du tittar på [Introduktion till Raspberry Pi Pico: LED, summer, tryckknappar och rattar](https://projects.raspberrypi.org/en/pathways/pico-intro), kan du hitta massor av idéer för hur för att förbättra din Raspberry Pi Pico-webbserver.
+One last thing to try is to run your Raspberry Pi Pico webserver without using Thonny. Save your program as `main.py` and this time save it to the Raspberry Pi Pico.
 
-![Bannerbild från Firefly-projektet.](images/fire_fly.png)
+Now when the Raspberry Pi Pico is powered, even without a connection to a computer, the webserver should start. Remember, you can use the **bootsel** button to close the server, or the button on the served webpage, if you need to reconnect to Thonny and make alterations to your code.
+
+I projektet [LED firefly](https://projects.raspberrypi.org/sv-SE/projects/led-firefly) kan du lära dig hur du kopplar externa lysdioder till en Raspberry Pi Pico, sedan kan du använda ett webbgränssnitt för att ändra mönstret som din eldfluga blinkar med.
+
+![Bannerbild från partypopperprojekt.](images/party-popper.png)
 
 I projektet [LED firefly](https://projects.raspberrypi.org/en/projects/led-firefly) kan du lära dig hur du kopplar externa lysdioder till en Raspberry Pi Pico, sedan kan du använda ett webbgränssnitt för att ändra mönstret som din eldfluga blinkar med.
 
-![Bannerbild från partypopperprojekt.](images/party-popper.png)
+![Bannerbild från projektet beating heart.](images/beating-heart.png)
 
 I projektet [Partypopper](https://projects.raspberrypi.org/en/projects/party-popper) kan du lära dig hur du använder en switch för att styra en RGB-LED och en summer. Du kan använda ett webbformulär med detta projekt för att styra färgen på lysdioden och tonen som summern spelar.
 
