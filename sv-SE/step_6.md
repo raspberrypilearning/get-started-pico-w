@@ -66,11 +66,13 @@ except KeyboardInterrupt:
 machine.reset()
 \--- /code ---
 
+\--- /code ---
+
 \--- /task ---
 
-**Test:** Kör ditt program och skriv sedan in IP-adressen i en webbläsares adressfält på din dator.
-
 ![Ett webbläsaradressfält med IP-adressen för Pico inskriven.](images/browser_ip.png)
+
+Du borde se något liknande i utdata i Thonny.
 
 Du borde se något liknande i utdata i Thonny.
 
@@ -93,23 +95,9 @@ Därefter måste du skicka HTML-koden du har skrivit till klientens webbläsare.
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 63-64
------------------------------------------------------------
-
-def serve(connection):
-\#Start a web server
-state = 'OFF'
-pico_led.off()
-temperature = 0
-while True:
-client = connection.accept()[0]
-request = client.recv(1024)
-request = str(request)
-print(request)
-html = webpage(temperature, state)
-client.send(html)
-client.close()
+line_number_start: 66
+line_highlights: 76, 77
+------------------------------------------------------------
 
 try:
 ip = connect()
@@ -117,6 +105,12 @@ connection = open_socket(ip)
 serve(connection)
 except KeyboardInterrupt:
 machine.reset()
+\--- /code ---
+
+ip = connect()
+connection = open_socket(ip)
+serve(connection)
+
 \--- /code ---
 
 \--- /task ---
@@ -137,27 +131,27 @@ b'GET /lightoff? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Win
 
 \--- /task ---
 
-Lägg märke till att du har `/lighton?` och `lightoff?` i förfrågningarna. Dessa kan användas för att styra den inbyggda lysdioden på din Raspberry Pi Pico W.
+Notice that you have `/lighton?`, `lightoff?`, and `close?` in the requests. These can be used to control the onboard LED of your Raspberry Pi Pico W and close your server.
 
 \--- task ---
 
 Dela förfrågningssträngen och hämta sedan det första objektet i listan. Ibland kan förfrågningssträngen kanske inte delas, så det är bäst att hantera detta i ett `try`/`except`.
 
-Om det första objektet i uppdelningen är `lighton?` kan du slå på lysdioden. Om det är `lightoff?` kan du stänga av lysdioden.
+Om det första objektet i uppdelningen är `lighton?` kan du slå på lysdioden. Om det är `lightoff?` kan du stänga av lysdioden. If it is `close?` you can perform a `sys.exit()`
 
 ## --- code ---
 
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 62-69
+line_number_start: 66
+line_highlights: 75-85
 -----------------------------------------------------------
 
 def serve(connection):
 \#Start a web server
-state = 'OFF'
-pico_led.off()
+state = 'ON'
+pico_led.on()
 temperature = 0
 while True:
 client = connection.accept()[0]
@@ -171,6 +165,8 @@ if request == '/lighton?':
 pico_led.on()
 elif request =='/lightoff?':
 pico_led.off()
+elif request == '/close?':
+sys.exit()\
 html = webpage(temperature, state)
 client.send(html)
 client.close()
@@ -181,7 +177,7 @@ client.close()
 
 \--- task ---
 
-Kör din kod igen. Den här gången, när du uppdaterar ditt webbläsarfönster och klickar på knapparna, bör den inbyggda LED-lampan tändas och släckas.
+Kör din kod igen. Den här gången, när du uppdaterar ditt webbläsarfönster och klickar på knapparna, bör den inbyggda LED-lampan tändas och släckas. If you click on the **Stop Server** button, your server should shutdown.
 
 \--- /task ---
 
@@ -194,32 +190,11 @@ Du kan också berätta för användaren av webbsidan vad statusen för lysdioden
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 68, 71
+line_number_start: 66
+line_highlights: 81, 84
 ------------------------------------------------------------
 
-def serve(connection):
-\#Start a web server
-state = 'OFF'
-pico_led.off()
-temperature = 0
-while True:
-client = connection.accept()[0]
-request = client.recv(1024)
-request = str(request)
-try:
-request = request.split()[1]
-except IndexError:
-pass
-if request == '/lighton?':
-pico_led.on()
-state = 'ON'
-elif request =='/lightoff?':
-pico_led.off()
-state = 'OFF'
-html = webpage(temperature, state)
-client.send(html)
-client.close()
+Nu när du kör koden bör texten för statusen för lysdioden också ändras på den uppdaterade webbsidan.
 
 \--- /code ---
 
@@ -236,14 +211,14 @@ Slutligen kan du använda den inbyggda temperatursensorn för att få en ungefä
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 72
+line_number_start: 66
+line_highlights: 87
 --------------------------------------------------------
 
 def serve(connection):
 \#Start a web server
-state = 'OFF'
-pico_led.off()
+state = 'ON'
+pico_led.on()
 temperature = 0
 while True:
 client = connection.accept()[0]
@@ -259,6 +234,8 @@ state = 'ON'
 elif request =='/lightoff?':
 pico_led.off()
 state = 'OFF'
+elif request == '/close?':
+sys.exit()
 temperature = pico_temp_sensor.temp
 html = webpage(temperature, state)
 client.send(html)
