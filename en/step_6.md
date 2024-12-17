@@ -26,6 +26,7 @@ def serve(connection):
     state = 'OFF'
     pico_led.off()
     temperature = 0
+
 --- /code ---
 
 --- /task ---
