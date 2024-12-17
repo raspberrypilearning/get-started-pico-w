@@ -89,6 +89,7 @@ Waiting for connection...
 Waiting for connection...
 Connected on 192.168.1.143
 <socket state=1 timeout=-1 incoming=0 off=0>
+
 --- /code ---
 
 `socket state=1` tells you that your socket is working.
