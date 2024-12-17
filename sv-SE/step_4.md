@@ -20,7 +20,7 @@ För att öppna en socket måste du ange IP-adressen och ett portnummer. Portnum
 
 \--- task ---
 
-Skapa en ny funktion som kan anropas för att öppna en socket. Det bör vara över din `try`/`except`. Börja med att ge socketen en IP-adress och ett portnummer.
+Skapa en ny funktion som kan anropas för att öppna en socket. Börja med att ge socketen en IP-adress och ett portnummer.
 
 ## --- code ---
 
@@ -41,19 +41,21 @@ except KeyboardInterrupt:
 machine.reset()
 \--- /code ---
 
+\--- /code ---
+
 \--- /task ---
 
 \--- task ---
 
-Skapa nu din socket och låt den sedan lyssna efter förfrågningar på port `80`. Glöm inte att anropa din funktion längst ner i din kod.
+Now create your socket, and then have it listen for requests on port `80`. Don't forget to call your function at the bottom of your code.
 
 ## --- code ---
 
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 25
-line_highlights: 28-31
+line_number_start: 35
+line_highlights: 38-41
 -----------------------------------------------------------
 
 def open_socket(ip):
@@ -64,11 +66,8 @@ connection.bind(address)
 connection.listen(1)
 print(connection)
 
-try:
 ip = connect()
 open_socket(ip)
-except KeyboardInterrupt:
-machine.reset()
 
 \--- /code ---
 
@@ -76,7 +75,7 @@ machine.reset()
 
 \--- task ---
 
-**Test:** Kör din kod så bör du se en utdata som ser ut ungefär så här.
+**Test:** Run your code, and you should see an output that looks something like this.
 
 ## --- code ---
 
@@ -99,21 +98,21 @@ line_highlights:
 
 \--- /code ---
 
-`socket state=1` talar om för dig att din socket fungerar.
+`socket state=1` tells you that your socket is working.
 
 \--- /task ---
 
 \--- task ---
 
-Slutligen, ersätt din `print` med en `return` och lagra sedan den returnerade socket-anslutningen som en variabel.
+Lastly, replace your `print` with a `return` and then store the returned socket connection as a variable.
 
 ## --- code ---
 
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 25
-line_highlights: 31, 36
+line_number_start: 35
+line_highlights: 41, 46
 ------------------------------------------------------------
 
 def open_socket(ip):
@@ -124,16 +123,13 @@ connection.bind(address)
 connection.listen(1)
 return connection
 
-try:
 ip = connect()
 connection = open_socket(ip)
-except KeyboardInterrupt:
-machine.reset()
 
 \--- /code ---
 
 \--- /task ---
 
-Du har nu din Raspberry Pi Pico W som lyssnar efter anslutningar till dess IP-adress på port `80`. Det betyder att den är redo att börja visa HTML-kod, så att en ansluten webbläsare kan se en webbsida.
+You now have your Raspberry Pi Pico W listening for connections to its IP address on port `80`. This means that it is ready to start serving HTML code, so that a connected web browser can see a webpage.
 
 \--- save ---
