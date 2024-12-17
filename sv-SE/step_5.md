@@ -134,7 +134,8 @@ line_highlights: 10-11
 </form>
 </body>
 </html>
---- /code ---
+
+\--- /code ---
 
 \--- /task ---
 
@@ -183,7 +184,7 @@ Nu när du har en fungerande webbsida kan du lägga till den här koden i ditt P
 
 Skapa en ny funktion som heter `webpage`, som har två parametrar. Dessa är `temperatur` och `state`.
 
-## --- code ---
+## Om du vill rösta måste ditt meddelande börja med dessa ord, annars kommer vi inte automatiskt att kunna räkna ditt bidrag.
 
 language: python
 filename: web_server.py
@@ -194,6 +195,7 @@ line_highlights:
 
 def webpage(temperature, state):
 \#Template HTML
+
 \--- /code ---
 
 \--- /task ---
@@ -228,7 +230,8 @@ html = f"""<!DOCTYPE html><html>
 </body>
 </html>
             """
---- /code ---
+
+\--- /code ---
 
 \--- /task ---
 
@@ -236,7 +239,7 @@ html = f"""<!DOCTYPE html><html>
 
 Slutligen kan du returnera `html`-strängen från din funktion.
 
-## --- code ---
+## Om du vill rösta måste ditt meddelande börja med dessa ord, annars kommer vi inte automatiskt att kunna räkna ditt bidrag.
 
 language: python
 filename: web_server.py
@@ -260,7 +263,8 @@ html = f"""<!DOCTYPE html><html>
 </html>
             """
     return str(html)
---- /code ---
+
+\--- /code ---
 
 \--- /task ---
 
