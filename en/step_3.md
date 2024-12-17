@@ -33,9 +33,11 @@ from picozero import pico_temp_sensor, pico_led
 import machine
 import rp2
 import sys
+
 --- /code ---
 
 Save this code now, and choose the option to save to **This computer**
+
 --- /task ---
 
 --- task ---
@@ -52,6 +54,7 @@ line_highlights:
 ---
 ssid = 'NAME OF YOUR WIFI NETWORK'
 password = 'YOUR SECRET PASSWORD'
+
 --- /code ---
 
 --- /task ---
@@ -98,6 +101,7 @@ def connect():
     while wlan.isconnected() == False:
         print('Waiting for connection...')
         sleep(1)
+
 --- /code ---
 
 --- /task ---
@@ -149,11 +153,13 @@ Waiting for connection...
 Waiting for connection...
 Waiting for connection...
 ('192.168.1.143', '255.255.255.0', '192.168.1.254', '192.168.1.254')
+
 --- /code ---
 
 --- /task ---
 
 --- collapse ---
+
 ---
 title: The Raspberry Pi Pico W won't connect
 ---
@@ -188,6 +194,7 @@ def connect():
     
 
 connect()
+
 --- /code ---
 
 --- /task ---
@@ -217,6 +224,7 @@ def connect():
     
 
 ip = connect()
+
 --- /code ---
 
 --- /task ---
@@ -247,6 +255,7 @@ def connect():
     ip = wlan.ifconfig()[0]
     print(f'Connected on {ip}')
     return ip
+
 --- /code ---
 
 
@@ -281,10 +290,9 @@ def connect():
     print(f'Connected on {ip}')
     pico_led.on()
     return ip
+
 --- /code ---
 
-
 --- /task ---
-
 
 --- save ---
