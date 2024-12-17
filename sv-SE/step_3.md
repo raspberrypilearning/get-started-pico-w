@@ -51,7 +51,7 @@ line_highlights:
 -----------------------------------------------------
 
 ssid = 'NAMN PÅ DITT WIFI-NÄTVERK'
-lösenord = 'DITT HEMLIGA LÖSENORD'
+password = 'DITT HEMLIGA LÖSENORD'
 \--- /code ---
 
 \--- /task ---
@@ -106,7 +106,7 @@ sleep(1)
 
 \--- task ---
 
-Skriv nu ut din WLAN-konfiguration och testa allt. Du måste anropa din funktion. Behåll alla dina funktionsanrop längst ner i filen, så att de är de sista kodraderna som körs. Eftersom WiFi-anslutningen kan vara uppe, även när du stoppar koden, kan du lägga till ett `try`/`except` som återställer din Raspberry Pi Pico W när skriptet stoppas.
+Skriv nu ut din WLAN-konfiguration och testa allt. Du måste anropa din funktion. Behåll alla dina funktionsanrop längst ner i filen, så att de är de sista kodraderna som körs.
 
 ## --- code ---
 
@@ -133,11 +133,13 @@ except KeyboardInterrupt:
 machine.reset()
 \--- /code ---
 
+\--- /code ---
+
 \--- /task ---
 
 \--- task ---
 
-**Testa:** Spara och kör din kod. Du bör se en del utdata i rutan som ser ut ungefär så här, även om de specifika IP-adresserna kommer att vara annorlunda.
+**Test:** Save and run your code. You should see some output in the shell that looks something like this, although the specific IP addresses will be different.
 
 ## --- code ---
 
@@ -160,57 +162,25 @@ Waiting for connection...
 
 ## --- collapse ---
 
-## titel: Raspberry Pi Pico W ansluter inte
+## title: The Raspberry Pi Pico W won't connect
 
-1. Se till att du använder rätt SSID och lösenord.
-2. Om du är på en skola eller arbetar med WLAN kan det hända att obehöriga enheter inte tillåts åtkomst till WiFi.
-3. Koppla ur din Raspberry Pi Pico W från din dator för att stänga av den och anslut den sedan igen. Detta kan vara ett problem när du har anslutit en gång och sedan försöker ansluta igen.
+1. Make sure that you are using the correct SSID and password.
+2. If you are on a school or work WLAN, unauthorised devices might not be permitted access to the WiFi.
+3. Unplug your Raspberry Pi Pico W from your computer to power it off, then plug it back in. This can be a problem when you have connected once, and then try to connect again.
 
 \--- /collapse ---
 
 \--- task ---
 
-Du behöver inte all information som tillhandahålls av `wlan.ifconfig()`. Den viktigaste informationen du behöver är IP-adressen för Raspberry Pi Pico W, som är den första informationen. Du kan använda en **fstring** för att visa **IP-adressen**. Genom att placera ett `f` framför din sträng kan variabler skrivas ut när de är omgivna av `{}`.
+You don't need all the information provided by `wlan.ifconfig()`. The key information you need is the IP address of the Raspberry Pi Pico W, which is the first piece of information. You can use an **fstring** to output the **IP address**. By placing an `f` in front of your string, variables can be printed when they are surrounded by `{}`.
 
 ## --- code ---
 
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 12
-line_highlights: 20-21
------------------------------------------------------------
-
-def connect():
-\#Connect to WLAN
-wlan = network.WLAN(network.STA_IF)
-wlan.active(True)
-wlan.connect(ssid, password)
-while wlan.isconnected() == False:
-print('Waiting for connection...')
-sleep(1)
-ip = wlan.ifconfig()[0]
-print(f'Connected on {ip}')
-
-try:
-connect()
-except KeyboardInterrupt:
-machine.reset()
-\--- /code ---
-
-\--- /task ---
-
-\--- task ---
-
-Du kan nu returnera värdet för IP-adressen för din Raspberry Pi Pico W och lagra det när du anropar din funktion.
-
-## --- code ---
-
-language: python
-filename: web_server.py
-line_numbers: true
-line_number_start: 12
-line_highlights: 22, 26
+line_number_start: 14
+line_highlights: 22, 23
 ------------------------------------------------------------
 
 def connect():
@@ -223,12 +193,102 @@ print('Waiting for connection...')
 sleep(1)
 ip = wlan.ifconfig()[0]
 print(f'Connected on {ip}')
+
+connect()
+\--- /code ---
+
+\--- /task ---
+
+\--- task ---
+
+You can now return the value for the IP address of your Raspberry Pi Pico W, and store it when you call your function.
+
+## --- code ---
+
+language: python
+filename: web_server.py
+line_numbers: true
+line_number_start: 14
+line_highlights: 23, 26
+------------------------------------------------------------
+
+def connect():
+\#Connect to WLAN
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+wlan.connect(ssid, password)
+while wlan.isconnected() == False:
+print('Waiting for connection...')
+sleep(1)
+print(f'Connected on {ip}')
 return ip
 
-try:
 ip = connect()
-except KeyboardInterrupt:
-machine.reset()
+\--- /code ---
+
+\--- /task ---
+
+You might want to run this file without using Thonny, which will be covered later in this project. It would be useful to have some indication that the the Raspberry Pi Pico has connected to the WLAN, and also to be able to quit the program without having to have the Raspberry Pi Pico connected to a computer.
+
+\--- task ---
+
+Add a condition, where if the bootsel button is pressed, the program will quit.
+
+## --- code ---
+
+language: python
+filename: web_server.py
+line_numbers: true
+line_number_start: 14
+line_highlights: 20, 21
+------------------------------------------------------------
+
+def connect():
+\#Connect to WLAN
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+wlan.connect(ssid, password)
+while wlan.isconnected() == False:
+if rp2.bootsel_button() == 1:
+sys.exit()
+print('Waiting for connection...')
+ip = wlan.ifconfig()[0]
+print(f'Connected on {ip}')
+return ip
+\--- /code ---
+
+\--- /task ---
+
+\--- task ---
+
+Then make the onboard LED blink each time it attempts a connection, and then stay on once connected.
+
+## --- code ---
+
+language: python
+filename: web_server.py
+line_numbers: true
+line_number_start: 14
+line_highlights: 23, 24, 25, 26, 29
+------------------------------------------------------------------------
+
+def connect():
+\#Connect to WLAN
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+wlan.connect(ssid, password)
+while wlan.isconnected() == False:
+if rp2.bootsel_button() == 1:
+sys.exit()
+print('Waiting for connection...')
+pico_led.on()
+sleep(0.5)
+pico_led.off()
+sleep(0.5)
+ip = wlan.ifconfig()[0]
+print(f'Connected on {ip}')
+pico_led.on()
+return ip
 \--- /code ---
 
 \--- /task ---
