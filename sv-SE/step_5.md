@@ -129,6 +129,41 @@ line_highlights: 10-11
 <form action="./lightoff">
 <input type="submit" value="Light off" />
 </form>
+<form action="./close">
+<input type="submit" value="Stop server" />
+</form>
+</body>
+</html>
+--- /code ---
+
+\--- /task ---
+
+\--- task ---
+
+![Webbsida i Google Chrome som visar två knappar och text som visar lysdiodens status och Picos temperatur.](images/button_and_state.png)
+
+## --- code ---
+
+language: html
+filename: index.html
+line_numbers: true
+line_number_start:
+line_highlights: 13-14
+-----------------------------------------------------------
+
+<!DOCTYPE html>
+
+<html>
+<body>
+<form action="./lighton">
+<input type="submit" value="Light on" />
+</form>
+<form action="./lightoff">
+<input type="submit" value="Light off" />
+</form>
+<form action="./close">
+<input type="submit" value="Stop server" />
+</form>
 <p>LED is {state}</p>
 <p>Temperature is {temperature}</p>
 </body>
@@ -153,7 +188,7 @@ Skapa en ny funktion som heter `webpage`, som har två parametrar. Dessa är `te
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 34
+line_number_start: 44
 line_highlights:
 -----------------------------------------------------
 
@@ -172,8 +207,8 @@ Du kan nu lagra all din HTML-kod som du har skrivit och testat i en variabel. At
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 34
-line_highlights: 36-49
+line_number_start: 44
+line_highlights: 46-62
 -----------------------------------------------------------
 
 def webpage(temperature, state):
@@ -184,6 +219,9 @@ html = f"""<!DOCTYPE html><html>
 </form>
 <form action="./lightoff">
 <input type="submit" value="Light off" />
+</form>
+<form action="./close">
+<input type="submit" value="Stop server" />
 </form>
 <p>LED is {state}</p>
 <p>Temperature is {temperature}</p>
@@ -203,8 +241,8 @@ Slutligen kan du returnera `html`-strängen från din funktion.
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 34
-line_highlights: 50
+line_number_start: 44
+line_highlights: 63
 --------------------------------------------------------
 
 def webpage(temperature, state):
@@ -230,4 +268,4 @@ html = f"""<!DOCTYPE html><html>
 
 Du kan inte testa den här koden ännu, eftersom ditt program ännu inte levererar HTML. Det kommer att åtgärdas i nästa steg.
 
-Den enkla HTML-koden du just har skrivit kommer att lagras i ditt MicroPython-skript och visas i webbläsaren på alla datorer som ansluter till den över ditt nätverk, precis som en webbsida som lagras på vilken annan server som helst i världen. En viktig skillnad är att endast enheter anslutna till ditt WiFi-nätverk kan komma åt webbsidan eller styra din Raspberry Pi Pico W. Den här sidan är en mycket enkel demonstration av vad som är möjligt. För att lära dig mer om HTML-kodning och skapa webbplatser, se några av våra andra projekt på den här webbplatsen!
+The simple HTML code you have just written will be stored in your MicroPython script and served to the browser of any computers that connect to it over your network, just like a webpage stored on any other server in the world. En viktig skillnad är att endast enheter anslutna till ditt WiFi-nätverk kan komma åt webbsidan eller styra din Raspberry Pi Pico W. Den här sidan är en mycket enkel demonstration av vad som är möjligt. To learn more about HTML coding and creating websites, see some of our [other projects on this site!](https://projects.raspberrypi.org/en/collections/html_and_css)
