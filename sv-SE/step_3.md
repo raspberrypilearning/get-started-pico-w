@@ -54,8 +54,8 @@ line_number_start: 7
 line_highlights:
 -----------------------------------------------------
 
-ssid = 'NAME OF YOUR WIFI NETWORK'
-password = 'YOUR SECRET PASSWORD'
+ssid = 'NAMN PÅ DITT WIFI-NÄTVERK'
+password = 'DITT HEMLIGA LÖSENORD'
 
 \--- /code ---
 
