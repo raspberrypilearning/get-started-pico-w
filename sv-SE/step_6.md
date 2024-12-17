@@ -27,6 +27,7 @@ def serve(connection):
 state = 'OFF'
 pico_led.off()
 temperature = 0
+
 \--- /code ---
 
 \--- /task ---
@@ -107,9 +108,13 @@ except KeyboardInterrupt:
 machine.reset()
 \--- /code ---
 
+try:
 ip = connect()
 connection = open_socket(ip)
 serve(connection)
+except KeyboardInterrupt:
+machine.reset()
+\--- /code ---
 
 \--- /code ---
 
@@ -131,7 +136,7 @@ b'GET /lightoff? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Win
 
 \--- /task ---
 
-Notice that you have `/lighton?`, `lightoff?`, and `close?` in the requests. These can be used to control the onboard LED of your Raspberry Pi Pico W and close your server.
+Lägg märke till att du har `/lighton?`, `lightoff?` och `close?` i förfrågningarna. These can be used to control the onboard LED of your Raspberry Pi Pico W and close your server.
 
 \--- task ---
 
