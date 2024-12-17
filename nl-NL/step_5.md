@@ -134,7 +134,8 @@ line_highlights: 10-12
 </form>
 </body>
 </html>
---- /code ---
+
+\--- /code ---
 
 \--- /task ---
 
@@ -194,6 +195,7 @@ line_highlights:
 
 def webpage(temperature, state):
 \#Template HTML
+
 \--- /code ---
 
 \--- /task ---
@@ -228,7 +230,8 @@ html = f"""<!DOCTYPE html><html>
 </body>
 </html>
             """
---- /code ---
+
+\--- /code ---
 
 \--- /task ---
 
@@ -260,7 +263,8 @@ html = f"""<!DOCTYPE html><html>
 </html>
             """
     return str(html)
---- /code ---
+
+\--- /code ---
 
 \--- /task ---
 
