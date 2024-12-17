@@ -108,7 +108,7 @@ line_highlights: 7-9
 
 \--- task ---
 
-To finish off the webpage, you can add in some extra data, such as the state of the LED and the temperature of your Raspberry Pi Pico W.
+An additional button can be added to close the webserver, without having to use Thonny.
 
 ## --- code ---
 
@@ -116,7 +116,7 @@ language: html
 filename: index.html
 line_numbers: true
 line_number_start:
-line_highlights: 10-11
+line_highlights: 10-12
 -----------------------------------------------------------
 
 <!DOCTYPE html>
@@ -128,6 +128,41 @@ line_highlights: 10-11
 </form>
 <form action="./lightoff">
 <input type="submit" value="Light off" />
+</form>
+<form action="./close">
+<input type="submit" value="Stop server" />
+</form>
+</body>
+</html>
+--- /code ---
+
+\--- /task ---
+
+\--- task ---
+
+To finish off the webpage, you can add in some extra data, such as the state of the LED and the temperature of your Raspberry Pi Pico W.
+
+## --- code ---
+
+language: html
+filename: index.html
+line_numbers: true
+line_number_start:
+line_highlights: 13-14
+-----------------------------------------------------------
+
+<!DOCTYPE html>
+
+<html>
+<body>
+<form action="./lighton">
+<input type="submit" value="Light on" />
+</form>
+<form action="./lightoff">
+<input type="submit" value="Light off" />
+</form>
+<form action="./close">
+<input type="submit" value="Stop server" />
 </form>
 <p>LED is {state}</p>
 <p>Temperature is {temperature}</p>
@@ -153,7 +188,7 @@ Create a new function called `webpage`, that has two parameters. These are `temp
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 34
+line_number_start: 44
 line_highlights:
 -----------------------------------------------------
 
@@ -172,8 +207,8 @@ You can now store all your HTML code that you have written and tested in a varia
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 34
-line_highlights: 36-49
+line_number_start: 44
+line_highlights: 46-62
 -----------------------------------------------------------
 
 def webpage(temperature, state):
@@ -184,6 +219,9 @@ html = f"""<!DOCTYPE html><html>
 </form>
 <form action="./lightoff">
 <input type="submit" value="Light off" />
+</form>
+<form action="./close">
+<input type="submit" value="Stop server" />
 </form>
 <p>LED is {state}</p>
 <p>Temperature is {temperature}</p>
@@ -203,8 +241,8 @@ Lastly, you can return the `html` string from your function.
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 34
-line_highlights: 50
+line_number_start: 44
+line_highlights: 63
 --------------------------------------------------------
 
 def webpage(temperature, state):
@@ -230,4 +268,4 @@ html = f"""<!DOCTYPE html><html>
 
 You can't test this code yet, as your program is not yet serving the HTML. That will be tackled in the next step.
 
-The simple HTML code you have just written will be stored used in your MicroPython script and served to the browser of any computers that connect to it over your network, just like a webpage stored on any other server in the world. An important difference is that only devices connected to your WiFi network can access the webpage or control your Raspberry Pi Pico W. This page is a very simple demonstration of what is possible. To learn more about HTML coding and creating websites, see some of our other projects on this site!
+The simple HTML code you have just written will be stored in your MicroPython script and served to the browser of any computers that connect to it over your network, just like a webpage stored on any other server in the world. An important difference is that only devices connected to your WiFi network can access the webpage or control your Raspberry Pi Pico W. This page is a very simple demonstration of what is possible. To learn more about HTML coding and creating websites, see some of our [other projects on this site!](https://projects.raspberrypi.org/en/collections/html_and_css)
