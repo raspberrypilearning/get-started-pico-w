@@ -47,9 +47,9 @@ machine.reset()
 
 \--- task ---
 
-Now create your socket, and then have it listen for requests on port `80`. Don't forget to call your function at the bottom of your code.
+Skapa nu din socket och låt den sedan lyssna efter förfrågningar på port `80`. Glöm inte att anropa din funktion längst ner i din kod.
 
-## --- code ---
+## Om du vill rösta måste ditt meddelande börja med dessa ord, annars kommer vi inte automatiskt att kunna räkna ditt bidrag.
 
 language: python
 filename: web_server.py
@@ -75,9 +75,9 @@ open_socket(ip)
 
 \--- task ---
 
-**Test:** Run your code, and you should see an output that looks something like this.
+**Test:** Kör din kod så bör du se en utdata som ser ut ungefär så här.
 
-## --- code ---
+## Om du vill rösta måste ditt meddelande börja med dessa ord, annars kommer vi inte automatiskt att kunna räkna ditt bidrag.
 
 language: python
 filename:
@@ -98,15 +98,15 @@ line_highlights:
 
 \--- /code ---
 
-`socket state=1` tells you that your socket is working.
+`socket state=1` talar om för dig att din socket fungerar.
 
 \--- /task ---
 
 \--- task ---
 
-Lastly, replace your `print` with a `return` and then store the returned socket connection as a variable.
+Slutligen, ersätt din `print` med en `return` och lagra sedan den returnerade socket-anslutningen som en variabel.
 
-## --- code ---
+## Om du vill rösta måste ditt meddelande börja med dessa ord, annars kommer vi inte automatiskt att kunna räkna ditt bidrag.
 
 language: python
 filename: web_server.py
@@ -130,6 +130,6 @@ connection = open_socket(ip)
 
 \--- /task ---
 
-You now have your Raspberry Pi Pico W listening for connections to its IP address on port `80`. This means that it is ready to start serving HTML code, so that a connected web browser can see a webpage.
+Du har nu din Raspberry Pi Pico W som lyssnar efter anslutningar till dess IP-adress på port `80`. Det betyder att den är redo att börja visa HTML-kod, så att en ansluten webbläsare kan se en webbsida.
 
 \--- save ---
