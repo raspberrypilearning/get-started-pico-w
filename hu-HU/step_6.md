@@ -18,9 +18,9 @@ Create a function that will start your web server, using the `connection` object
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 57-58
------------------------------------------------------------
+line_number_start: 66
+line_highlights:
+-----------------------------------------------------
 
 def serve(connection):
 \#Start a web server
@@ -42,8 +42,8 @@ You want to keep the web server up and listening all the time, so that any clien
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 58-63, 69
+line_number_start: 66
+line_highlights: 71-76, 81
 ---------------------------------------------------------------
 
 def serve(connection):
@@ -58,12 +58,10 @@ request = str(request)
 print(request)
 client.close()
 
-try:
 ip = connect()
 connection = open_socket(ip)
 serve(connection)
-except KeyboardInterrupt:
-machine.reset()
+
 \--- /code ---
 
 \--- /task ---
@@ -93,14 +91,14 @@ Next, you need to send the HTML code you have written to the client web browser.
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 63-64
------------------------------------------------------------
+line_number_start: 66
+line_highlights: 76, 77
+------------------------------------------------------------
 
 def serve(connection):
 \#Start a web server
-state = 'OFF'
-pico_led.off()
+state = 'ON'
+pico_led.on()
 temperature = 0
 while True:
 client = connection.accept()[0]
@@ -111,12 +109,10 @@ html = webpage(temperature, state)
 client.send(html)
 client.close()
 
-try:
 ip = connect()
 connection = open_socket(ip)
 serve(connection)
-except KeyboardInterrupt:
-machine.reset()
+
 \--- /code ---
 
 \--- /task ---
@@ -137,27 +133,27 @@ b'GET /lightoff? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Win
 
 \--- /task ---
 
-Notice that you have `/lighton?` and `lightoff?` in the requests. These can be used to control the onboard LED of your Raspberry Pi Pico W.
+Notice that you have `/lighton?`, `lightoff?`, and `close?` in the requests. These can be used to control the onboard LED of your Raspberry Pi Pico W and close your server.
 
 \--- task ---
 
 Split the request string and then fetch the first item in the list. Sometimes the request string might not be able to be split, so it's best to handle this in a `try`/`except`.
 
-If the first item in the split is `lighton?` then you can switch the LED on. If it is `lightoff?` then you can switch the LED off.
+If the first item in the split is `lighton?` then you can switch the LED on. If it is `lightoff?` then you can switch the LED off. If it is `close?` you can perform a `sys.exit()`
 
 ## --- code ---
 
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 62-69
+line_number_start: 66
+line_highlights: 75-85
 -----------------------------------------------------------
 
 def serve(connection):
 \#Start a web server
-state = 'OFF'
-pico_led.off()
+state = 'ON'
+pico_led.on()
 temperature = 0
 while True:
 client = connection.accept()[0]
@@ -171,6 +167,8 @@ if request == '/lighton?':
 pico_led.on()
 elif request =='/lightoff?':
 pico_led.off()
+elif request == '/close?':
+sys.exit()\
 html = webpage(temperature, state)
 client.send(html)
 client.close()
@@ -181,7 +179,7 @@ client.close()
 
 \--- task ---
 
-Run your code again. This time, when you refresh your browser window and click on the buttons, the onboard LED should turn on and off.
+Run your code again. This time, when you refresh your browser window and click on the buttons, the onboard LED should turn on and off. If you click on the **Stop Server** button, your server should shutdown.
 
 \--- /task ---
 
@@ -194,14 +192,14 @@ You can also tell the user of the webpage what the state of the LED is.
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 68, 71
+line_number_start: 66
+line_highlights: 81, 84
 ------------------------------------------------------------
 
 def serve(connection):
 \#Start a web server
-state = 'OFF'
-pico_led.off()
+state = 'ON'
+pico_led.on()
 temperature = 0
 while True:
 client = connection.accept()[0]
@@ -217,6 +215,8 @@ state = 'ON'
 elif request =='/lightoff?':
 pico_led.off()
 state = 'OFF'
+elif request == '/close?':
+sys.exit()
 html = webpage(temperature, state)
 client.send(html)
 client.close()
@@ -236,14 +236,14 @@ Lastly, you can use the onboard temperature sensor to get an approximate reading
 language: python
 filename: web_server.py
 line_numbers: true
-line_number_start: 53
-line_highlights: 72
+line_number_start: 66
+line_highlights: 87
 --------------------------------------------------------
 
 def serve(connection):
 \#Start a web server
-state = 'OFF'
-pico_led.off()
+state = 'ON'
+pico_led.on()
 temperature = 0
 while True:
 client = connection.accept()[0]
@@ -259,6 +259,8 @@ state = 'ON'
 elif request =='/lightoff?':
 pico_led.off()
 state = 'OFF'
+elif request == '/close?':
+sys.exit()
 temperature = pico_temp_sensor.temp
 html = webpage(temperature, state)
 client.send(html)
