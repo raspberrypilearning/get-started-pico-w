@@ -27,6 +27,7 @@ def serve(connection):
 state = 'OFF'
 pico_led.off()
 temperature = 0
+\--- /code ---
 
 \--- /code ---
 
@@ -71,7 +72,7 @@ machine.reset()
 
 \--- /task ---
 
-![Ett webbläsaradressfält med IP-adressen för Pico inskriven.](images/browser_ip.png)
+Du borde se något liknande i utdata i Thonny.
 
 Du borde se något liknande i utdata i Thonny.
 
@@ -188,7 +189,28 @@ Kör din kod igen. Den här gången, när du uppdaterar ditt webbläsarfönster 
 
 \--- task ---
 
-Du kan också berätta för användaren av webbsidan vad statusen för lysdioden är.
+def serve(connection):
+\#Start a web server
+state = 'OFF'
+pico_led.off()
+temperature = 0
+while True:
+client = connection.accept()[0]
+request = client.recv(1024)
+request = str(request)
+try:
+request = request.split()[1]
+except IndexError:
+pass
+if request == '/lighton?':
+pico_led.on()
+state = 'ON'
+elif request =='/lightoff?':
+pico_led.off()
+state = 'OFF'
+html = webpage(temperature, state)
+client.send(html)
+client.close()
 
 ## --- code ---
 
@@ -203,13 +225,35 @@ Nu när du kör koden bör texten för statusen för lysdioden också ändras p�
 
 \--- /code ---
 
-Nu när du kör koden bör texten för statusen för lysdioden också ändras på den uppdaterade webbsidan.
+Slutligen kan du använda den inbyggda temperatursensorn för att få en ungefärlig avläsning av CPU-temperaturen och visa den på din webbsida också.
 
 \--- /task ---
 
 \--- task ---
 
-Slutligen kan du använda den inbyggda temperatursensorn för att få en ungefärlig avläsning av CPU-temperaturen och visa den på din webbsida också.
+def serve(connection):
+\#Start a web server
+state = 'OFF'
+pico_led.off()
+temperature = 0
+while True:
+client = connection.accept()[0]
+request = client.recv(1024)
+request = str(request)
+try:
+request = request.split()[1]
+except IndexError:
+pass
+if request == '/lighton?':
+pico_led.on()
+state = 'ON'
+elif request =='/lightoff?':
+pico_led.off()
+state = 'OFF'
+temperature = pico_temp_sensor.temp
+html = webpage(temperature, state)
+client.send(html)
+client.close()
 
 ## --- code ---
 
