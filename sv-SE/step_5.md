@@ -172,7 +172,9 @@ line_highlights: 13-14
 
 \--- /code ---
 
-Din webbsida bör se ut så här:
+def webpage(temperature, state):
+\#Template HTML
+\--- /code ---
 
 ![Webbsida i Google Chrome som visar två knappar och text som visar lysdiodens status och Picos temperatur.](images/button_and_state.png)
 
