@@ -2,7 +2,7 @@
 
 ---
 
-## legend: Question 3 of 3
+## legend: Vraag 3 van 3
 
 \--- choices ---
 
