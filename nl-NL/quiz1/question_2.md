@@ -2,9 +2,9 @@
 
 ---
 
-## legend: Question 2 of 3
+## legend: Vraag 2 van 3
 
-You made Pico say hello in a speech bubble.
+Je liet Pico in een tekstballon hallo zeggen.
 
 ```blocks3
 say [Hello!] for [2] secs
