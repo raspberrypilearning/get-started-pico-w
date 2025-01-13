@@ -6,7 +6,7 @@ import machine
 
 
 ssid = 'SSID hier''
-password = 'psk_here'
+password = 'psk_hier'
 
 
 def connect():
@@ -23,16 +23,16 @@ def connect():
     
 
 def open_socket(ip):
-    # Open a socket
-    address = (ip, 80)
-    connection = socket.socket()
-    connection.bind(address)
-    connection.listen(1)
-    return connection
+    # Open een socket
+    adres = (ip, 80)
+    verbinding = socket.socket()
+    verbinding.bind(adres)
+    verbinding.listen(1)
+    return verbinding
 
 
-def webpage(temperature, state):
-    #Template HTML
+def webpagina(temperatuur, status):
+    #HTML-sjabloon
     html = f"""
             <!DOCTYPE html>
             <html>
@@ -42,43 +42,43 @@ def webpage(temperature, state):
             <form action="./lightoff">
             <input type="submit" value="Light off" />
             </form>
-            <p>LED is {state}</p>
-            <p>Temperature is {temperature}</p>
+            <p>LED is {status}</p>
+            <p>Temperatuur is {temperatuur}</p>
             </body>
             </html>
             """
     return str(html)
 
 
-def serve(connection):
-    #Start a webserver
-    state = 'OFF'
+def serve(verbinding):
+    #Start een webserver
+    status = 'UIT'
     pico_led.off()
     while True:
-        client = connection.accept()[0]
-        request = client.recv(1024)
-        request = str(request)
+        client = verbinding.accept()[0]
+        verzoek = client.recv(1024)
+        verzoek = str(verzoek)
         try:
-            request = request.split()[1]
+            verzoek = verzoek.split()[1]
         except IndexError:
             pass
-        if request == '/lighton?':
+        if verzoek == '/lighton?':
             #led.on()
             pico_led.on()
-            state = 'ON'
-        elif request =='/lightoff?':
+            status = 'AAN'
+        elif verzoek =='/lightoff?':
             pico_led.off()
             #led.off()
-            state = 'OFF'
-        temperature = pico_temp_sensor.temp
-        html = webpage(temperature, state)
+            status = 'UIT'
+        temperatuur = pico_temp_sensor.temp
+        html = webpagina(temperatuur, status)
         client.send(html)
         client.close()
 
 
 try:
     ip = connect()
-    connection = open_socket(ip)
-    serve(connection)
+    verbinding = open_socket(ip)
+    serve(verbinding)
 except KeyboardInterrupt:
     machine.reset()
