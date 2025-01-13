@@ -1,22 +1,22 @@
-## Connect your Raspberry Pi Pico W to a WLAN
+## Verbind je Raspberry Pi Pico W met een WLAN
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-Here, you will learn to use MicroPython to connect your Raspberry Pi Pico W to a wireless local area network (WLAN), more commonly known as a WiFi network.
+Hier leer je hoe je MicroPython kunt gebruiken om je Raspberry Pi Pico W te verbinden met een draadloos lokaal netwerk (WLAN), beter bekend als een WiFi-netwerk.
 </div>
 <div>
-![MicroPython shell showing connection to a WLAN.](images/WiFi_connect.png){:width="300px"}
+![MicroPython shell toont verbinding met een WLAN.](images/WiFi_connect.png){:width="300px"}
 </div>
 </div>
 
 <p style='border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;'>
-<span style="color: #0faeb0">Passwords</span> need to be kept securely and privately. In this step, you will add your WiFi password into your Python file. Make sure you don't share your file with anyone that you wouldn't want to tell your password to.</p>
+<span style="color: #0faeb0">Wachtwoorden</span> moeten veilig en privé worden bewaard. In deze stap voeg je je WiFi-wachtwoord toe aan je Python-bestand. Zorg ervoor dat je jouw bestand niet deelt met iemand aan wie je jouw wachtwoord niet wilt geven.</p>
 
-To connect to a WiFi network, you will need to know your service set identifier (SSID). This is the name of your WiFi network. You will also need your WiFi password. These can usually be found written on your wireless router, although you should have changed the default password to something unique.
+Om verbinding te maken met een WiFi-netwerk, moet je jouw service set identifier (SSID) weten. Dat is de naam van jouw WiFi-netwerk. Je hebt ook jouw WiFi-wachtwoord nodig. Deze wachtwoorden staan meestal op je draadloze router, maar je zou het standaardwachtwoord moeten hebben gewijzigd in iets unieks.
 
 \--- task ---
 
-In Thonny, import the packages you will need to connect to your WiFi network, read the onboard temperature sensor, and light the onboard light-emitting diode (LED).
+Importeer in Thonny de pakketten die je nodig hebt om verbinding te maken met jouw wifi-netwerk, de ingebouwde temperatuursensor uit te lezen en de ingebouwde lichtgevende diode (LED) te laten branden.
 
 ## --- code ---
 
@@ -37,13 +37,13 @@ import sys
 
 \--- /code ---
 
-Save this code now, and choose the option to save to **This computer**
+Sla deze code nu op en kies de optie om op te slaan op **This computer**
 
 \--- /task ---
 
 \--- task ---
 
-Next, set up your Raspberry Pi Pico W to use the onboard LED, and additionally add in the SSID and password for your network.
+Stel vervolgens je Raspberry Pi Pico W in om de ingebouwde LED te gebruiken en voeg daarnaast de SSID en het wachtwoord voor jouw netwerk toe.
 
 ## --- code ---
 
@@ -54,8 +54,8 @@ line_number_start: 9
 line_highlights:
 -----------------------------------------------------
 
-ssid = 'NAME OF YOUR WIFI NETWORK'
-password = 'YOUR SECRET PASSWORD'
+ssid = 'NAAM VAN JOUW WIFI-NETWERK'
+wachtwoord = 'JOUW GEHEIME WACHTWOORD'
 
 \--- /code ---
 
@@ -63,7 +63,7 @@ password = 'YOUR SECRET PASSWORD'
 
 \--- task ---
 
-Now, begin to build a function to connect to your WLAN. You need to set up a `wlan` object, activate the wireless, and provide the object with your `ssid` and `password`.
+Begin nu met het bouwen van een functie om verbinding te maken met jouw WLAN. Je moet een `wlan`-object instellen, de draadloze verbinding activeren en het object voorzien van jouw `ssid` en `wachtwoord`.
 
 ## --- code ---
 
@@ -75,10 +75,10 @@ line_highlights:
 -----------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Verbind met WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, wachtwoord)
 
 \--- /code ---
 
@@ -86,7 +86,7 @@ wlan.connect(ssid, password)
 
 \--- task ---
 
-If you've ever connected a device to a WiFi network, you will know that it doesn't happen instantly. Your device will send requests to your WiFi router to connect, and when the router responds, they will perform what is called a handshake to establish a connection. To do this with Python, you can set up a loop that will keep sending requests each second until the connection handshake has been performed.
+Als je eerder een apparaat met een WiFi-netwerk hebt verbonden, weet je dat dit niet onmiddelijk gebeurt. Je apparaat stuurt verzoeken naar jouw WiFi-router om verbinding te maken. Wanneer de router reageert, wordt er een handshake uitgevoerd om de verbinding tot stand te brengen. Om dit met Python te doen, kun je een lus instellen die elke seconde verzoeken blijft versturen totdat de verbindingshandshake is uitgevoerd.
 
 ## --- code ---
 
@@ -98,12 +98,12 @@ line_highlights: 19-21
 -----------------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Verbinding maken met WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, wachtwoord)
 while wlan.isconnected() == False:
-print('Waiting for connection...')
+print('Wachten op verbinding...')
 sleep(1)
 
 \--- /code ---
@@ -112,7 +112,7 @@ sleep(1)
 
 \--- task ---
 
-Now print out your WLAN configuration, and test it all. You'll need to call your function. Keep all your function calls at the bottom of your file, so they are the last lines of code that are run.
+Print nu jouw WLAN-configuratie uit en test alles. Je moet je functie aanroepen. Plaats alle functieaanroepen onderaan je bestand, zodat ze de laatste regels code zijn die worden uitgevoerd.
 
 ## --- code ---
 
@@ -124,12 +124,12 @@ line_highlights: 25, 22
 ------------------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Verbinding maken met WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, wachtwoord)
 while wlan.isconnected() == False:
-print('Waiting for connection...')
+print('Wachten op verbinding...')
 sleep(1)
 print(wlan.ifconfig())
 
@@ -141,7 +141,7 @@ connect()
 
 \--- task ---
 
-**Test:** Save and run your code. You should see some output in the shell that looks something like this, although the specific IP addresses will be different.
+**Test:** Sla je code op en voer je code uit. Je zou in de shell uitvoer moeten zien die er ongeveer zo uitziet, hoewel de specifieke IP-adressen anders zullen zijn.
 
 ## --- code ---
 
@@ -155,7 +155,7 @@ line_highlights:
 Waiting for connection...
 Waiting for connection...
 Waiting for connection...
-Waiting for connection...
+Wachten op verbinding...
 Waiting for connection...
 ('192.168.1.143', '255.255.255.0', '192.168.1.254', '192.168.1.254')
 
@@ -167,17 +167,17 @@ Waiting for connection...
 
 ---
 
-## title: The Raspberry Pi Pico W won't connect
+## titel: De Raspberry Pi Pico W maakt geen verbinding
 
-1. Make sure that you are using the correct SSID and password.
-2. If you are on a school or work WLAN, unauthorised devices might not be permitted access to the WiFi.
-3. Unplug your Raspberry Pi Pico W from your computer to power it off, then plug it back in. This can be a problem when you have connected once, and then try to connect again.
+1. Zorg ervoor dat u de juiste SSID en het juiste wachtwoord gebruikt.
+2. Als je gebruikmaakt van een school- of werk-WLAN, is het mogelijk dat ongeautoriseerde apparaten geen toegang tot het WiFi-netwerk krijgen.
+3. Koppel jouw Raspberry Pi Pico W los van je computer om hem uit te schakelen en sluit hem vervolgens weer aan. Dit kan een probleem zijn als je eenmaal verbinding hebt gemaakt en het vervolgens opnieuw probeert.
 
 \--- /collapse ---
 
 \--- task ---
 
-You don't need all the information provided by `wlan.ifconfig()`. The key information you need is the IP address of the Raspberry Pi Pico W, which is the first piece of information. You can use an **fstring** to output the **IP address**. By placing an `f` in front of your string, variables can be printed when they are surrounded by `{}`.
+Je hebt niet alle informatie nodig die `wlan.ifconfig()` biedt. De belangrijkste informatie die je nodig hebt, is het IP-adres van de Raspberry Pi Pico W. Dit is het eerste stukje informatie. Je kunt een **fstring** gebruiken om het **IP-adres** uit te voeren. Door een `f` voor je tekenreeks te plaatsen, kunnen variabelen worden afgedrukt wanneer ze worden omgeven door `{}`.
 
 ## --- code ---
 
@@ -189,12 +189,12 @@ line_highlights: 22, 23
 ------------------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Verbinding maken met WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, wachtwoord)
 while wlan.isconnected() == False:
-print('Waiting for connection...')
+print('Wachten op verbinding...')
 sleep(1)
 ip = wlan.ifconfig()[0]
 print(f'Connected on {ip}')
@@ -207,7 +207,7 @@ connect()
 
 \--- task ---
 
-You can now return the value for the IP address of your Raspberry Pi Pico W, and store it when you call your function.
+Je kunt nu de waarde voor het IP-adres van jouw Raspberry Pi Pico W retourneren en opslaan wanneer je jouw functie aanroept.
 
 ## --- code ---
 
@@ -219,14 +219,14 @@ line_highlights: 23, 26
 ------------------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Verbinding maken met WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, wachtwoord)
 while wlan.isconnected() == False:
-print('Waiting for connection...')
+print('Wachten op verbinding...')
 sleep(1)
-print(f'Connected on {ip}')
+print(f'Verbonden op {ip}')
 return ip
 
 ip = connect()
@@ -235,11 +235,11 @@ ip = connect()
 
 \--- /task ---
 
-You might want to run this file without using Thonny, which will be covered later in this project. It would be useful to have some indication that the the Raspberry Pi Pico has connected to the WLAN, and also to be able to quit the program without having to have the Raspberry Pi Pico connected to a computer.
+Het is mogelijk dat je dit bestand wilt uitvoeren zonder Thonny te gebruiken. Dit wordt later in dit project besproken. Het zou handig zijn als er een indicatie zou zijn dat de Raspberry Pi Pico verbinding heeft gemaakt met het WLAN en dat het programma afgesloten zou kunnen worden zonder dat de Raspberry Pi Pico verbonden hoeft te zijn met een computer.
 
 \--- task ---
 
-Add a condition, where if the bootsel button is pressed, the program will quit.
+Voeg een voorwaarde toe, waarbij het programma wordt afgesloten als de bootselknop wordt ingedrukt.
 
 ## --- code ---
 
@@ -251,16 +251,16 @@ line_highlights: 20, 21
 ------------------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Verbinding maken met WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, wachtwoord)
 while wlan.isconnected() == False:
 if rp2.bootsel_button() == 1:
 sys.exit()
-print('Waiting for connection...')
+print('Wachten op verbinding...')
 ip = wlan.ifconfig()[0]
-print(f'Connected on {ip}')
+print(f'Verbonden op {ip}')
 return ip
 
 \--- /code ---
@@ -269,7 +269,7 @@ return ip
 
 \--- task ---
 
-Then make the onboard LED blink each time it attempts a connection, and then stay on once connected.
+Zorg er vervolgens voor dat de ingebouwde LED knippert telkens wanneer er geprobeerd wordt verbinding te maken, en dat de LED blijft branden zodra er verbinding is gemaakt.
 
 ## --- code ---
 
@@ -281,20 +281,20 @@ line_highlights: 23, 24, 25, 26, 29
 ------------------------------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Verbinding maken met WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, wachtwoord)
 while wlan.isconnected() == False:
 if rp2.bootsel_button() == 1:
 sys.exit()
-print('Waiting for connection...')
+print('Wachten op verbinding...')
 pico_led.on()
 sleep(0.5)
 pico_led.off()
-sleep(0.5)
+slaap(0.5)
 ip = wlan.ifconfig()[0]
-print(f'Connected on {ip}')
+print(f'Verbonden op {ip}')
 pico_led.on()
 return ip
 
