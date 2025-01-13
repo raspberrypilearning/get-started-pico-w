@@ -1,24 +1,24 @@
-## Introduction
+## Inleiding
 
-Raspberry Pi Pico W is a Raspberry Pi product that adds WiFi capability to the Raspberry Pi Pico, allowing you to connect the device to a WiFi network. In this guide, you will learn how to use a Raspberry Pi Pico W, how to connect it to a WiFi network, and then how to turn it into a web server to control digital outputs from a browser, and to receive sensor data.
+De Raspberry Pi Pico W is een Raspberry Pi-product dat WiFi-functionaliteit toevoegt aan de Raspberry Pi Pico, zodat je het apparaat kunt verbinden met een WiFi-netwerk. In deze handleiding leer je hoe je een Raspberry Pi Pico W gebruikt, hoe je deze verbindt met een WiFi-netwerk en hoe je er vervolgens een webserver van maakt om digitale uitgangen vanuit een browser te bedienen en sensorgegevens te ontvangen.
 
-![Raspberry Pi Pico W being controlled from a web page.](images/web-server.gif)
+![Raspberry Pi Pico W wordt bestuurd vanaf een webpagina.](images/web-server.gif)
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-<span style="color: #0faeb0">**WiFi**</span> enabled devices allow for easy communication between computers and the internet. The technology helped kick-start the Internet Of Things (IoT) revolution.
+Apparaten met <span style="color: #0faeb0">**WiFi**</span>-functionaliteit maken eenvoudige communicatie tussen computers en het internet mogelijk. De technologie heeft de revolutie van het Internet of Things (IoT) op gang gebracht.
 </p>
 
-You will:
+Je gaat:
 
-- Connect your Raspberry Pi Pico W to a WiFi hub
-- Create a web server on your Raspberry Pi Pico W, to display a webpage
-- Use your webpage to control the Raspberry Pi Pico W onboard LED and to receive temperature data from it
+- Je Raspberry Pi Pico verbinden met een WiFi-hub
+- Een webserver maken op je Raspberry Pi Pico W om een webpgina te tonen
+- Je webpagina gebruiken om de LED op de Raspberry Pi Pico W aan te sturen en er temperatuurgegevens van te ontvangen
 
-You will need:
+Je hebt nodig:
 
-- A Raspberry Pi Pico W and micro USB data cable
-- A computer connected to your network
-- The Thonny Python IDE
+- Een Raspberry Pi Pico W en een micro-USB-datakabel
+- Een computer die is aangesloten op je netwerk
+- De Thonny Python IDE
 
 [[[thonny-install]]]
 
