@@ -1,23 +1,23 @@
 ---
-title: Getting started with your Raspberry Pi Pico W
+title: Aan de slag met je Raspberry Pi Pico W
 hero_image: images/banner.png
-description: Get started with your Raspberry Pi Pico W
+description: Ga aan de slag met je Raspberry Pi Pico W
 version: 4
 listed: true
 copyedit: true
 last_tested: '2022-06-30'
 steps:
   - 
-    title: Introduction
+    title: Inleiding
   - 
-    title: Set up your Raspberry Pi Pico W
+    title: Stel je Raspberry Pi Pico W in
   - 
-    title: Connect your Raspberry Pi Pico to a WLAN
+    title: Verbind je Raspberry Pi Pico met een WLAN
   - 
-    title: Open a socket
+    title: Open een socket
   - 
-    title: Create a webpage
+    title: Maak een webpagina
   - 
-    title: Serve your webpage
+    title: Bedien je webpagina
   - 
-    title: What next?
+    title: Wat kun je verder nog doen?
