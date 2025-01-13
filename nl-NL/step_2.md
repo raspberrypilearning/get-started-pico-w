@@ -1,128 +1,128 @@
-## Set up your Raspberry Pi Pico W
+## Stel je Raspberry Pi Pico W in
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-Connect your Raspberry Pi Pico W and set up MicroPython.
+Sluit je Raspberry Pi Pico W aan en stel MicroPython in.
 </div>
 </div>
 
 <p style='border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;'>
-<span style="color: #0faeb0">MicroPython</span> is a version of the Python programming language for microcontrollers, such as your Raspberry Pi Pico W. MicroPython lets you use your Python knowledge to write code to interact with electronics components.</p>
+<span style="color: #0faeb0">MicroPython</span> is een versie van de programmeertaal Python voor microcontrollers, zoals je Raspberry Pi Pico W. Met MicroPython kun je jouw Python-kennis gebruiken om code te schrijven voor interactie met elektronische componenten.</p>
 
 \--- task ---
 
-Download the latest version of Raspberry Pi Pico W firmware at [https://rpf.io/pico-w-firmware](https://rpf.io/pico-w-firmware)
+Download de nieuwste versie van de Raspberry Pi Pico W-firmware op [https://rpf.io/pico-w-firmware](https://rpf.io/pico-w-firmware)
 
 \--- /task ---
 
 \--- task ---
 
-**Connect** the small end of your micro USB cable to the Raspberry Pi Pico W.
+**Sluit** het kleine uiteinde van je micro-USB-kabel aan op de Raspberry Pi Pico W.
 
-![A Raspberry Pi Pico W connected to the small end of a micro USB cable.](images/pico-top-plug.png)
-
-\--- /task ---
-
-\--- task ---
-
-Hold down the **BOOTSEL** button on your Raspberry Pi Pico W.
-
-![A Raspberry Pi Pico W with the BOOTSEL button highlighted](images/bootsel.png)
+![Een Raspberry Pi Pico W aangesloten op het kleine uiteinde van een micro-USB-kabel.](images/pico-top-plug.png)
 
 \--- /task ---
 
 \--- task ---
 
-**Connect** the other end to your desktop computer, laptop, or Raspberry Pi.
+Houd de **BOOTSEL**-knop op je Raspberry Pi Pico W ingedrukt.
 
-![A Raspberry Pi Pico W connected to a laptop via a micro USB cable.](images/plug-in-pico.png)
-
-\--- /task ---
-
-\--- task ---
-
-Your file manager should open up, with Raspberry Pi Pico being show as an externally connected drive. Drag and drop the firmware file you downloaded into the file manager. Your Raspberry Pi Pico should disconnect and the file manager will close.
-
-![image of the Windows file manager opened, showing Raspberry Pi Pico connected as an external drive](images/file_manager.png)
+![Een Raspberry Pi Pico W met de BOOTSEL-knop gemarkeerd](images/bootsel.png)
 
 \--- /task ---
 
 \--- task ---
 
-Open the Thonny editor.
+**Verbind** het andere uiteinde met je desktop computer, laptop of Raspberry Pi.
+
+![Een Raspberry Pi Pico W aangesloten op een laptop via een micro-USB-kabel.](images/plug-in-pico.png)
 
 \--- /task ---
 
 \--- task ---
 
-Look at the text in the bottom right-hand corner of the Thonny editor. It will show you the version of Python that is being used.
+Je bestandsbeheerder zou nu moeten openen en de Raspberry Pi Pico zou moeten worden weergegeven als een extern aangesloten schijf. Sleep het gedownloade firmwarebestand naar de bestandsbeheerder. De verbinding met je Raspberry Pi Pico wordt verbroken en de bestandsbeheerder wordt gesloten.
 
-If it does **not** say 'MicroPython (Raspberry Pi Pico)' there, then click on the text and select 'MicroPython (Raspberry Pi Pico)' from the options.
-
-![MicroPython selected as the interpreter for Thonny.](images/thonny-select-interpreter.png)
+![afbeelding van de geopende Windows-bestandsbeheerder, met de Raspberry Pi Pico aangesloten als een externe schijf](images/file_manager.png)
 
 \--- /task ---
 
 \--- task ---
 
-**Debug:**
+Open de Thonny editor.
+
+\--- /task ---
+
+\--- task ---
+
+Kijk naar de tekst in de rechterbenedenhoek van de Thonny editor. Het zal je de versie van Python laten zien die wordt gebruikt.
+
+Als er **niet** 'MicroPython (Raspberry Pi Pico)' staat, klik dan op de tekst en selecteer 'MicroPython (Raspberry Pi Pico)' uit de opties.
+
+![MicroPython geselecteerd als interpreter voor Thonny.](images/thonny-select-interpreter.png)
+
+\--- /task ---
+
+\--- task ---
+
+**Fouten oplossen:**
 
 ## --- collapse ---
 
-## title: I don't know if the firmware is installed and cannot connect to my Pico
+## title: Ik weet niet of de firmware is geïnstalleerd en ik kan geen verbinding kan maken met mijn Pico
 
-Make sure your Raspberry Pi Pico W is connected to your computer with a micro USB cable. Click on the list in the bottom right-hand corner of your Thonny window. A pop-up menu will appear, which lists the available interpreters.
+Zorg ervoor dat je Raspberry Pi Pico W met een micro-USB-kabel op de computer is aangesloten. Klik op de lijst in de rechterbenedenhoek van het Thonny-venster. Er verschijnt een pop-upmenu met de beschikbare interpreters.
 
-![A pop-up menu that shows an option saying configure interpreter.](images/no-pico-interpreter.png)
+![Een pop-upmenu dat een optie toont met de tekst configure interpreter.](images/no-pico-interpreter.png)
 
-If you cannot see Pico in the list (as shown in the picture), you need to reconnect your Raspberry Pi Pico W while holding the BOOTSEL button to mount it as a storage volume, and then reinstall the firmware by following the instructions in the section above.
+Als je Pico niet in de lijst ziet (zoals in de afbeelding), moet je de Raspberry Pi Pico W opnieuw verbinden terwijl je de BOOTSEL-knop ingedrukt houdt om het als een opslagvolume te koppelen en daarna de firmware opnieuw installeren door de instructies in het bovenstaande gedeelte te volgen.
 
 \--- /collapse ---
 
 ## --- collapse ---
 
-## title: Firmware is installed but I still cannot connect to my Pico
+## title: Firmware is geïnstalleerd, maar ik kan nog steeds geen verbinding maken met mijn Pico
 
-You may be using the wrong kind of micro USB cable. Your current micro USB cable may be damaged, or designed to only carry power to devices and not transfer data. Try swapping your cable for another if nothing else has worked.
+Mogelijk gebruik je de verkeerde micro-USB-kabel. Je huidige micro-USB-kabel is mogelijk beschadigd of alleen ontworpen om stroom naar apparaten over te brengen en niet om gegevens over te brengen. Probeer de kabel te vervangen door een andere als verder niets heeft gewerkt.
 
-If your Pico still won't connect after trying all these things, it may **itself** be damaged and unable to connect.
+Als je Pico nog steeds geen verbinding kan maken nadat je al deze dingen hebt geprobeerd, kan het **zelf** beschadigd zijn en niet in staat zijn verbinding te maken.
 
 \--- /collapse ---
 
 \--- /task ---
 
-For newcomers to Raspberry Pi Pico, `picozero` is a MicroPython library that's beginner-friendly.
+Voor beginners met Raspberry Pi Pico is `picozero` een MicroPython-bibliotheek die speciaal is ontwikkeld voor beginners.
 
 \--- task ---
 
-To complete the projects in this path, you need to install the `picozero` library as a Thonny package.
+Om de projecten in dit pad te voltooien, moet je de `picozero` bibliotheek installeren als een Thonny-pakket.
 
-In Thonny, choose **Tools** > **Manage packages**.
+In Thonny, kies **Tools** > **Manage packages**.
 
-![The Thonny Tools menu with Manage packages highlighted.](images/thonny-manage-packages.jpg)
+![Het Thonny Tools-menu met Manage packages gemarkeerd.](images/thonny-manage-packages.jpg)
 
 \--- /task ---
 
 \--- task ---
 
-In the pop-up 'Manage packages for Raspberry Pi Pico' window, type `picozero` and click **Search on PyPi**.
+In de pop-up 'Manage packages for Raspberry Pi Pico' window, type `picozero` en klik **Search on PyPi**.
 
-![Thonny plugins search results showing picozero.](images/thonny-packages-picozero.jpg)
+![Zoekresultaten van Thonny-plug-ins tonen picozero.](images/thonny-packages-picozero.jpg)
 
 \--- /task ---
 
 \--- task ---
 
-Click on **picozero** in the search results.
+Klik op **picozero** in de zoekresultaten.
 
-Click on **Install**.
+Klik op **Install**.
 
-![The picozero information with 'Install' button highlighted.](images/thonny-install-package.jpg)
+![De picozero-informatie met de knop 'Install' gemarkeerd.](images/thonny-install-package.jpg)
 
-When installation has completed, close the package window, then quit and reopen Thonny.
+Wanneer de installatie is voltooid, sluit je het pakketvenster, sluit je Thonny en dan open je Thonny opnieuw.
 
 \--- /task ---
 
-If you have difficulties installing the `picozero` library in Thonny, you can download the library file and save it to your Raspberry Pi Pico W.
+Als je problemen hebt met het installeren van de `picozero` bibliotheek in Thonny, kun je het bibliotheekbestand downloaden en opslaan in je Raspberry Pi Pico.
 
 [[[picozero-offline-install]]]
