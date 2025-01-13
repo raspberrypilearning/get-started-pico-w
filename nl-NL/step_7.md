@@ -1,19 +1,19 @@
-## What next?
+## Wat kun je verder nog doen?
 
-One last thing to try is to run your Raspberry Pi Pico webserver without using Thonny. Save your program as `main.py` and this time save it to the Raspberry Pi Pico.
+Probeer ten slotte je Raspberry Pi Pico-webserver te draaien zonder Thonny. Sla je programma op als `main.py` en sla het deze keer op de Raspberry Pi Pico op.
 
-Now when the Raspberry Pi Pico is powered, even without a connection to a computer, the webserver should start. Remember, you can use the **bootsel** button to close the server, or the button on the served webpage, if you need to reconnect to Thonny and make alterations to your code.
+Zodra je de Raspberry Pi Pico inschakelt, zou de webserver moeten starten, zelfs als er geen verbinding is met een computer. Vergeet niet dat je de **bootsel**-knop kunt gebruiken om de server te sluiten, of de knop op de weergegeven webpagina, als je opnieuw verbinding wilt maken met Thonny en wijzigingen wilt aanbrengen in je code.
 
-If you have a look at [Introduction to Raspberry Pi Pico: LEDs, buzzers, switches, and dials](https://projects.raspberrypi.org/en/pathways/pico-intro), you can find plenty of ideas for how to improve on your Raspberry Pi Pico web server.
+Als je een kijkje neemt op [Inleiding tot Raspberry Pi Pico: LED's, zoemers, schakelaars en draaiknoppen](https://projects.raspberrypi.org/en/pathways/pico-intro), vind je tal van ideeën over hoe je jouw Raspberry Pi Pico-webserver kunt verbeteren.
 
-![Banner image from firefly project.](images/fire_fly.png)
+![Bannerafbeelding van het vuurvlieg-project.](images/fire_fly.png)
 
-In the [LED firefly](https://projects.raspberrypi.org/en/projects/led-firefly) project, you can learn how to wire up external LEDs to a Raspberry Pi Pico, then you could use a web interface to change the pattern your firefly blinks with.
+In het project [LED-vuurvlieg](https://projects.raspberrypi.org/en/projects/led-firefly) leer je hoe je externe LED's op een Raspberry Pi Pico aansluit. Vervolgens kun je via een webinterface het knipperpatroon van jouw vuurvlieg wijzigen.
 
-![Banner image from party popper project.](images/party-popper.png)
+![Bannerafbeelding van het feestknaller-project.](images/party-popper.png)
 
-In the [Party popper](https://projects.raspberrypi.org/en/projects/party-popper) project, you can learn how to use a switch to control an RGB LED and a buzzer. You could use a web form with this project to control the colour of the LED and the tone that the buzzer plays.
+In het [Feestknaller](https://projects.raspberrypi.org/en/projects/party-popper) project leer je hoe je een schakelaar gebruikt om een RGB-LED en een zoemer te bedienen. Je kunt bij dit project een webformulier gebruiken om de kleur van de LED en de toon die de zoemer afspeelt te regelen.
 
-![Banner image from beating heart project.](images/beating-heart.png)
+![Bannerafbeelding van het kloppend hart-project.](images/beating-heart.png)
 
-In [Beating heart](https://projects.raspberrypi.org/en/projects/beating-heart), you learn to use a potentiometer to control a pulsing LED, but you could also use your browser to control the pulse rate, and the potentiometer could be used to change the appearance of your webpage.
+In [Kloppend](https://projects.raspberrypi.org/en/projects/beating-heart) leer je hoe je een potentiometer kunt gebruiken om een pulserende LED te regelen, maar je kunt ook je browser gebruiken om de pulsfrequentie te regelen, en de potentiometer kan worden gebruikt om het uiterlijk van je webpagina te veranderen.
