@@ -5,7 +5,7 @@ De Raspberry Pi Pico W is een Raspberry Pi-product dat WiFi-functionaliteit toev
 ![Raspberry Pi Pico W wordt bestuurd vanaf een webpagina.](images/web-server.gif)
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-Apparaten met <span style="color: #0faeb0">**WiFi**</span>-functionaliteit maken eenvoudige communicatie tussen computers en het internet mogelijk. De technologie heeft de revolutie van het Internet of Things (IoT) op gang gebracht.
+Apparaten met <span style="color: #0faeb0">**WiFi**</span>-functionaliteit maken communicatie tussen computers en het internet gemakkelijker. Deze technologie heeft de revolutie van het Internet of Things (IoT) op gang gebracht.
 </p>
 
 Je gaat:
