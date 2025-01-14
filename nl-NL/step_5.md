@@ -1,25 +1,25 @@
-## Create a webpage
+## Maak een webpagina
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will create a webpage that the web server, running on your Raspberry Pi Pico W, can send to a client web browser. You're going to test the webpage on your computer first though, to make sure it displays as it should. In the next step, you can add the code to your Python script, so that your Raspberry Pi Pico W can serve the webpage.
+In deze stap maak je een webpagina die de webserver op je Raspberry Pi Pico W naar een webbrowser kan sturen. Je gaat de webpagina eerst op jouw computer testen, om er zeker van te zijn dat deze correct wordt weergegeven. In de volgende stap kun je de code toevoegen aan jouw Python-script, zodat jouw Raspberry Pi Pico W de webpagina kan presenteren.
 </div>
 <div>
-![Screenshot from Chrome showing a webpage with two buttons for turning an LED on and off, and some boiler plate text.](images/index.png)
+![Screenshot van Chrome met een webpagina met twee knoppen om een LED aan en uit te zetten, en wat standaardtekst.](images/index.png)
 </div>
 </div>
 
-A webpage can be as simple as some text, formatted in such a way that a web browser will render it and provide some interactivity. Although Thonny is not designed to write HTML, it can be used for this purpose. However, you can use your preferred text editor if you like, be that VSCode, TextEdit, or Notepad.
+Een webpagina kan bestaan uit wat tekst, die zo is opgemaakt dat een webbrowser de tekst kan weergeven en voor enige interactie kan zorgen. Hoewel Thonny niet ontworpen is om HTML te schrijven, kan het wel voor dit doel gebruikt worden. Je kunt echter ook jouw favoriete teksteditor gebruiken, bijvoorbeeld VSCode, TextEdit of Kladblok.
 
 \--- task ---
 
-In your text editor or in Thonny, create a new file. You can call it whatever you like, but `index.html` is the standard name for the first page that a user interacts with. Make sure you add the `.html` file extension. If using Thonny, make sure to save to **This computer**.
+Maak een nieuw bestand in je teksteditor of in Thonny. Je kunt het elke gewenste naam geven, maar `index.html` is de standaardnaam voor de eerste pagina waarmee een gebruiker communiceert. Zorg ervoor dat je de bestandsextensie `.html` toevoegt. Als je Thonny gebruikt, zorg er dan voor dat je het bestand op **This computer** opslaat.
 
 \--- /task ---
 
 \--- task ---
 
-There is some standard HTML code that you will need to include to begin with.
+Om te beginnen moet je een aantal standaard HTML-codes toevoegen.
 
 ## --- code ---
 
@@ -43,7 +43,7 @@ line_highlights:
 
 \--- task ---
 
-Next, you can create a button that will be used to turn the onboard LED on or off.
+Vervolgens kun je een knop maken waarmee je de ingebouwde LED kunt aan- of uitzetten.
 
 ## --- code ---
 
@@ -70,15 +70,15 @@ line_highlights: 4-6
 
 \--- task ---
 
-Save your file and then find it in your file manager. When you double click the file, it should open in your default web browser. Here is what the webpage looks like in Google Chrome.
+Sla je bestand op en zoek het op in jouw bestandsbeheerder. Wanneer je dubbelklikt op het bestand, wordt het geopend in je standaardwebbrowser. Zo ziet de webpagina eruit in Google Chrome.
 
-![Google Chrome showing a page with a single button labelled Light on.](images/button.png)
+![Google Chrome toont een pagina met één enkele knop met het label Licht aan.](images/button.png)
 
 \--- /task ---
 
 \--- task ---
 
-Add a second button to turn the LED off.
+Voeg een tweede knop toe om de LED uit te schakelen.
 
 ## --- code ---
 
@@ -108,7 +108,7 @@ line_highlights: 7-9
 
 \--- task ---
 
-An additional button can be added to close the webserver, without having to use Thonny.
+Er kan een extra knop worden toegevoegd om de webserver te sluiten, zonder dat Thonny nodig is.
 
 ## --- code ---
 
@@ -141,7 +141,7 @@ line_highlights: 10-12
 
 \--- task ---
 
-To finish off the webpage, you can add in some extra data, such as the state of the LED and the temperature of your Raspberry Pi Pico W.
+Om de webpagina af te ronden, kun je nog wat extra gegevens toevoegen, zoals de status van de LED en de temperatuur van jouw Raspberry Pi Pico W.
 
 ## --- code ---
 
@@ -165,24 +165,24 @@ line_highlights: 13-14
 <form action="./close">
 <input type="submit" value="Stop server" />
 </form>
-<p>LED is {state}</p>
-<p>Temperature is {temperature}</p>
+<p>LED is {status}</p>
+<p>Temperatuur is {temperatuur}</p>
 </body>
 </html>
 
 \--- /code ---
 
-Your webpage should look like this:
+Je webpagina zou er als volgt uit moeten zien:
 
-![Webpage in Google Chrome showing two buttons and text regarding the LED's state and the Pico's temperature.](images/button_and_state.png)
+![Webpagina in Google Chrome met twee knoppen en tekst over de status van de LED en de temperatuur van de Pico.](images/button_and_state.png)
 
 \--- /task ---
 
-Now that you have a working webpage, you can add this code into your Python script. You'll need to switch back to your Python code in Thonny first.
+Nu je een werkende webpagina hebt, kun je deze code aan jouw Python-script toevoegen. Je moet eerst terugschakelen naar je Python-code in Thonny.
 
 \--- task ---
 
-Create a new function called `webpage`, that has two parameters. These are `temperature` and `state`.
+Maak een nieuwe functie met de naam `webpagina`, die twee parameters heeft. Dit zijn `temperatuur` en `status`.
 
 ## --- code ---
 
@@ -193,8 +193,8 @@ line_number_start: 44
 line_highlights:
 -----------------------------------------------------
 
-def webpage(temperature, state):
-\#Template HTML
+def webpagina(temperatuur, status):
+\#HTML-sjabloon
 
 \--- /code ---
 
@@ -202,7 +202,7 @@ def webpage(temperature, state):
 
 \--- task ---
 
-You can now store all your HTML code that you have written and tested in a variable. Using **fstrings** for the text means that the placeholders you have in the HTML for `temperature` and `state` can be inserted into your string.
+Nu kun je al jouw HTML-code die je hebt geschreven en getest, opslaan in een variabele. Als je **fstrings** voor de tekst gebruikt, kun je de tijdelijke aanduidingen in de HTML voor `temperatuur` en `status` in jouw tekenreeks invoegen.
 
 ## --- code ---
 
@@ -213,8 +213,8 @@ line_number_start: 44
 line_highlights: 46-62
 -----------------------------------------------------------
 
-def webpage(temperature, state):
-\#Template HTML
+def webpagina(temperatuur, status):
+\#HTML-sjabloon
 html = f"""<!DOCTYPE html><html>
 <form action="./lighton">
 <input type="submit" value="Light on" />
@@ -225,11 +225,11 @@ html = f"""<!DOCTYPE html><html>
 <form action="./close">
 <input type="submit" value="Stop server" />
 </form>
-<p>LED is {state}</p>
-<p>Temperature is {temperature}</p>
+<p>LED is {status}</p>
+<p>Temperatuur is {temperatuur}</p>
 </body>
 </html>
-            """
+"""
 
 \--- /code ---
 
@@ -237,7 +237,7 @@ html = f"""<!DOCTYPE html><html>
 
 \--- task ---
 
-Lastly, you can return the `html` string from your function.
+Ten slotte kun je de `html`-string uit jouw functie retourneren.
 
 ## --- code ---
 
@@ -248,8 +248,8 @@ line_number_start: 44
 line_highlights: 63
 --------------------------------------------------------
 
-def webpage(temperature, state):
-\#Template HTML
+def webpagina(temperatuur, status):
+\#HTML-sjabloon
 html = f"""<!DOCTYPE html><html>
 <form action="./lighton">
 <input type="submit" value="Light on" />
@@ -257,8 +257,8 @@ html = f"""<!DOCTYPE html><html>
 <form action="./lightoff">
 <input type="submit" value="Light off" />
 </form>
-<p>LED is {state}</p>
-<p>Temperature is {temperature}</p>
+<p>LED is {status}</p>
+<p>Temperatuur is {temperatuur}</p>
 </body>
 </html>
             """
@@ -270,6 +270,6 @@ html = f"""<!DOCTYPE html><html>
 
 \--- save ---
 
-You can't test this code yet, as your program is not yet serving the HTML. That will be tackled in the next step.
+Je kunt deze code nog niet testen, omdat jouw programma de HTML nog niet aanbiedt. Dat wordt in de volgende stap aangepakt.
 
-The simple HTML code you have just written will be stored in your MicroPython script and served to the browser of any computers that connect to it over your network, just like a webpage stored on any other server in the world. An important difference is that only devices connected to your WiFi network can access the webpage or control your Raspberry Pi Pico W. This page is a very simple demonstration of what is possible. To learn more about HTML coding and creating websites, see some of our [other projects on this site!](https://projects.raspberrypi.org/en/collections/html_and_css)
+De eenvoudige HTML-code die je zojuist hebt geschreven, wordt opgeslagen in jouw MicroPython-script en weergegeven in de browser van alle computers die via jouw netwerk verbinding maken met het script, net als een webpagina die op een andere server ter wereld is opgeslagen. Een belangrijk verschil is dat alleen apparaten die zijn verbonden met jouw WiFi-netwerk toegang hebben tot de webpagina of jouw Raspberry Pi Pico W kunnen bedienen. Deze pagina is een zeer eenvoudige demonstratie van wat mogelijk is. Om meer te leren over HTML-codering en het maken van websites, bekijk enkele van onze [andere projecten op deze site!](https://projects.raspberrypi.org/en/collections/html_and_css)
