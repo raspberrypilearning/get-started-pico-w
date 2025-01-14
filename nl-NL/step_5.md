@@ -2,7 +2,7 @@
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In deze stap maak je een webpagina die de webserver op je Raspberry Pi Pico W naar een webbrowser kan sturen. Je gaat de webpagina eerst op jouw computer testen, om er zeker van te zijn dat deze correct wordt weergegeven. In de volgende stap kun je de code toevoegen aan jouw Python-script, zodat jouw Raspberry Pi Pico W de webpagina kan presenteren.
+In deze stap maak je een webpagina die de webserver op je Raspberry Pi Pico W naar een client webbrowser kan sturen. Je gaat de webpagina eerst op jouw computer testen, om er zeker van te zijn dat deze correct wordt weergegeven. In de volgende stap kun je de code toevoegen aan jouw Python-script, zodat jouw Raspberry Pi Pico W de webpagina kan presenteren.
 </div>
 <div>
 ![Screenshot van Chrome met een webpagina met twee knoppen om een LED aan en uit te zetten, en wat standaardtekst.](images/index.png)
@@ -270,6 +270,6 @@ html = f"""<!DOCTYPE html><html>
 
 \--- save ---
 
-Je kunt deze code nog niet testen, omdat jouw programma de HTML nog niet aanbiedt. Dat wordt in de volgende stap aangepakt.
+Je kunt deze code nog niet testen, omdat jouw programma de HTML nog niet bedient. Dat wordt in de volgende stap aangepakt.
 
 De eenvoudige HTML-code die je zojuist hebt geschreven, wordt opgeslagen in jouw MicroPython-script en weergegeven in de browser van alle computers die via jouw netwerk verbinding maken met het script, net als een webpagina die op een andere server ter wereld is opgeslagen. Een belangrijk verschil is dat alleen apparaten die zijn verbonden met jouw WiFi-netwerk toegang hebben tot de webpagina of jouw Raspberry Pi Pico W kunnen bedienen. Deze pagina is een zeer eenvoudige demonstratie van wat mogelijk is. Om meer te leren over HTML-codering en het maken van websites, bekijk enkele van onze [andere projecten op deze site!](https://projects.raspberrypi.org/en/collections/html_and_css)
