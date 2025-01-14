@@ -86,7 +86,7 @@ wlan.connect(ssid, wachtwoord)
 
 \--- task ---
 
-Als je eerder een apparaat met een WiFi-netwerk hebt verbonden, weet je dat dit niet onmiddelijk gebeurt. Je apparaat stuurt verzoeken naar jouw WiFi-router om verbinding te maken. Wanneer de router reageert, wordt er een handshake uitgevoerd om de verbinding tot stand te brengen. Om dit met Python te doen, kun je een lus instellen die elke seconde verzoeken blijft versturen totdat de verbindingshandshake is uitgevoerd.
+Als je eerder een apparaat met een WiFi-netwerk hebt verbonden, weet je dat dit niet onmiddelijk gebeurt. Je apparaat stuurt verzoeken naar jouw WiFi-router om verbinding te maken, wanneer de router reageert, wordt er een handshake uitgevoerd om de verbinding tot stand te brengen. Om dit met Python te doen, kun je een lus instellen die elke seconde verzoeken blijft versturen totdat de verbindingshandshake is uitgevoerd.
 
 ## --- code ---
 
@@ -167,9 +167,9 @@ Waiting for connection...
 
 ---
 
-## titel: De Raspberry Pi Pico W maakt geen verbinding
+## title: De Raspberry Pi Pico W maakt geen verbinding
 
-1. Zorg ervoor dat u de juiste SSID en het juiste wachtwoord gebruikt.
+1. Zorg ervoor dat je de juiste SSID en het juiste wachtwoord gebruikt.
 2. Als je gebruikmaakt van een school- of werk-WLAN, is het mogelijk dat ongeautoriseerde apparaten geen toegang tot het WiFi-netwerk krijgen.
 3. Koppel jouw Raspberry Pi Pico W los van je computer om hem uit te schakelen en sluit hem vervolgens weer aan. Dit kan een probleem zijn als je eenmaal verbinding hebt gemaakt en het vervolgens opnieuw probeert.
 
@@ -177,7 +177,7 @@ Waiting for connection...
 
 \--- task ---
 
-Je hebt niet alle informatie nodig die `wlan.ifconfig()` biedt. De belangrijkste informatie die je nodig hebt, is het IP-adres van de Raspberry Pi Pico W. Dit is het eerste stukje informatie. Je kunt een **fstring** gebruiken om het **IP-adres** uit te voeren. Door een `f` voor je tekenreeks te plaatsen, kunnen variabelen worden afgedrukt wanneer ze worden omgeven door `{}`.
+Je hebt niet alle informatie nodig die `wlan.ifconfig()` biedt. De belangrijkste informatie die je nodig hebt, is het IP-adres van de Raspberry Pi Pico W, dit is het eerste stukje informatie. Je kunt een **fstring** gebruiken om het **IP-adres** uit te voeren. Door een `f` voor je tekenreeks te plaatsen, kunnen variabelen worden afgedrukt wanneer ze worden geplaatst tussen `{}`.
 
 ## --- code ---
 
@@ -235,7 +235,7 @@ ip = connect()
 
 \--- /task ---
 
-Het is mogelijk dat je dit bestand wilt uitvoeren zonder Thonny te gebruiken. Dit wordt later in dit project besproken. Het zou handig zijn als er een indicatie zou zijn dat de Raspberry Pi Pico verbinding heeft gemaakt met het WLAN en dat het programma afgesloten zou kunnen worden zonder dat de Raspberry Pi Pico verbonden hoeft te zijn met een computer.
+Het is mogelijk dat je dit bestand wilt uitvoeren zonder Thonny te gebruiken, dit wordt later in dit project besproken. Het zou handig zijn als er een indicatie zou zijn dat de Raspberry Pi Pico verbinding heeft gemaakt met het WLAN en dat het programma afgesloten zou kunnen worden zonder dat de Raspberry Pi Pico verbonden hoeft te zijn met een computer.
 
 \--- task ---
 
