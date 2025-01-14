@@ -71,9 +71,9 @@ Als er **niet** 'MicroPython (Raspberry Pi Pico)' staat, klik dan op de tekst en
 
 ## title: Ik weet niet of de firmware is geïnstalleerd en ik kan geen verbinding kan maken met mijn Pico
 
-Zorg ervoor dat je Raspberry Pi Pico W met een micro-USB-kabel op de computer is aangesloten. Klik op de lijst in de rechterbenedenhoek van het Thonny-venster. Er verschijnt een pop-upmenu met de beschikbare interpreters.
+Zorg ervoor dat je Raspberry Pi Pico W met een micro-USB-kabel op je computer is aangesloten. Klik op de lijst in de rechterbenedenhoek van het Thonny-venster. Er verschijnt een pop-up menu met de beschikbare interpreters.
 
-![Een pop-upmenu dat een optie toont met de tekst configure interpreter.](images/no-pico-interpreter.png)
+![Een pop-up menu dat een optie toont met de tekst configure interpreter.](images/no-pico-interpreter.png)
 
 Als je Pico niet in de lijst ziet (zoals in de afbeelding), moet je de Raspberry Pi Pico W opnieuw verbinden terwijl je de BOOTSEL-knop ingedrukt houdt om het als een opslagvolume te koppelen en daarna de firmware opnieuw installeren door de instructies in het bovenstaande gedeelte te volgen.
 
@@ -105,7 +105,7 @@ In Thonny, kies **Tools** > **Manage packages**.
 
 \--- task ---
 
-In de pop-up 'Manage packages for Raspberry Pi Pico' window, type `picozero` en klik **Search on PyPi**.
+In het pop-up 'Manage packages for Raspberry Pi Pico' venster, type `picozero` en klik **Search on PyPi**.
 
 ![Zoekresultaten van Thonny-plug-ins tonen picozero.](images/thonny-packages-picozero.jpg)
 
@@ -119,10 +119,10 @@ Klik op **Install**.
 
 ![De picozero-informatie met de knop 'Install' gemarkeerd.](images/thonny-install-package.jpg)
 
-Wanneer de installatie is voltooid, sluit je het pakketvenster, sluit je Thonny en dan open je Thonny opnieuw.
+Wanneer de installatie is voltooid, sluit je het package venster, vervolgens sluit je Thonny af en dan open je Thonny opnieuw.
 
 \--- /task ---
 
-Als je problemen hebt met het installeren van de `picozero` bibliotheek in Thonny, kun je het bibliotheekbestand downloaden en opslaan in je Raspberry Pi Pico.
+Als je problemen hebt met het installeren van de `picozero` bibliotheek in Thonny, kun je het bibliotheekbestand downloaden en opslaan op je Raspberry Pi Pico.
 
 [[[picozero-offline-install]]]
