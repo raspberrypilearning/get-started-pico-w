@@ -1,17 +1,17 @@
-## Serve your webpage
+## Bedien je webpagina
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will start up your web server so that a client can connect to it, and control your LED and read the temperature.
+In deze stap start je jouw webserver op, zodat een client er verbinding mee kan maken, jouw LED kan bedienen en de temperatuur kan aflezen.
 </div>
 <div>
-![Screenshot from Chrome showing a webpage with two buttons for turning an LED on and off.](images/web_light_on.png)
+![Schermafbeelding van Chrome met een webpagina met twee knoppen om een LED aan en uit te zetten.](images/web_light_on.png)
 </div>
 </div>
 
 \--- task ---
 
-Create a function that will start your web server, using the `connection` object you saved as a parameter. The `state` and `temperature` variables need to be set for your HTML data. The state is going to start as being set to `'OFF'`, and the temperature to `0`, which means you should also ensure that the LED is off when the server starts.
+Maak een functie die jouw webserver start, met behulp van het `verbinding`-object dat je als parameter hebt opgeslagen. De variabelen `status` en `temperatuur` moeten worden ingevuld voor jouw HTML-gegevens. De status staat in eerste instantie op `UIT` en de temperatuur op `0`. Dit betekent dat je er ook voor moet zorgen dat de LED uit is wanneer de server start.
 
 ## --- code ---
 
@@ -22,21 +22,21 @@ line_number_start: 66
 line_highlights:
 -----------------------------------------------------
 
-def serve(connection):
-\#Start a web server
-state = 'OFF'
+def serve(verbinding):
+\#Start een webserver
+status = 'UIT'
 pico_led.off()
-temperature = 0
+temperatuur = 0
 
 \--- /code ---
 
 \--- /task ---
 
-When your web browser asks for a connection to your Raspberry Pi Pico W, the connection needs to be accepted. After that, the data that is sent from your web browser must be done in specific chunks (in this case, 1024 bytes). You also need to know what request your web browser is making — is it asking for just a simple page? Is it asking for a page that doesn't exist?
+Wanneer je webbrowser vraagt om een verbinding met jouw Raspberry Pi Pico W, moet de verbinding worden geaccepteerd. Daarna moeten de gegevens die door je webbrowser worden verzonden, in specifieke stukken worden verdeeld (in dit geval 1024 bytes). Je moet ook weten welk verzoek je webbrowser doet: vraagt hij om een eenvoudige pagina? Vraagt het om een pagina die niet bestaat?
 
 \--- task ---
 
-You want to keep the web server up and listening all the time, so that any client can connect to it. You can do this by adding a `while True:` loop. Add these five lines of code so that you can accept a request, and `print()` to see what the request was. Add a call to your `serve` function in your calls at the bottom of your code.
+Je wilt dat de webserver altijd actief is en luistert, zodat elke client er verbinding mee kan maken. Je kunt dit doen door een `while True:`-lus toe te voegen. Voeg deze vijf regels code toe zodat je een verzoek kunt accepteren en `print()` om te zien wat het verzoek was. Voeg een aanroep toe aan jouw `serve`-functie in je aanroepen onderaan je code.
 
 ## --- code ---
 
@@ -47,16 +47,16 @@ line_number_start: 66
 line_highlights: 71-76, 81
 ---------------------------------------------------------------
 
-def serve(connection):
-\#Start a web server
-state = 'OFF'
+def serve(verbinding):
+\#Start een webserver
+status = 'UIT'
 pico_led.off()
-temperature = 0
+temperatuur = 0
 while True:
-client = connection.accept()[0]
-request = client.recv(1024)
-request = str(request)
-print(request)
+client = verbinding.accept()[0]
+verzoek = client.recv(1024)
+verzoek = str(verzoek)
+print(verzoek)
 client.close()
 
 ip = connect()
@@ -67,9 +67,9 @@ serve(connection)
 
 \--- /task ---
 
-**Test:** Run your program and then type in the IP address into a web browser's address bar on your computer.
+**Test:** Start je programma en typ vervolgens het IP-adres in de adresbalk van een webbrowser op jouw computer.
 
-![A browser address bar with the IP of the Pico typed in.](images/browser_ip.png)
+![Een browseradresbalk met het IP-adres van de Pico ingetypt.](images/browser_ip.png)
 
 You should see something like this in the shell output in Thonny.
 
