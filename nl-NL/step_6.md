@@ -230,7 +230,7 @@ Wanneer je nu de code uitvoert, zou de tekst voor de status van de LED ook moete
 
 \--- task ---
 
-Tot slot kun je de ingebouwde temperatuursensor gebruiken om een indicatie te krijgen van de CPU-temperatuur en deze ook op jouw webpagina weer te geven.
+Tot slot kun je de ingebouwde temperatuursensor gebruiken om een indicatie te krijgen van de CPU-temperatuur en deze ook op jouw webpagina weergeven.
 
 ## --- code ---
 
@@ -273,6 +273,6 @@ client.close()
 
 \--- task ---
 
-**Test:** Je kunt je hand boven jouw Raspberry Pi Pico W houden om de temperatuur te verhogen en vervolgens de webpagina op jouw computer vernieuwen om de nieuwe waarde te zien die wordt weergegeven.
+**Test:** Je kunt je hand over jouw Raspberry Pi Pico W houden om de temperatuur te verhogen en vervolgens de webpagina op jouw computer vernieuwen om de nieuwe waarde te zien die wordt weergegeven.
 
 \--- /task ---
