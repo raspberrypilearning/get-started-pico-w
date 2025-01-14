@@ -16,4 +16,4 @@ In het [Feestknaller](https://projects.raspberrypi.org/en/projects/party-popper)
 
 ![Bannerafbeelding van het kloppend hart-project.](images/beating-heart.png)
 
-In [Kloppend](https://projects.raspberrypi.org/en/projects/beating-heart) leer je hoe je een potentiometer kunt gebruiken om een pulserende LED te regelen, maar je kunt ook je browser gebruiken om de pulsfrequentie te regelen, en de potentiometer kan worden gebruikt om het uiterlijk van je webpagina te veranderen.
+In [Kloppend hart](https://projects.raspberrypi.org/en/projects/beating-heart) leer je hoe je een potentiometer kunt gebruiken om een pulserende LED te regelen, maar je kunt ook je browser gebruiken om de pulsfrequentie te regelen, en de potentiometer kan worden gebruikt om het uiterlijk van je webpagina te veranderen.
