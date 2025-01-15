@@ -11,14 +11,14 @@ Les appareils compatibles<span style="color: #0faeb0"> **WiFi**</span> permetten
 Tu vas :
 
 - Connecter ton Raspberry Pi Pico W à un réseau Wi-Fi
-- Create a web server on your Raspberry Pi Pico W, to display a webpage
-- Use your webpage to control the Raspberry Pi Pico W onboard LED and to receive temperature data from it
+- Créer un serveur web sur ton Raspberry Pi Pico W, pour afficher une page web
+- Utiliser ta page Web pour contrôler la LED embarquée Raspberry Pi Pico W et pour recevoir des données de température à partir de celle-ci
 
-You will need:
+Tu auras besoin :
 
-- A Raspberry Pi Pico W and micro USB data cable
-- A computer connected to your network
-- The Thonny Python IDE
+- Un Raspberry Pi Pico W et un câble de données micro USB
+- Un ordinateur connecté à ton réseau
+- L'IDE Python Thonny
 
 [[[thonny-install]]]
 
