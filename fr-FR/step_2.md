@@ -1,71 +1,71 @@
-## Set up your Raspberry Pi Pico W
+## Configurer ton Raspberry Pi Pico W
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-Connect your Raspberry Pi Pico W and set up MicroPython.
+Connecte ton Raspberry Pi Pico W et configure MicroPython.
 </div>
 </div>
 
 <p style='border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;'>
-<span style="color: #0faeb0">MicroPython</span> is a version of the Python programming language for microcontrollers, such as your Raspberry Pi Pico W. MicroPython lets you use your Python knowledge to write code to interact with electronics components.</p>
+<span style="color: #0faeb0">MicroPython</span> est une version du langage de programmation Python pour les microcontrôleurs, comme ton Raspberry Pi Pico W. MicroPython te permet d'utiliser tes connaissances Python pour écrire du code pour interagir avec des composants électroniques.</p>
 
 \--- task ---
 
-Download the latest version of Raspberry Pi Pico W firmware at [https://rpf.io/pico-w-firmware](https://rpf.io/pico-w-firmware)
+Télécharge la dernière version du firmware Raspberry Pi Pico W à [https://rpf.io/pico-w-firmware](https://rpf.io/pico-w-firmware)
 
 \--- /task ---
 
 \--- task ---
 
-**Connect** the small end of your micro USB cable to the Raspberry Pi Pico W.
+**Connecte** la petite extrémité de ton câble micro USB au Raspberry Pi Pico W.
 
-![A Raspberry Pi Pico W connected to the small end of a micro USB cable.](images/pico-top-plug.png)
-
-\--- /task ---
-
-\--- task ---
-
-Hold down the **BOOTSEL** button on your Raspberry Pi Pico W.
-
-![A Raspberry Pi Pico W with the BOOTSEL button highlighted](images/bootsel.png)
+![A Raspberry Pi Pico W connecté à la petite extrémité d'un câble micro USB.](images/pico-top-plug.png)
 
 \--- /task ---
 
 \--- task ---
 
-**Connect** the other end to your desktop computer, laptop, or Raspberry Pi.
+Maintiens enfoncé le bouton **BOOTSEL** de ton Raspberry Pi Pico W.
 
-![A Raspberry Pi Pico W connected to a laptop via a micro USB cable.](images/plug-in-pico.png)
-
-\--- /task ---
-
-\--- task ---
-
-Your file manager should open up, with Raspberry Pi Pico being show as an externally connected drive. Drag and drop the firmware file you downloaded into the file manager. Your Raspberry Pi Pico should disconnect and the file manager will close.
-
-![image of the Windows file manager opened, showing Raspberry Pi Pico connected as an external drive](images/file_manager.png)
+![Un Raspberry Pi Pico W avec le bouton BOOTSEL en surbrillance](images/bootsel.png)
 
 \--- /task ---
 
 \--- task ---
 
-Open the Thonny editor.
+**Connecte** l'autre extrémité à ton ordinateur de bureau, ordinateur portable, ou Raspberry Pi.
+
+![A Raspberry Pi Pico W connecté à un ordinateur portable via un câble micro USB.](images/plug-in-pico.png)
 
 \--- /task ---
 
 \--- task ---
 
-Look at the text in the bottom right-hand corner of the Thonny editor. It will show you the version of Python that is being used.
+Ton gestionnaire de fichiers devrait s'ouvrir, le Raspberry Pi Pico étant affiché comme un lecteur connecté à l'extérieur. Glisse et dépose le fichier firmware que tu as téléchargé dans le gestionnaire de fichiers. Ton Raspberry Pi Pico devrait se déconnecter et le gestionnaire de fichiers se fermera.
 
-If it does **not** say 'MicroPython (Raspberry Pi Pico)' there, then click on the text and select 'MicroPython (Raspberry Pi Pico)' from the options.
-
-![MicroPython selected as the interpreter for Thonny.](images/thonny-select-interpreter.png)
+![image du gestionnaire de fichiers Windows ouvert, montrant le Raspberry Pi Pico connecté en tant que lecteur externe](images/file_manager.png)
 
 \--- /task ---
 
 \--- task ---
 
-**Debug:**
+Ouvre l'éditeur Thonny.
+
+\--- /task ---
+
+\--- task ---
+
+Regarde le texte dans le coin inférieur droit de l'éditeur Thonny. Il te montrera la version de Python utilisée.
+
+Si « MicroPython (Raspberry Pi Pico) » n'est **pas** indiqué, clique sur le texte et sélectionne « MicroPython (Raspberry Pi Pico) » dans les options.
+
+![MicroPython sélectionné comme interprète pour Thonny.](images/thonny-select-interpreter.png)
+
+\--- /task ---
+
+\--- task ---
+
+**Débogage :**
 
 ## --- collapse ---
 
