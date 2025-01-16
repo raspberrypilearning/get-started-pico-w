@@ -292,7 +292,7 @@ print('Wachten op verbinding...')
 pico_led.on()
 sleep(0.5)
 pico_led.off()
-slaap(0.5)
+sleep(0.5)
 ip = wlan.ifconfig()[0]
 print(f'Verbonden op {ip}')
 pico_led.on()
