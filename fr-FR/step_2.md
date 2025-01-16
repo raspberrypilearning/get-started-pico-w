@@ -69,21 +69,21 @@ Si « MicroPython (Raspberry Pi Pico) » n'est **pas** indiqué, clique sur le
 
 ## --- collapse ---
 
-## title: I don't know if the firmware is installed and cannot connect to my Pico
+## title: Je ne sais pas si le firmware est installé et je n'arrive pas à me connecter à mon Pico
 
-Make sure your Raspberry Pi Pico W is connected to your computer with a micro USB cable. Click on the list in the bottom right-hand corner of your Thonny window. A pop-up menu will appear, which lists the available interpreters.
+Assure-toi que ton Raspberry Pi Pico W est connecté à ton ordinateur avec un câble micro USB. Clique sur la liste dans le coin inférieur droit de ta fenêtre Thonny. Un menu contextuel apparaîtra, qui répertorie les interprètes disponibles.
 
-![A pop-up menu that shows an option saying configure interpreter.](images/no-pico-interpreter.png)
+![Un menu contextuel qui affiche une option indiquant configurer l'interpréteur.](images/no-pico-interpreter.png)
 
-If you cannot see Pico in the list (as shown in the picture), you need to reconnect your Raspberry Pi Pico W while holding the BOOTSEL button to mount it as a storage volume, and then reinstall the firmware by following the instructions in the section above.
+Si tu ne vois pas Pico dans la liste (comme indiqué sur l'image), tu dois reconnecter ton Raspberry Pi Pico W tout en maintenant le bouton BOOTSEL pour le monter en tant que volume de stockage, puis réinstaller le firmware en suivant les instructions de la section ci-dessus.
 
 \--- /collapse ---
 
 ## --- collapse ---
 
-## title: Firmware is installed but I still cannot connect to my Pico
+## title: Le firmware est installé mais je ne parviens toujours pas à me connecter à mon Pico
 
-You may be using the wrong kind of micro USB cable. Your current micro USB cable may be damaged, or designed to only carry power to devices and not transfer data. Try swapping your cable for another if nothing else has worked.
+Tu utilises peut-être le mauvais type de câble micro USB. Your current micro USB cable may be damaged, or designed to only carry power to devices and not transfer data. Try swapping your cable for another if nothing else has worked.
 
 If your Pico still won't connect after trying all these things, it may **itself** be damaged and unable to connect.
 
