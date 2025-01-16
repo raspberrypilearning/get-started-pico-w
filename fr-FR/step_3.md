@@ -1,22 +1,22 @@
-## Connect your Raspberry Pi Pico W to a WLAN
+## Connecter ton Raspberry Pi Pico W à un réseau Wi-Fi
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-Here, you will learn to use MicroPython to connect your Raspberry Pi Pico W to a wireless local area network (WLAN), more commonly known as a WiFi network.
+Ici, tu apprendras à utiliser MicroPython pour connecter ton Raspberry Pi Pico W à un réseau local sans fil (WLAN), plus communément appelé réseau WiFi.
 </div>
 <div>
-![MicroPython shell showing connection to a WLAN.](images/WiFi_connect.png){:width="300px"}
+![Shell MicroPython montrant la connexion à un réseau local sans fil.](images/WiFi_connect.png){:width="300px"}
 </div>
 </div>
 
 <p style='border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;'>
-<span style="color: #0faeb0">Passwords</span> need to be kept securely and privately. In this step, you will add your WiFi password into your Python file. Make sure you don't share your file with anyone that you wouldn't want to tell your password to.</p>
+<span style="color: #0faeb0">Les mots de passe</span> doivent être conservés de manière sécurisée et privée. Dans cette étape, tu vas ajouter ton mot de passe WiFi dans ton fichier Python. Assure-toi de ne pas partager ton fichier avec quelqu'un à qui tu ne voudrais pas communiquer ton mot de passe.</p>
 
-To connect to a WiFi network, you will need to know your service set identifier (SSID). This is the name of your WiFi network. You will also need your WiFi password. These can usually be found written on your wireless router, although you should have changed the default password to something unique.
+Pour te connecter à un réseau WiFi, tu devras connaître ton identifiant de service (SSID). C'est le nom de ton réseau WiFi. Tu auras également besoin de ton mot de passe WiFi. Ils peuvent généralement être trouvés écrits sur ton routeur sans fil, bien que tu aurais dû changer le mot de passe par défaut en quelque chose d'unique.
 
 \--- task ---
 
-In Thonny, import the packages you will need to connect to your WiFi network, read the onboard temperature sensor, and light the onboard light-emitting diode (LED).
+Dans Thonny, importe les paquets dont tu auras besoin pour te connecter à ton réseau WiFi, lire le capteur de température embarqué et allumer la diode électroluminescente (LED) embarquée.
 
 ## --- code ---
 
@@ -37,13 +37,13 @@ import sys
 
 \--- /code ---
 
-Save this code now, and choose the option to save to **This computer**
+Enregistre ce code maintenant et choisis l'option à enregistrer sur **cet ordinateur**
 
 \--- /task ---
 
 \--- task ---
 
-Next, set up your Raspberry Pi Pico W to use the onboard LED, and additionally add in the SSID and password for your network.
+Ensuite, configure ton Raspberry Pi Pico W pour utiliser la LED intégrée et ajoute également le SSID et le mot de passe de ton réseau.
 
 ## --- code ---
 
@@ -54,8 +54,8 @@ line_number_start: 9
 line_highlights:
 -----------------------------------------------------
 
-ssid = 'NAME OF YOUR WIFI NETWORK'
-password = 'YOUR SECRET PASSWORD'
+ssid = 'NOM DE TON RESEAU WIFI
+motdepasse = 'TON MOT DE PASSE SECRET'
 
 \--- /code ---
 
@@ -63,7 +63,7 @@ password = 'YOUR SECRET PASSWORD'
 
 \--- task ---
 
-Now, begin to build a function to connect to your WLAN. You need to set up a `wlan` object, activate the wireless, and provide the object with your `ssid` and `password`.
+Maintenant, commence à créer une fonction pour te connecter à ton WLAN. Tu dois configurer un objet « wlan », activer le réseau sans fil et fournir à l'objet ton « ssid » et ton « mot de passe ».
 
 ## --- code ---
 
@@ -75,10 +75,10 @@ line_highlights:
 -----------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Se connecter au WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, motdepasse)
 
 \--- /code ---
 
@@ -86,7 +86,7 @@ wlan.connect(ssid, password)
 
 \--- task ---
 
-If you've ever connected a device to a WiFi network, you will know that it doesn't happen instantly. Your device will send requests to your WiFi router to connect, and when the router responds, they will perform what is called a handshake to establish a connection. To do this with Python, you can set up a loop that will keep sending requests each second until the connection handshake has been performed.
+Si tu as déjà connecté un appareil à un réseau Wi-Fi, tu sais que cela ne se produit pas instantanément. Ton appareil enverra des demandes à ton routeur WiFi pour se connecter, et lorsque le routeur répondra, ils effectueront ce que l'on appelle une poignée de main (handshake) pour établir une connexion. Pour ce faire avec Python, tu peux configurer une boucle qui continuera d'envoyer des requêtes chaque seconde jusqu'à ce que la liaison ait été effectuée.
 
 ## --- code ---
 
@@ -98,12 +98,12 @@ line_highlights: 19-21
 -----------------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Se connecter au WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, motdepasse)
 while wlan.isconnected() == False:
-print('Waiting for connection...')
+print('En attente de connexion...')
 sleep(1)
 
 \--- /code ---
@@ -112,7 +112,7 @@ sleep(1)
 
 \--- task ---
 
-Now print out your WLAN configuration, and test it all. You'll need to call your function. Keep all your function calls at the bottom of your file, so they are the last lines of code that are run.
+Imprime maintenant ta configuration WLAN et teste-la. Tu devras appeler ta fonction. Garde tous tes appels de fonctions en bas de ton fichier, donc ce sont les dernières lignes de code qui sont exécutées.
 
 ## --- code ---
 
@@ -124,12 +124,12 @@ line_highlights: 25, 22
 ------------------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Se connecter au WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, motdepasse)
 while wlan.isconnected() == False:
-print('Waiting for connection...')
+print('En attente de connexion...')
 sleep(1)
 print(wlan.ifconfig())
 
@@ -141,7 +141,7 @@ connect()
 
 \--- task ---
 
-**Test:** Save and run your code. You should see some output in the shell that looks something like this, although the specific IP addresses will be different.
+**Test :** Sauvegarde et exécute ton code. Tu devrais voir une sortie dans le shell qui ressemble à ceci, bien que les adresses IP spécifiques soient différentes.
 
 ## --- code ---
 
@@ -155,7 +155,7 @@ line_highlights:
 Waiting for connection...
 Waiting for connection...
 Waiting for connection...
-Waiting for connection...
+En attente de connexion ...
 Waiting for connection...
 ('192.168.1.143', '255.255.255.0', '192.168.1.254', '192.168.1.254')
 
@@ -167,11 +167,11 @@ Waiting for connection...
 
 ---
 
-## title: The Raspberry Pi Pico W won't connect
+## title: Le Raspberry Pi Pico W ne se connecte pas
 
-1. Make sure that you are using the correct SSID and password.
-2. If you are on a school or work WLAN, unauthorised devices might not be permitted access to the WiFi.
-3. Unplug your Raspberry Pi Pico W from your computer to power it off, then plug it back in. This can be a problem when you have connected once, and then try to connect again.
+1. Assure-toi d'utiliser le SSID et le mot de passe corrects.
+2. Si tu es dans une école ou sur un lieu de travail, il se peut que les appareils non autorisés ne soient pas autorisés à accéder au WiFi.
+3. Débranche ton Raspberry Pi Pico W de ton ordinateur pour l'éteindre, puis rebranche-le. Cela peut être un problème lorsque tu t'es connecté une fois, puis essaie de te connecter à nouveau.
 
 \--- /collapse ---
 
