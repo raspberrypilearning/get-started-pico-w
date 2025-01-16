@@ -83,46 +83,46 @@ Si tu ne vois pas Pico dans la liste (comme indiqué sur l'image), tu dois recon
 
 ## title: Le firmware est installé mais je ne parviens toujours pas à me connecter à mon Pico
 
-Tu utilises peut-être le mauvais type de câble micro USB. Your current micro USB cable may be damaged, or designed to only carry power to devices and not transfer data. Try swapping your cable for another if nothing else has worked.
+Tu utilises peut-être le mauvais type de câble micro USB. Ton câble micro USB actuel est peut-être endommagé ou conçu uniquement pour transporter de l'énergie vers des appareils et non pour transférer des données. Essaie d’échanger ton câble contre un autre si rien d’autre n’a fonctionné.
 
-If your Pico still won't connect after trying all these things, it may **itself** be damaged and unable to connect.
+Si ton Pico ne se connecte toujours pas après avoir essayé toutes ces choses, il se peut qu'il soit **lui-même** endommagé et incapable de se connecter.
 
 \--- /collapse ---
 
 \--- /task ---
 
-For newcomers to Raspberry Pi Pico, `picozero` is a MicroPython library that's beginner-friendly.
+Pour les nouveaux arrivants sur le Raspberry Pi Pico, `picozero` est une bibliothèque MicroPython conviviale pour les débutants.
 
 \--- task ---
 
-To complete the projects in this path, you need to install the `picozero` library as a Thonny package.
+Pour compléter les projets dans ce chemin, tu dois installer la bibliothèque `picozero` en tant que paquet Thonny.
 
-In Thonny, choose **Tools** > **Manage packages**.
+Dans Thonny, choisis **Outils** > **Gérer les paquets**.
 
-![The Thonny Tools menu with Manage packages highlighted.](images/thonny-manage-packages.jpg)
+![Le menu Outils Thonny avec Gérer les packages en surbrillance.](images/thonny-manage-packages.jpg)
 
 \--- /task ---
 
 \--- task ---
 
-In the pop-up 'Manage packages for Raspberry Pi Pico' window, type `picozero` and click **Search on PyPi**.
+Dans la fenêtre pop-up 'Gérer les paquets pour Raspberry Pi Pico', tape `picozero` et clique sur **Rechercher sur PyPi**.
 
-![Thonny plugins search results showing picozero.](images/thonny-packages-picozero.jpg)
+![Résultats de recherche des plugins Thonny affichant picozero.](images/thonny-packages-picozero.jpg)
 
 \--- /task ---
 
 \--- task ---
 
-Click on **picozero** in the search results.
+Cliquz sur **picozero** dans les résultats de recherche.
 
-Click on **Install**.
+Clique sur **Installer**.
 
-![The picozero information with 'Install' button highlighted.](images/thonny-install-package.jpg)
+![Les informations de Picozero avec le bouton « Installer » en surbrillance.](images/thonny-install-package.jpg)
 
-When installation has completed, close the package window, then quit and reopen Thonny.
+Une fois l'installation terminée, ferme la fenêtre du paquet, puis quitte et rouvre Thonny.
 
 \--- /task ---
 
-If you have difficulties installing the `picozero` library in Thonny, you can download the library file and save it to your Raspberry Pi Pico W.
+Si tu as des difficultés à installer la bibliothèque `picozero` dans Thonny, tu peux télécharger le fichier de la bibliothèque et l'enregistrer dans ton Raspberry Pi Pico W.
 
 [[[picozero-offline-install]]]
