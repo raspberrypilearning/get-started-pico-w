@@ -235,11 +235,11 @@ ip = connect()
 
 \--- /task ---
 
-You might want to run this file without using Thonny, which will be covered later in this project. It would be useful to have some indication that the the Raspberry Pi Pico has connected to the WLAN, and also to be able to quit the program without having to have the Raspberry Pi Pico connected to a computer.
+Tu souhaiteras peut-être exécuter ce fichier sans utiliser Thonny, ce qui sera abordé plus tard dans ce projet. Il serait utile d'avoir une indication que le Raspberry Pi Pico est connecté au WLAN, et également de pouvoir quitter le programme sans avoir à connecter le Raspberry Pi Pico à un ordinateur.
 
 \--- task ---
 
-Add a condition, where if the bootsel button is pressed, the program will quit.
+Ajoute une condition, où si le bouton bootsel est enfoncé, le programme se fermera.
 
 ## --- code ---
 
@@ -251,16 +251,16 @@ line_highlights: 20, 21
 ------------------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Se connecter au WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, motdepasse)
 while wlan.isconnected() == False:
 if rp2.bootsel_button() == 1:
 sys.exit()
-print('Waiting for connection...')
+print('En attente de connexion...')
 ip = wlan.ifconfig()[0]
-print(f'Connected on {ip}')
+print(f'Connecté sur {ip}')
 return ip
 
 \--- /code ---
@@ -269,7 +269,7 @@ return ip
 
 \--- task ---
 
-Then make the onboard LED blink each time it attempts a connection, and then stay on once connected.
+Ensuite, fais clignoter la LED intégrée à chaque tentative de connexion, puis rester allumée une fois connectée.
 
 ## --- code ---
 
@@ -281,14 +281,14 @@ line_highlights: 23, 24, 25, 26, 29
 ------------------------------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Se connecter au WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, motdepasse)
 while wlan.isconnected() == False:
 if rp2.bootsel_button() == 1:
 sys.exit()
-print('Waiting for connection...')
+print('En attente de connexion...')
 pico_led.on()
 sleep(0.5)
 pico_led.off()
