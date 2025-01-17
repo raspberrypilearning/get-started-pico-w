@@ -177,7 +177,7 @@ Waiting for connection...
 
 \--- task ---
 
-You don't need all the information provided by `wlan.ifconfig()`. The key information you need is the IP address of the Raspberry Pi Pico W, which is the first piece of information. You can use an **fstring** to output the **IP address**. By placing an `f` in front of your string, variables can be printed when they are surrounded by `{}`.
+Tu n'as pas besoin de toutes les informations fournies par `wlan.ifconfig()`. L’information clé dont tu as besoin est l’adresse IP du Raspberry Pi Pico W, qui est la première information. Tu peux utiliser une **fstring** pour afficher l'**adresse IP**. En plaçant un `f` devant ta chaîne, les variables peuvent être imprimées quand elles sont entourées de `{}`.
 
 ## --- code ---
 
@@ -189,12 +189,12 @@ line_highlights: 22, 23
 ------------------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Se connecter au WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, motdepasse)
 while wlan.isconnected() == False:
-print('Waiting for connection...')
+print('En attente de connexion...')
 sleep(1)
 ip = wlan.ifconfig()[0]
 print(f'Connected on {ip}')
@@ -207,7 +207,7 @@ connect()
 
 \--- task ---
 
-You can now return the value for the IP address of your Raspberry Pi Pico W, and store it when you call your function.
+Tu peux maintenant retourner la valeur pour l'adresse IP de ton Raspberry Pi Pico W, et la stocker quand tu appelles ta fonction.
 
 ## --- code ---
 
@@ -219,14 +219,14 @@ line_highlights: 23, 26
 ------------------------------------------------------------
 
 def connect():
-\#Connect to WLAN
+\#Se connecter au WLAN
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid, password)
+wlan.connect(ssid, motdepasse)
 while wlan.isconnected() == False:
-print('Waiting for connection...')
+print('En attente de connexion...')
 sleep(1)
-print(f'Connected on {ip}')
+print(f'Connecté sur {ip}')
 return ip
 
 ip = connect()
