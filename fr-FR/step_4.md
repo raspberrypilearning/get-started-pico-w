@@ -1,17 +1,18 @@
-## Open a socket
+## Ouvrir une socket
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will use the connection to your WLAN to open a socket.
+Dans cette étape, tu utiliseras la connexion à ton WLAN pour ouvrir une socket.
 </div>
 <div>
-![MicroPython shell showing the connection to a WLAN and a socket connection.](images/socket.png){:width="300px"}
+![shell MicroPython montrant la connexion à un réseau WLAN et une connexion à une socket
+.](images/socket.png){:width="300px"}
 </div>
 </div>
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 10px;">
-<div style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px; display:flex; margin-bottom: 27px;"><p><span style="color: #0faeb0">A socket</span> is the way a **server** can listen for a **client** that wants to connect to it. The webpage you are currently looking at is hosted on Raspberry Pi Foundation servers. These servers have an open socket that waits for your web browser to make a connection, at which point the contents of the webpage are sent to your computer. In this case, your server is going to be your Raspberry Pi Pico W and the client will be a web browser on another computer.</p>
+<div style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px; display:flex; margin-bottom: 27px;"><p><span style="color: #0faeb0">Une socket</span> est la façon dont un **serveur** peut écouter un **client** qui veut s'y connecter. La page web que tu regardes actuellement est hébergée sur les serveurs de la Fondation Raspberry Pi. Ces serveurs disposent d'une socket ouvert qui attend que ton navigateur Web établisse une connexion, moment auquel le contenu de la page web est envoyé à ton ordinateur. In this case, your server is going to be your Raspberry Pi Pico W and the client will be a web browser on another computer.</p>
 </div>
 </div>
 </div>
