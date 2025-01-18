@@ -1,27 +1,27 @@
-## Ouvrir une socket
+## Ouvrir un socket
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-Dans cette étape, tu utiliseras la connexion à ton WLAN pour ouvrir une socket.
+Dans cette étape, tu utiliseras la connexion à ton WLAN pour ouvrir un socket.
 </div>
 <div>
-![shell MicroPython montrant la connexion à un réseau WLAN et une connexion à une socket
+![shell MicroPython montrant la connexion à un réseau WLAN et une connexion à un socket
 .](images/socket.png){:width="300px"}
 </div>
 </div>
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 10px;">
-<div style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px; display:flex; margin-bottom: 27px;"><p><span style="color: #0faeb0">Une socket</span> est la façon dont un **serveur** peut écouter un **client** qui veut s'y connecter. La page web que tu regardes actuellement est hébergée sur les serveurs de la Fondation Raspberry Pi. Ces serveurs disposent d'une socket ouvert qui attend que ton navigateur Web établisse une connexion, moment auquel le contenu de la page web est envoyé à ton ordinateur. In this case, your server is going to be your Raspberry Pi Pico W and the client will be a web browser on another computer.</p>
+<div style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px; display:flex; margin-bottom: 27px;"><p><span style="color: #0faeb0">Un socket</span> est la façon dont un **serveur** peut écouter un **client** qui veut s'y connecter. La page web que tu regardes actuellement est hébergée sur les serveurs de la Fondation Raspberry Pi. Ces serveurs disposent d'un socket ouvert qui attend que ton navigateur Web établisse une connexion, moment auquel le contenu de la page web est envoyé à ton ordinateur. Dans ce cas, ton serveur sera ton Raspberry Pi Pico W et le client sera un navigateur web sur un autre ordinateur.</p>
 </div>
 </div>
 </div>
 
-To open a socket, you need to provide the IP address and a port number. Port numbers are used by computers to identify where requests should be sent. For instance, port `80` is normally used for web traffic; Stardew Valley uses port `24642` when you're playing a multiplayer game. As you are setting up a web server, you will be using port `80`.
+Pour ouvrir un socket, tu dois fournir l'adresse IP et le numéro de port. Les numéros de port sont utilisés par les ordinateurs pour identifier où les requêtes doivent être envoyées. Par exemple, le port `80` est normalement utilisé pour le trafic web ; Stardew Valley utilise le port `24642` lorsque tu joues à un jeu multijoueur. Comme tu configures un serveur web, tu utiliseras le port `80`.
 
 \--- task ---
 
-Create a new function that can be called to open a socket. Start by giving the socket an IP address and a port number.
+Crée une nouvelle fonction qui peut être appelée pour ouvrir un socket. Commence par donner au socket une adresse IP et un numéro de port.
 
 ## --- code ---
 
@@ -33,8 +33,8 @@ line_highlights:
 -----------------------------------------------------
 
 def open_socket(ip):
-\# Open a socket
-address = (ip, 80)
+\# Ouvrir un socket
+adresse = (ip, 80)
 
 connect()
 
@@ -44,7 +44,7 @@ connect()
 
 \--- task ---
 
-Now create your socket, and then have it listen for requests on port `80`. Don't forget to call your function at the bottom of your code.
+Maintenant, crée ton socket, puis fais-la écouter sur le port `80`. N'oublie pas d'appeler ta fonction en bas de ton code.
 
 ## --- code ---
 
@@ -56,12 +56,12 @@ line_highlights: 38-41
 -----------------------------------------------------------
 
 def open_socket(ip):
-\# Open a socket
-address = (ip, 80)
-connection = socket.socket()
-connection.bind(address)
+\# Ouvre un socket
+adresse = (ip, 80)
+connexion = socket.socket()
+connection.bind(adresse)
 connection.listen(1)
-print(connection)
+print(connexion)
 
 ip = connect()
 open_socket(ip)
@@ -72,7 +72,7 @@ open_socket(ip)
 
 \--- task ---
 
-**Test:** Run your code, and you should see an output that looks something like this.
+**Test :** exécute ton code, et tu devrais voir une sortie qui ressemble à ça.
 
 ## --- code ---
 
@@ -95,13 +95,13 @@ line_highlights:
 
 \--- /code ---
 
-`socket state=1` tells you that your socket is working.
+`socket state=1` t'indique que ton socket fonctionne.
 
 \--- /task ---
 
 \--- task ---
 
-Lastly, replace your `print` with a `return` and then store the returned socket connection as a variable.
+Enfin, remplace ton `print` par un `return` et stocke la connexion de socket retournée en tant que variable.
 
 ## --- code ---
 
@@ -113,12 +113,12 @@ line_highlights: 41, 46
 ------------------------------------------------------------
 
 def open_socket(ip):
-\# Open a socket
-address = (ip, 80)
-connection = socket.socket()
-connection.bind(address)
-connection.listen(1)
-return connection
+\# Ouvre un socket
+adresse = (ip, 80)
+connexion = socket.socket()
+connexion.bind(adresse)
+connexion.listen(1)
+return connexion
 
 ip = connect()
 connection = open_socket(ip)
@@ -127,6 +127,6 @@ connection = open_socket(ip)
 
 \--- /task ---
 
-You now have your Raspberry Pi Pico W listening for connections to its IP address on port `80`. This means that it is ready to start serving HTML code, so that a connected web browser can see a webpage.
+Tu as maintenant ton Raspberry Pi Pico W à l'écoute des connexions à son adresse IP sur le port `80`. Cela signifie qu'il est prêt à commencer à diffuser du code HTML, afin qu'un navigateur web connecté puisse voir une page web.
 
 \--- save ---
