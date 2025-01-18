@@ -14,7 +14,7 @@ steps:
   - 
     title: Connecter ton Raspberry Pi Pico à un réseau Wi-Fi
   - 
-    title: Ouvrir une socket
+    title: Ouvrir un socket
   - 
     title: Créer une page web
   - 
