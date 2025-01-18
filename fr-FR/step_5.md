@@ -2,18 +2,18 @@
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will create a webpage that the web server, running on your Raspberry Pi Pico W, can send to a client web browser. You're going to test the webpage on your computer first though, to make sure it displays as it should. In the next step, you can add the code to your Python script, so that your Raspberry Pi Pico W can serve the webpage.
+Dans cette étape, tu vas créer une page web que le serveur web, exécuté sur ton Raspberry Pi Pico W, peut envoyer à un navigateur web client. Tu vas d'abord tester la page web sur ton ordinateur pour t'assurer qu'elle s'affiche comme il se doit. Dans l'étape suivante, tu peux ajouter le code à ton script Python, afin que ton Raspberry Pi Pico W puisse diffuser la page web.
 </div>
 <div>
-![Screenshot from Chrome showing a webpage with two buttons for turning an LED on and off, and some boiler plate text.](images/index.png)
+![Capture d'écran de Chrome montrant une page Web avec deux boutons pour allumer et éteindre une LED, et du texte standard.](images/index.png)
 </div>
 </div>
 
-A webpage can be as simple as some text, formatted in such a way that a web browser will render it and provide some interactivity. Although Thonny is not designed to write HTML, it can be used for this purpose. However, you can use your preferred text editor if you like, be that VSCode, TextEdit, or Notepad.
+Une page web peut être aussi simple qu'un texte, formaté de manière à ce qu'un navigateur web la restitue et offre une certaine interactivité. Bien que Thonny ne soit pas conçu pour écrire du HTML, il peut être utilisé à cette fin. Cependant, tu peux utiliser ton éditeur de texte préféré si tu le souhaites, que ce soit VSCode, TextEdit, ou Notepad.
 
 \--- task ---
 
-In your text editor or in Thonny, create a new file. You can call it whatever you like, but `index.html` is the standard name for the first page that a user interacts with. Make sure you add the `.html` file extension. If using Thonny, make sure to save to **This computer**.
+Dans ton éditeur de texte ou dans Thonny, crée un nouveau fichier. You can call it whatever you like, but `index.html` is the standard name for the first page that a user interacts with. Make sure you add the `.html` file extension. If using Thonny, make sure to save to **This computer**.
 
 \--- /task ---
 
