@@ -1,17 +1,17 @@
-## Serve your webpage
+## Servir ta page Web
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will start up your web server so that a client can connect to it, and control your LED and read the temperature.
+Dans cette étape, tu vas démarrer ton serveur Web afin qu'un client puisse s'y connecter, contrôler ta LED et lire la température.
 </div>
 <div>
-![Screenshot from Chrome showing a webpage with two buttons for turning an LED on and off.](images/web_light_on.png)
+![Capture d'écran de Chrome montrant une page web avec deux boutons pour allumer et éteindre une LED.](images/web_light_on.png)
 </div>
 </div>
 
 \--- task ---
 
-Create a function that will start your web server, using the `connection` object you saved as a parameter. The `state` and `temperature` variables need to be set for your HTML data. The state is going to start as being set to `'OFF'`, and the temperature to `0`, which means you should also ensure that the LED is off when the server starts.
+Crée une fonction qui démarrera ton serveur web, en utilisant l'objet `connexion` que tu as enregistré en tant que paramètre. Les variables `etat` et `temperature` doivent être définies pour tes données HTML. L'état va commencer comme étant défini à `'OFF'`, et la température à `0`, ce qui signifie que tu dois également t'assurer que la LED est éteinte au démarrage du serveur.
 
 ## --- code ---
 
@@ -22,9 +22,9 @@ line_number_start: 66
 line_highlights:
 -----------------------------------------------------
 
-def serve(connection):
-\#Start a web server
-state = 'OFF'
+def serve(connexion):
+\#Démarrer un serveur web
+etat = 'OFF'
 pico_led.off()
 temperature = 0
 
