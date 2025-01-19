@@ -32,7 +32,7 @@ temperature = 0
 
 \--- /task ---
 
-When your web browser asks for a connection to your Raspberry Pi Pico W, the connection needs to be accepted. After that, the data that is sent from your web browser must be done in specific chunks (in this case, 1024 bytes). You also need to know what request your web browser is making — is it asking for just a simple page? Is it asking for a page that doesn't exist?
+Lorsque ton navigateur web demande une connexion à ton Raspberry Pi Pico W, la connexion doit être acceptée. Après cela, les données envoyées depuis ton navigateur web doivent être effectuées en blocs spécifiques (dans ce cas, 1024 octets). Tu dois également savoir quelle demande ton navigateur Web effectue : demande-t-il simplement une page simple ? Est-ce qu'il demande une page qui n'existe pas ?
 
 \--- task ---
 
