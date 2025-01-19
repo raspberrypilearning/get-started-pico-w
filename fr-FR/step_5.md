@@ -193,7 +193,7 @@ line_number_start: 44
 line_highlights:
 -----------------------------------------------------
 
-def webpage(temperature, etat):
+def pageweb(temperature, etat):
 \#Modèle HTML
 
 \--- /code ---
@@ -237,7 +237,7 @@ html = f"""<!DOCTYPE html><html>
 
 \--- task ---
 
-Lastly, you can return the `html` string from your function.
+Enfin, tu peux retourner la chaîne `html` de ta fonction.
 
 ## --- code ---
 
@@ -248,8 +248,8 @@ line_number_start: 44
 line_highlights: 63
 --------------------------------------------------------
 
-def webpage(temperature, state):
-\#Template HTML
+def pageweb(temperature, etat):
+\#Modèle HTML
 html = f"""<!DOCTYPE html><html>
 <form action="./lighton">
 <input type="submit" value="Light on" />
@@ -257,11 +257,14 @@ html = f"""<!DOCTYPE html><html>
 <form action="./lightoff">
 <input type="submit" value="Light off" />
 </form>
-<p>LED is {state}</p>
-<p>Temperature is {temperature}</p>
+<form action="./close">
+<input type="submit" value="Stop server" />
+</form>
+<p>La LED est {etat}</p>
+<p>La température est de {temperature}</p>
 </body>
 </html>
-            """
+"""
     return str(html)
 
 \--- /code ---
