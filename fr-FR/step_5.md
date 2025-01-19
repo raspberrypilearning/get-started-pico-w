@@ -13,13 +13,13 @@ Une page web peut être aussi simple qu'un texte, formaté de manière à ce qu'
 
 \--- task ---
 
-Dans ton éditeur de texte ou dans Thonny, crée un nouveau fichier. You can call it whatever you like, but `index.html` is the standard name for the first page that a user interacts with. Make sure you add the `.html` file extension. If using Thonny, make sure to save to **This computer**.
+Dans ton éditeur de texte ou dans Thonny, crée un nouveau fichier. Tu peux l'appeler comme tu le souhaites, mais `index.html` est le nom standard de la première page avec laquelle un utilisateur interagit. Assure-toi d'ajouter l'extension de fichier `.html`. Si tu utilises Thonny, assure-toi de sauvegarder sur **Cet ordinateur**.
 
 \--- /task ---
 
 \--- task ---
 
-There is some standard HTML code that you will need to include to begin with.
+Il y a du code HTML standard que tu devras inclure pour commencer.
 
 ## --- code ---
 
@@ -43,7 +43,7 @@ line_highlights:
 
 \--- task ---
 
-Next, you can create a button that will be used to turn the onboard LED on or off.
+Ensuite, tu peux créer un bouton qui sera utilisé pour allumer ou éteindre la LED embarquée.
 
 ## --- code ---
 
@@ -70,15 +70,15 @@ line_highlights: 4-6
 
 \--- task ---
 
-Save your file and then find it in your file manager. When you double click the file, it should open in your default web browser. Here is what the webpage looks like in Google Chrome.
+Enregistre ton fichier et retrouve-le dans ton gestionnaire de fichiers. Lorsque tu double-cliques sur le fichier, il devrait s'ouvrir dans ton navigateur web par défaut. Voici à quoi ressemble la page web dans Google Chrome.
 
-![Google Chrome showing a page with a single button labelled Light on.](images/button.png)
+![Google Chrome affiche une page avec un seul bouton intitulé Lumière allumée.](images/button.png)
 
 \--- /task ---
 
 \--- task ---
 
-Add a second button to turn the LED off.
+Ajoute un deuxième bouton pour éteindre la LED.
 
 ## --- code ---
 
@@ -108,7 +108,7 @@ line_highlights: 7-9
 
 \--- task ---
 
-An additional button can be added to close the webserver, without having to use Thonny.
+Un bouton supplémentaire peut être ajouté pour fermer le serveur web, sans avoir à utiliser Thonny.
 
 ## --- code ---
 
@@ -141,7 +141,7 @@ line_highlights: 10-12
 
 \--- task ---
 
-To finish off the webpage, you can add in some extra data, such as the state of the LED and the temperature of your Raspberry Pi Pico W.
+Pour terminer la page web, tu peux ajouter des données supplémentaires, comme l'état de la LED et la température de ton Raspberry Pi Pico W.
 
 ## --- code ---
 
@@ -165,24 +165,24 @@ line_highlights: 13-14
 <form action="./close">
 <input type="submit" value="Stop server" />
 </form>
-<p>LED is {state}</p>
-<p>Temperature is {temperature}</p>
+<p>La LED est {etat}</p>
+<p>La température est {temperature}</p>
 </body>
 </html>
 
 \--- /code ---
 
-Your webpage should look like this:
+Ta page web devrait ressembler à ceci :
 
-![Webpage in Google Chrome showing two buttons and text regarding the LED's state and the Pico's temperature.](images/button_and_state.png)
+![Page Web dans Google Chrome montrant deux boutons et texte concernant l'état de la LED et la température du Pico.](images/button_and_state.png)
 
 \--- /task ---
 
-Now that you have a working webpage, you can add this code into your Python script. You'll need to switch back to your Python code in Thonny first.
+Maintenant que tu as une page web fonctionnelle, tu peux ajouter ce code dans ton script Python. Tu devras d'abord revenir à ton code Python dans Thonny.
 
 \--- task ---
 
-Create a new function called `webpage`, that has two parameters. These are `temperature` and `state`.
+Crée une nouvelle fonction appelée `pageweb`, qui a deux paramètres. Il s'agit de `temperature` et `etat`.
 
 ## --- code ---
 
@@ -193,8 +193,8 @@ line_number_start: 44
 line_highlights:
 -----------------------------------------------------
 
-def webpage(temperature, state):
-\#Template HTML
+def webpage(temperature, etat):
+\#Modèle HTML
 
 \--- /code ---
 
@@ -202,7 +202,7 @@ def webpage(temperature, state):
 
 \--- task ---
 
-You can now store all your HTML code that you have written and tested in a variable. Using **fstrings** for the text means that the placeholders you have in the HTML for `temperature` and `state` can be inserted into your string.
+Tu peux maintenant stocker tout ton code HTML que tu as écrit et testé dans une variable. L'utilisation de **fstrings** pour le texte signifie que les espaces réservés que tu as dans le HTML pour `temperature` et `etat` peuvent être insérés dans ta chaîne.
 
 ## --- code ---
 
@@ -213,8 +213,8 @@ line_number_start: 44
 line_highlights: 46-62
 -----------------------------------------------------------
 
-def webpage(temperature, state):
-\#Template HTML
+def pageweb(temperature, etat):
+\#Modèle HTML
 html = f"""<!DOCTYPE html><html>
 <form action="./lighton">
 <input type="submit" value="Light on" />
@@ -225,11 +225,11 @@ html = f"""<!DOCTYPE html><html>
 <form action="./close">
 <input type="submit" value="Stop server" />
 </form>
-<p>LED is {state}</p>
-<p>Temperature is {temperature}</p>
+<p>La LED est {etat}</p>
+<p>La température est de {temperature}</p>
 </body>
 </html>
-            """
+"""
 
 \--- /code ---
 
