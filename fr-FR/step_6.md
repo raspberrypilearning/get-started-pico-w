@@ -134,13 +134,13 @@ b'GET /lightoff? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Win
 
 \--- /task ---
 
-Note que tu as `/lighton?`, `lightoff?` et `close?` dans les requêtes. Celles-ci peuvent être utilisées pour contrôler la LED embarquée de ton Raspberry Pi Pico W et fermer ton serveur.
+Note que tu as `/lighton?`, `lightoff?` et `close?` dans les requêtes. Celles-ci peuvent être utilisées pour contrôler la LED intégrée de ton Raspberry Pi Pico W et fermer ton serveur.
 
 \--- task ---
 
-Divise la chaîne de requête, puis récupére le premier élément de la liste. Parfois, la chaîne de requête peut ne pas pouvoir être divisée, il est donc préférable de la gérer dans une `try`/`except`.
+Divise la chaîne de requête, puis récupère le premier élément de la liste. Parfois, la chaîne de requête peut ne pas pouvoir être divisée, il est donc préférable de la gérer dans une `try`/`except`.
 
-Si le premier élément de la scission est `lighton?` alors tu peux allumer la LED. Si c'est `lightoff?` alors tu peux éteindre la LED. Si c'est `close?` tu peux effectuer un `sys.exit()`
+Si le premier élément de la division est `lighton?` alors tu peux allumer la LED. Si c'est `lightoff?` alors tu peux éteindre la LED. Si c'est `close?` tu peux effectuer un `sys.exit()`
 
 ## --- code ---
 
@@ -152,23 +152,23 @@ line_highlights: 75-85
 -----------------------------------------------------------
 
 def serve(connexion):
-\#Démarrer un serveur Web
+\#Démarrer un serveur web
 etat = 'ON'
 pico_led.on()
 temperature = 0
 while True:
 client = connexion.accept()[0]
-request = client.recv(1024)
-request = str(request)
+requete = client.recv(1024)
+requete = str(requete)
 try:
-request = request.split()[1]
+requete = requete.split()[1]
 except IndexError:
 pass
-if request == '/lighton?':
+if requete == '/lighton?':
 pico_led.on()
-elif request =='/lightoff?':
+elif requete =='/lightoff?':
 pico_led.off()
-elif request== '/close?':
+elif requete== '/close?':
 sys.exit()\
 html = pageweb(temperature, etat)
 client.send(html)
@@ -198,25 +198,25 @@ line_highlights: 81, 84
 ------------------------------------------------------------
 
 def serve(connexion):
-\#Démarrer un serveur Web
+\#Démarrer un serveur web
 etat = 'ON'
 pico_led.on()
 temperature = 0
 while True:
 client = connexion.accept()[0]
-request = client.recv(1024)
-request = str(request)
+requete = client.recv(1024)
+requete = str(requete)
 try:
-request = request.split()[1]
+requete = requete.split()[1]
 except IndexError:
 pass
-if request == '/lighton?':
+if requete == '/lighton?':
 pico_led.on()
 etat = 'ON'
-elif request=='/lightoff?':
+elif requete=='/lightoff?':
 pico_led.off()
 etat = 'OFF'
-elif request== '/close?':
+elif requete== '/close?':
 sys.exit()
 html = pageweb(temperature, etat)
 client.send(html)
@@ -242,25 +242,25 @@ line_highlights: 87
 --------------------------------------------------------
 
 def serve(connexion):
-\#Démarrer un serveur Web
+\#Démarrer un serveur web
 etat = 'ON'
 pico_led.on()
 temperature = 0
 while True:
 client = connexion.accept()[0]
-request = client.recv(1024)
-request = str(request)
+requete = client.recv(1024)
+requete = str(requete)
 try:
-request = request.split()[1]
+requete = requete.split()[1]
 except IndexError:
 pass
-if request == '/lighton?':
+if requete == '/lighton?':
 pico_led.on()
 etat = 'ON'
-elif request=='/lightoff?':
+elif requete=='/lightoff?':
 pico_led.off()
 etat = 'OFF'
-elif request== '/close?':
+elif requete== '/close?':
 sys.exit()
 temperature = pico_temp_sensor.temp
 html = pageweb(temperature, etat)
@@ -273,6 +273,6 @@ client.close()
 
 \--- task ---
 
-**Test :** tu peux tenir ta main sur ton Raspberry Pi Pico W pour augmenter sa température, puis actualiser la page web de ton ordinateur pour voir la nouvelle valeur qui s'affiche.
+**Test :** tu peux passer ta main au-dessus de ton Raspberry Pi Pico W pour augmenter sa température, puis rafraîchir la page web sur ton ordinateur pour voir la nouvelle valeur affichée.
 
 \--- /task ---
