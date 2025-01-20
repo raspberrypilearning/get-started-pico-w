@@ -5,12 +5,12 @@ from picozero import pico_temp_sensor, pico_led
 import machine
 
 
-ssid = 'SSID here'
-motdepasse = 'psk_here'
+ssid = 'SSID ici'
+motdepasse = 'psk_ici'
 
 
 def connect():
-    Se connecter au Wi-Fi
+    #Se connecter au WLAN
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
     wlan.connect(ssid, motdepasse)
@@ -50,23 +50,23 @@ def pageweb(temperature, etat):
     return str(html)
 
 
-def serve(connexion) :
+def serve(connexion):
     #Démarrer un serveur web
     etat = 'OFF'
     pico_led.off()
     while True:
         client = connexion.accept()[0]
-        request = client.recv(1024)
-        request = str(request)
+        requete = client.recv(1024)
+        requete = str(requete)
         try:
-            request = request.split()[1]
+            requete = requete.split()[1]
         except IndexError:
             pass
-        if request == '/lighton?':
+        if requete == '/lighton?':
             #led.on()
             pico_led.on()
             etat = 'ON'
-        elif request =='/lightoff?':
+        elif requete =='/lightoff?':
             pico_led.off()
             #led.off()
             etat = 'OFF'
