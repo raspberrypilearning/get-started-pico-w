@@ -36,7 +36,7 @@ Lorsque ton navigateur web demande une connexion à ton Raspberry Pi Pico W, la 
 
 \--- task ---
 
-You want to keep the web server up and listening all the time, so that any client can connect to it. You can do this by adding a `while True:` loop. Add these five lines of code so that you can accept a request, and `print()` to see what the request was. Add a call to your `serve` function in your calls at the bottom of your code.
+Tu souhaites que le serveur Web reste opérationnel et à l'écoute en permanence, afin que n'importe quel client puisse s'y connecter. Tu peux le faire en ajoutant une boucle `while True:`. Ajoute ces cinq lignes de code pour que tu puisses accepter une requête, et `print()` pour voir quelle était la requête. Ajoute un appel à ta fonction `serve` dans tes appels en bas de ton code.
 
 ## --- code ---
 
@@ -47,13 +47,13 @@ line_number_start: 66
 line_highlights: 71-76, 81
 ---------------------------------------------------------------
 
-def serve(connection):
-\#Start a web server
-state = 'OFF'
+def serve(connexion):
+\#Démarrer un serveur Web
+etat = 'OFF'
 pico_led.off()
 temperature = 0
 while True:
-client = connection.accept()[0]
+client = connexion.accept()[0]
 request = client.recv(1024)
 request = str(request)
 print(request)
@@ -67,11 +67,11 @@ serve(connection)
 
 \--- /task ---
 
-**Test:** Run your program and then type in the IP address into a web browser's address bar on your computer.
+**Test :** exécute ton programme, puis tape l’adresse IP dans la barre d’adresse d’un navigateur web sur ton ordinateur.
 
-![A browser address bar with the IP of the Pico typed in.](images/browser_ip.png)
+![Une barre d'adresse de navigateur avec l'IP du Pico saisie.](images/browser_ip.png)
 
-You should see something like this in the shell output in Thonny.
+Tu devrais voir quelque chose comme ça dans la sortie du shell dans Thonny.
 
 ```python
 >>> %Run -c $EDITOR_CONTENT
@@ -85,7 +85,7 @@ b'GET /favicon.ico HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (W
 
 \--- task ---
 
-Next, you need to send the HTML code you have written to the client web browser.
+Ensuite, tu dois envoyer le code HTML que tu as écrit dans le navigateur web du client.
 
 ## --- code ---
 
@@ -96,17 +96,17 @@ line_number_start: 66
 line_highlights: 76, 77
 ------------------------------------------------------------
 
-def serve(connection):
-\#Start a web server
-state = 'ON'
+def serve(connexion):
+\#Démarrer un serveur Web
+etat = 'ON'
 pico_led.on()
 temperature = 0
 while True:
-client = connection.accept()[0]
+client = connexion.accept()[0]
 request = client.recv(1024)
 request = str(request)
 print(request)
-html = webpage(temperature, state)
+html = pageweb(temperature, etat)
 client.send(html)
 client.close()
 
@@ -120,13 +120,13 @@ serve(connection)
 
 \--- task ---
 
-Refresh your page when you've run the code again. Click on the buttons that are displayed. In Thonny, you should then see that there are two different outputs from your shell.
+Actualise ta page lorsque tu as exécuté à nouveau le code. Clique sur les boutons qui s'affichent. Dans Thonny, tu devrais alors voir qu'il y a deux sorties différentes de ton shell.
 
 ```python
 b'GET /lighton? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8\r\nAccept-Language: en-GB,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\nConnection: keep-alive\r\nReferer: http://192.168.1.143/\r\nUpgrade-Insecure-Requests: 1\r\n\r\n'
 ```
 
-and
+et
 
 ```python
 b'GET /lightoff? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8\r\nAccept-Language: en-GB,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\nConnection: keep-alive\r\nReferer: http://192.168.1.143/lighton?\r\nUpgrade-Insecure-Requests: 1\r\n\r\n'
@@ -134,7 +134,7 @@ b'GET /lightoff? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Win
 
 \--- /task ---
 
-Notice that you have `/lighton?`, `lightoff?`, and `close?` in the requests. These can be used to control the onboard LED of your Raspberry Pi Pico W and close your server.
+Note que tu as `/lighton?`, `lightoff?` et `close?` dans les requêtes. Celles-ci peuvent être utilisées pour contrôler la LED embarquée de ton Raspberry Pi Pico W et fermer ton serveur.
 
 \--- task ---
 
