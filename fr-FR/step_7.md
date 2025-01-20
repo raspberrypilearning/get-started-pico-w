@@ -1,18 +1,18 @@
 ## Et ensuite ?
 
-Une dernière chose à essayer est d’exécuter ton serveur web Raspberry Pi Pico sans utiliser Thonny. Enregistre ton programme en tant que « main.py » et cette fois, enregistre-le sur le Raspberry Pi Pico.
+Une dernière chose à essayer est d’exécuter ton serveur web Raspberry Pi Pico sans utiliser Thonny. Enregistre ton programme en tant que `main.py` et cette fois, enregistre-le sur le Raspberry Pi Pico.
 
-Maintenant, lorsque le Raspberry Pi Pico est alimenté, même sans connexion à un ordinateur, le serveur web devrait démarrer. N'oublie pas que tu peux utiliser le bouton **bootsel** pour fermer le serveur, ou le bouton sur la page web serveur, si tu dois te reconnecter à Thonny et apporter des modifications à ton code.
+Maintenant, lorsque le Raspberry Pi Pico est alimenté, même sans connexion à un ordinateur, le serveur web devrait démarrer. N'oublie pas que tu peux utiliser le bouton **bootsel** pour fermer le serveur, ou le bouton sur la page web serveur, si tu dois te reconnecter à Thonny et apporter des modifications à ton code.
 
-Si tu jettes un œil à [Introduction au Raspberry Pi Pico : LED, buzzers, commutateurs et cadrans](https://projects.raspberrypi.org/en/pathways/pico-intro), tu trouveras de nombreuses idées pour améliorer ton serveur web Raspberry Pi Pico.
+Si tu jettes un œil à [Introduction au Raspberry Pi Pico : LED, buzzers, commutateurs et cadrans](https://projects.raspberrypi.org/en/pathways/pico-intro), tu trouveras de nombreuses idées pour améliorer ton serveur web Raspberry Pi Pico.
 
 ![Image de bannière du projet Firefly.](images/fire_fly.png)
 
-Dans le projet [LED firefly](https://projects.raspberrypi.org/en/projects/led-firefly), tu peux apprendre à connecter des LED externes à un Raspberry Pi Pico, puis tu peux utiliser une interface web pour modifier le modèle avec lequel ta luciole clignote.
+Dans le projet [LED firefly](https://projects.raspberrypi.org/en/projects/led-firefly), tu peux apprendre à connecter des LED externes à un Raspberry Pi Pico, puis tu peux utiliser une interface web pour modifier le modèle avec lequel ta luciole clignote.
 
-![Image de bannière du projet Party Popper.](images/party-popper.png)
+![Image de bannière du projet Bombe de table.](images/party-popper.png)
 
-Dans le projet [Party popper](https://projects.raspberrypi.org/en/projects/party-popper), tu peux apprendre à utiliser un interrupteur pour contrôler une LED RVB et un buzzer. Tu peux utiliser un formulaire web avec ce projet pour contrôler la couleur de la LED et la tonalité émise par le buzzer.
+Dans le projet [Bombe de table](https://projects.raspberrypi.org/en/projects/party-popper), tu peux apprendre à utiliser un interrupteur pour contrôler une LED RVB et un buzzer. Tu peux utiliser un formulaire web avec ce projet pour contrôler la couleur de la LED et la tonalité émise par le buzzer.
 
 ![Image de bannière du projet Cœur battant.](images/beating-heart.png)
 
