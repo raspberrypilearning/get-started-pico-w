@@ -6,33 +6,33 @@ import machine
 
 
 ssid = 'SSID here'
-password = 'psk_here'
+motdepasse = 'psk_here'
 
 
 def connect():
-    #Connect to WLAN
+    Se connecter au Wi-Fi
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
-    wlan.connect(ssid, password)
+    wlan.connect(ssid, motdepasse)
     while wlan.isconnected() == False:
-        print('Waiting for connection...')
+        print('En attente de connexion...')
         sleep(1)
     ip = wlan.ifconfig()[0]
-    print(f'Connected on {ip}')
+    print(f'Connecté à {ip}')
     return ip
     
 
-def open_socket(ip):
-    # Open a socket
-    address = (ip, 80)
-    connection = socket.socket()
-    connection.bind(address)
-    connection.listen(1)
-    return connection
+def ouvrir_socket(ip):
+    # Ouvrir un socket
+    adresse = (ip, 80)
+    connexion = socket.socket()
+    connexion.bind(adresse)
+    connexion.listen(1)
+    return connexion
 
 
-def webpage(temperature, state):
-    #Template HTML
+def pageweb(temperature, etat):
+    #Modèle HTML
     html = f"""
             <!DOCTYPE html>
             <html>
@@ -42,20 +42,20 @@ def webpage(temperature, state):
             <form action="./lightoff">
             <input type="submit" value="Light off" />
             </form>
-            <p>LED is {state}</p>
-            <p>Temperature is {temperature}</p>
+            <p>La LED est {etat}</p>
+            <p>La température est de {temperature}</p>
             </body>
             </html>
             """
     return str(html)
 
 
-def serve(connection):
-    #Start a webserver
-    state = 'OFF'
+def serve(connexion) :
+    #Démarrer un serveur web
+    etat = 'OFF'
     pico_led.off()
     while True:
-        client = connection.accept()[0]
+        client = connexion.accept()[0]
         request = client.recv(1024)
         request = str(request)
         try:
@@ -65,20 +65,20 @@ def serve(connection):
         if request == '/lighton?':
             #led.on()
             pico_led.on()
-            state = 'ON'
+            etat = 'ON'
         elif request =='/lightoff?':
             pico_led.off()
             #led.off()
-            state = 'OFF'
+            etat = 'OFF'
         temperature = pico_temp_sensor.temp
-        html = webpage(temperature, state)
+        html = pageweb(temperature, etat)
         client.send(html)
         client.close()
 
 
 try:
     ip = connect()
-    connection = open_socket(ip)
-    serve(connection)
+    connexion = ouvrir_socket(ip)
+    serve(connexion)
 except KeyboardInterrupt:
     machine.reset()
