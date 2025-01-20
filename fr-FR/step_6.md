@@ -2,7 +2,7 @@
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-Dans cette étape, tu vas démarrer ton serveur Web afin qu'un client puisse s'y connecter, contrôler ta LED et lire la température.
+Dans cette étape, tu vas démarrer ton serveur web afin qu'un client puisse s'y connecter, contrôler ta LED et lire la température.
 </div>
 <div>
 ![Capture d'écran de Chrome montrant une page web avec deux boutons pour allumer et éteindre une LED.](images/web_light_on.png)
@@ -11,7 +11,7 @@ Dans cette étape, tu vas démarrer ton serveur Web afin qu'un client puisse s'y
 
 \--- task ---
 
-Crée une fonction qui démarrera ton serveur web, en utilisant l'objet `connexion` que tu as enregistré en tant que paramètre. Les variables `etat` et `temperature` doivent être définies pour tes données HTML. L'état va commencer comme étant défini à `'OFF'`, et la température à `0`, ce qui signifie que tu dois également t'assurer que la LED est éteinte au démarrage du serveur.
+Crée une fonction qui démarrera ton serveur web, en utilisant l'objet `connexion` que tu as enregistré en tant que paramètre. Les variables `etat` et `temperature` doivent être définies pour tes données HTML. L'état va commencer comme étant défini sur `'OFF'`, et la température à `0`, ce qui signifie que tu dois également t'assurer que la LED est éteinte au démarrage du serveur.
 
 ## --- code ---
 
@@ -32,11 +32,11 @@ temperature = 0
 
 \--- /task ---
 
-Lorsque ton navigateur web demande une connexion à ton Raspberry Pi Pico W, la connexion doit être acceptée. Après cela, les données envoyées depuis ton navigateur web doivent être effectuées en blocs spécifiques (dans ce cas, 1024 octets). Tu dois également savoir quelle demande ton navigateur Web effectue : demande-t-il simplement une page simple ? Est-ce qu'il demande une page qui n'existe pas ?
+Lorsque ton navigateur web demande une connexion à ton Raspberry Pi Pico W, la connexion doit être acceptée. Après cela, les données envoyées depuis ton navigateur web doivent être effectuées en blocs spécifiques (dans ce cas, 1024 octets). Tu dois également savoir quelle est la requête de ton navigateur web : demande-t-il une simple page ? Est-ce qu'il demande une page qui n'existe pas ?
 
 \--- task ---
 
-Tu souhaites que le serveur Web reste opérationnel et à l'écoute en permanence, afin que n'importe quel client puisse s'y connecter. Tu peux le faire en ajoutant une boucle `while True:`. Ajoute ces cinq lignes de code pour que tu puisses accepter une requête, et `print()` pour voir quelle était la requête. Ajoute un appel à ta fonction `serve` dans tes appels en bas de ton code.
+Tu souhaites que le serveur web reste opérationnel et à l'écoute en permanence, afin que n'importe quel client puisse s'y connecter. Tu peux le faire en ajoutant une boucle `while True:`. Ajoute ces cinq lignes de code pour que tu puisses accepter une requête, et `print()` pour voir quelle était la requête. Ajoute un appel à ta fonction `serve` dans tes appels en bas de ton code.
 
 ## --- code ---
 
@@ -48,15 +48,15 @@ line_highlights: 71-76, 81
 ---------------------------------------------------------------
 
 def serve(connexion):
-\#Démarrer un serveur Web
+\#Démarrer un serveur web
 etat = 'OFF'
 pico_led.off()
 temperature = 0
 while True:
 client = connexion.accept()[0]
-request = client.recv(1024)
-request = str(request)
-print(request)
+requete = client.recv(1024)
+requete = str(requete)
+print(requete)
 client.close()
 
 ip = connect()
@@ -103,9 +103,9 @@ pico_led.on()
 temperature = 0
 while True:
 client = connexion.accept()[0]
-request = client.recv(1024)
-request = str(request)
-print(request)
+requete = client.recv(1024)
+requete = str(requete)
+print(requete)
 html = pageweb(temperature, etat)
 client.send(html)
 client.close()
