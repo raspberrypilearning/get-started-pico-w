@@ -138,9 +138,9 @@ Note que tu as `/lighton?`, `lightoff?` et `close?` dans les requêtes. Celles-c
 
 \--- task ---
 
-Split the request string and then fetch the first item in the list. Sometimes the request string might not be able to be split, so it's best to handle this in a `try`/`except`.
+Divise la chaîne de requête, puis récupére le premier élément de la liste. Parfois, la chaîne de requête peut ne pas pouvoir être divisée, il est donc préférable de la gérer dans une `try`/`except`.
 
-If the first item in the split is `lighton?` then you can switch the LED on. If it is `lightoff?` then you can switch the LED off. If it is `close?` you can perform a `sys.exit()`
+Si le premier élément de la scission est `lighton?` alors tu peux allumer la LED. Si c'est `lightoff?` alors tu peux éteindre la LED. Si c'est `close?` tu peux effectuer un `sys.exit()`
 
 ## --- code ---
 
@@ -151,13 +151,13 @@ line_number_start: 66
 line_highlights: 75-85
 -----------------------------------------------------------
 
-def serve(connection):
-\#Start a web server
-state = 'ON'
+def serve(connexion):
+\#Démarrer un serveur Web
+etat = 'ON'
 pico_led.on()
 temperature = 0
 while True:
-client = connection.accept()[0]
+client = connexion.accept()[0]
 request = client.recv(1024)
 request = str(request)
 try:
@@ -168,9 +168,9 @@ if request == '/lighton?':
 pico_led.on()
 elif request =='/lightoff?':
 pico_led.off()
-elif request == '/close?':
+elif request== '/close?':
 sys.exit()\
-html = webpage(temperature, state)
+html = pageweb(temperature, etat)
 client.send(html)
 client.close()
 
@@ -180,13 +180,13 @@ client.close()
 
 \--- task ---
 
-Run your code again. This time, when you refresh your browser window and click on the buttons, the onboard LED should turn on and off. If you click on the **Stop Server** button, your server should shutdown.
+Exécute ton code à nouveau. Cette fois, lorsque tu actualises la fenêtre de ton navigateur et clique sur les boutons, la LED intégrée doit s'allumer et s'éteindre. Si tu cliques sur le bouton **Arrêter le serveur**, ton serveur devrait s'arrêter.
 
 \--- /task ---
 
 \--- task ---
 
-You can also tell the user of the webpage what the state of the LED is.
+Tu peux également dire à l'utilisateur de la page web quel est l'état de la LED.
 
 ## --- code ---
 
@@ -197,13 +197,13 @@ line_number_start: 66
 line_highlights: 81, 84
 ------------------------------------------------------------
 
-def serve(connection):
-\#Start a web server
-state = 'ON'
+def serve(connexion):
+\#Démarrer un serveur Web
+etat = 'ON'
 pico_led.on()
 temperature = 0
 while True:
-client = connection.accept()[0]
+client = connexion.accept()[0]
 request = client.recv(1024)
 request = str(request)
 try:
@@ -212,25 +212,25 @@ except IndexError:
 pass
 if request == '/lighton?':
 pico_led.on()
-state = 'ON'
-elif request =='/lightoff?':
+etat = 'ON'
+elif request=='/lightoff?':
 pico_led.off()
-state = 'OFF'
-elif request == '/close?':
+etat = 'OFF'
+elif request== '/close?':
 sys.exit()
-html = webpage(temperature, state)
+html = pageweb(temperature, etat)
 client.send(html)
 client.close()
 
 \--- /code ---
 
-Now when you run the code, the text for the state of the LED should also change on the refreshed webpage.
+Maintenant, lorsque tu exécutes le code, le texte de l'état de la LED devrait également changer sur la page web actualisée.
 
 \--- /task ---
 
 \--- task ---
 
-Lastly, you can use the onboard temperature sensor to get an approximate reading of the CPU temperature, and display that on your webpage as well.
+Enfin, tu peux utiliser le capteur de température intégré pour obtenir une lecture approximative de la température du processeur et l'afficher également sur ta page web.
 
 ## --- code ---
 
@@ -241,13 +241,13 @@ line_number_start: 66
 line_highlights: 87
 --------------------------------------------------------
 
-def serve(connection):
-\#Start a web server
-state = 'ON'
+def serve(connexion):
+\#Démarrer un serveur Web
+etat = 'ON'
 pico_led.on()
 temperature = 0
 while True:
-client = connection.accept()[0]
+client = connexion.accept()[0]
 request = client.recv(1024)
 request = str(request)
 try:
@@ -256,14 +256,14 @@ except IndexError:
 pass
 if request == '/lighton?':
 pico_led.on()
-state = 'ON'
-elif request =='/lightoff?':
+etat = 'ON'
+elif request=='/lightoff?':
 pico_led.off()
-state = 'OFF'
-elif request == '/close?':
+etat = 'OFF'
+elif request== '/close?':
 sys.exit()
 temperature = pico_temp_sensor.temp
-html = webpage(temperature, state)
+html = pageweb(temperature, etat)
 client.send(html)
 client.close()
 
@@ -273,6 +273,6 @@ client.close()
 
 \--- task ---
 
-**Test:** You can hold your hand over your Raspberry Pi Pico W to increase its temperature, then refresh the webpage on your computer to see the new value that is displayed.
+**Test :** tu peux tenir ta main sur ton Raspberry Pi Pico W pour augmenter sa température, puis actualiser la page web de ton ordinateur pour voir la nouvelle valeur qui s'affiche.
 
 \--- /task ---
