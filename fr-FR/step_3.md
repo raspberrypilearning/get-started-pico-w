@@ -37,13 +37,13 @@ import sys
 
 \--- /code ---
 
-Enregistre ce code maintenant et choisis l'option à enregistrer sur **cet ordinateur**
+Enregistre ce code maintenant et choisis l'option à enregistrer sur **Cet ordinateur**
 
 \--- /task ---
 
 \--- task ---
 
-Ensuite, configure ton Raspberry Pi Pico W pour utiliser la LED intégrée et ajoute également le SSID et le mot de passe de ton réseau.
+Ensuite, configure ton Raspberry Pi Pico W pour utiliser la LED embarquée et ajoute également le SSID et le mot de passe de ton réseau.
 
 ## --- code ---
 
