@@ -41,7 +41,7 @@ Maintiens enfoncé le bouton **BOOTSEL** de ton Raspberry Pi Pico W.
 
 \--- task ---
 
-Ton gestionnaire de fichiers devrait s'ouvrir, le Raspberry Pi Pico étant affiché comme un lecteur connecté à l'extérieur. Glisse et dépose le fichier firmware que tu as téléchargé dans le gestionnaire de fichiers. Ton Raspberry Pi Pico devrait se déconnecter et le gestionnaire de fichiers se fermera.
+Ton gestionnaire de fichiers doit maintenant s'ouvrir et le Raspberry Pi Pico doit apparaître comme un lecteur externe connecté. Glisse et dépose le fichier firmware que tu as téléchargé dans le gestionnaire de fichiers. Ton Raspberry Pi Pico devrait se déconnecter et le gestionnaire de fichiers se fermera.
 
 ![image du gestionnaire de fichiers Windows ouvert, montrant le Raspberry Pi Pico connecté en tant que lecteur externe](images/file_manager.png)
 
