@@ -101,7 +101,7 @@ line_highlights:
 
 \--- task ---
 
-Enfin, remplace ton `print` par un `return` et stocke la connexion de socket retournée en tant que variable.
+Enfin, remplace ton `print` par un `return` et stocke la connexion de socket renvoyée en tant que variable.
 
 ## --- code ---
 
