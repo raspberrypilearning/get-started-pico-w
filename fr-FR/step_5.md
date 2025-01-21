@@ -165,7 +165,7 @@ line_highlights: 13-14
 <form action="./close">
 <input type="submit" value="Stop server" />
 </form>
-<p>La LED est {state}</p>
+<p>La LED est {etat}</p>
 <p>La température est de {temperature}</p>
 </body>
 </html>
@@ -225,7 +225,7 @@ html = f"""<!DOCTYPE html><html>
 <form action="./close">
 <input type="submit" value="Stop server" />
 </form>
-<p>La LED est {state}</p>
+<p>La LED est {etat}</p>
 <p>La température est de {temperature}</p>
 </body>
 </html>
@@ -260,7 +260,7 @@ html = f"""<!DOCTYPE html><html>
 <form action="./close">
 <input type="submit" value="Stop server" />
 </form>
-<p>La LED est {state}</p>
+<p>La LED est {etat}</p>
 <p>La température est de {temperature}</p>
 </body>
 </html>
