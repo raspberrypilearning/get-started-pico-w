@@ -273,3 +273,4 @@ html = f"""<!DOCTYPE html><html>
 Je kunt deze code nog niet testen, omdat jouw programma de HTML nog niet bedient. Dat wordt in de volgende stap aangepakt.
 
 De eenvoudige HTML-code die je zojuist hebt geschreven, wordt opgeslagen in jouw MicroPython-script en weergegeven in de browser van alle computers die via jouw netwerk verbinding maken met het script, net als een webpagina die op een andere server ter wereld is opgeslagen. Een belangrijk verschil is dat alleen apparaten die zijn verbonden met jouw WiFi-netwerk toegang hebben tot de webpagina of jouw Raspberry Pi Pico W kunnen bedienen. Deze pagina is een zeer eenvoudige demonstratie van wat mogelijk is. Om meer te leren over HTML-codering en het maken van websites, bekijk enkele van onze [andere projecten op deze site!](https://projects.raspberrypi.org/en/collections/html_and_css)
+
