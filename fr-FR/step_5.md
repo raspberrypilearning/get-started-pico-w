@@ -276,3 +276,4 @@ html = f"""<!DOCTYPE html><html>
 Tu ne peux pas encore tester ce code, car ton programme ne diffuse pas encore le code HTML. Cela sera abordé lors de la prochaine étape.
 
 Le simple code HTML que tu viens d'écrire sera stocké dans ton script MicroPython et servi au navigateur de tous les ordinateurs qui s'y connectent via ton réseau, comme une page web stockée sur n'importe quel autre serveur dans le monde. Une différence importante est que seuls les appareils connectés à ton réseau WiFi peuvent accéder à la page web ou contrôler ton Raspberry Pi Pico W. Cette page est une démonstration très simple de ce qui est possible. Pour en savoir plus sur le codage HTML et la création de sites web, consulte certains de nos [autres projets sur ce site !](https://projects.raspberrypi.org/en/collections/html_and_css)
+
