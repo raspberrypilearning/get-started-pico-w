@@ -23,3 +23,4 @@ Je hebt nodig:
 [[[thonny-install]]]
 
 [[[change-theme-thonny]]]
+
