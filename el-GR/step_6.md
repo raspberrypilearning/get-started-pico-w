@@ -276,3 +276,4 @@ client.close()
 **Test:** You can hold your hand over your Raspberry Pi Pico W to increase its temperature, then refresh the webpage on your computer to see the new value that is displayed.
 
 \--- /task ---
+
