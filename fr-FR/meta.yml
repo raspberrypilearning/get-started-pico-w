@@ -11,6 +11,8 @@ steps:
     title: Introduction
   - 
     title: Configurer ton Raspberry Pi Pico W
+    completion:
+      - engaged
   - 
     title: Connecter ton Raspberry Pi Pico au WLAN
   - 
@@ -19,5 +21,9 @@ steps:
     title: Créer une page web
   - 
     title: Servir ta page web
+    completion:
+      - internal
   - 
-    title: Et ensuite ?
+    title: What can you do now?
+    completion:
+      - external
