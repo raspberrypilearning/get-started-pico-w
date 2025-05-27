@@ -1,0 +1,22 @@
+---
+title: Aan de slag met je Raspberry Pi Pico W
+hero_image: images/banner.png
+description: Ga aan de slag met je Raspberry Pi Pico W
+version: 4
+listed: true
+copyedit: true
+last_tested: '2022-06-30'
+steps:
+  - title: Inleiding
+  - title: Stel je Raspberry Pi Pico W in
+    completion:
+      - engaged
+  - title: Verbind je Raspberry Pi Pico met een WLAN
+  - title: Open een socket
+  - title: Maak een webpagina
+  - title: Bedien je webpagina
+    completion:
+      - internal
+  - title: Wat kun je verder nog doen?
+    completion:
+      - external
