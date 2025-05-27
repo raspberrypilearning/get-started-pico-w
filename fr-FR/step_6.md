@@ -276,3 +276,4 @@ client.close()
 **Test :** tu peux passer ta main au-dessus de ton Raspberry Pi Pico W pour augmenter sa température, puis rafraîchir la page web sur ton ordinateur pour voir la nouvelle valeur affichée.
 
 \--- /task ---
+
