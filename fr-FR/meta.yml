@@ -24,6 +24,6 @@ steps:
     completion:
       - internal
   - 
-    title: What can you do now?
+    title: Que peux-tu faire maintenant ?
     completion:
       - external
