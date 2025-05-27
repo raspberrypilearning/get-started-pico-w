@@ -11,6 +11,8 @@ steps:
     title: Inleiding
   - 
     title: Stel je Raspberry Pi Pico W in
+    completion:
+      - engaged
   - 
     title: Verbind je Raspberry Pi Pico met een WLAN
   - 
@@ -19,5 +21,9 @@ steps:
     title: Maak een webpagina
   - 
     title: Bedien je webpagina
+    completion:
+      - internal
   - 
-    title: Wat kun je verder nog doen?
+    title: What can you do now?
+    completion:
+      - external
