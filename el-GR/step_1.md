@@ -23,3 +23,4 @@ You will need:
 [[[thonny-install]]]
 
 [[[change-theme-thonny]]]
+
