@@ -17,6 +17,5 @@ steps:
   - title: Bedien je webpagina
     completion:
       - internal
-  - title: Wat kun je verder nog doen?
     completion:
       - external
