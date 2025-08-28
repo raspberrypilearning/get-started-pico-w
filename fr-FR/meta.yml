@@ -22,8 +22,4 @@ steps:
   - 
     title: Servir ta page web
     completion:
-      - internal
-  - 
-    title: Que peux-tu faire maintenant ?
-    completion:
       - external
