@@ -22,8 +22,4 @@ steps:
   - 
     title: Visa din webbsida
     completion:
-      - internal
-  - 
-    title: Vad härnäst?
-    completion:
       - external
