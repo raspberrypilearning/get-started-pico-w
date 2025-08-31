@@ -182,7 +182,7 @@ Nyní, když máš funkční webovou stránku, můžeš přidat tento kód do sk
 
 \--- task ---
 
-Vytvoř novou funkci s názvem `webpage`, která má dva parametry. These are `temperature` and `state`.
+Vytvoř novou funkci s názvem `webpage`, která má dva parametry. Jedná se o „teplotu“ a „stav“.
 
 ## --- code ---
 
@@ -202,7 +202,7 @@ def webpage(temperature, state):
 
 \--- task ---
 
-You can now store all your HTML code that you have written and tested in a variable. Using **fstrings** for the text means that the placeholders you have in the HTML for `temperature` and `state` can be inserted into your string.
+Nyní můžeš veškerý napsaný a otestovaný HTML kód uložit do proměnné. Použití **fstrings** pro text znamená, že zástupné symboly, které máte v HTML pro `temperature` a `state`, lze vložit do tvého řetězce.
 
 ## --- code ---
 
@@ -237,7 +237,7 @@ html = f"""<!DOCTYPE html><html>
 
 \--- task ---
 
-Lastly, you can return the `html` string from your function.
+Nakonec můžeš z funkce vrátit řetězec `html`.
 
 ## --- code ---
 
@@ -270,7 +270,7 @@ html = f"""<!DOCTYPE html><html>
 
 \--- save ---
 
-You can't test this code yet, as your program is not yet serving the HTML. That will be tackled in the next step.
+Tento kód zatím nemůžeš otestovat, protože program zatím nezobrazuje HTML kód. To bude řešeno v dalším kroku.
 
-The simple HTML code you have just written will be stored in your MicroPython script and served to the browser of any computers that connect to it over your network, just like a webpage stored on any other server in the world. An important difference is that only devices connected to your WiFi network can access the webpage or control your Raspberry Pi Pico W. This page is a very simple demonstration of what is possible. To learn more about HTML coding and creating websites, see some of our [other projects on this site!](https://projects.raspberrypi.org/en/collections/html_and_css)
+Jednoduchý HTML kód, který máš právě napsaný, bude uložen ve skriptu MicroPython a zobrazen prohlížeči všech počítačů, které se k němu připojují přes síť, stejně jako webová stránka uložená na jakémkoli jiném serveru na světě. Důležitým rozdílem je, že k webové stránce mohou přistupovat nebo ovládat Raspberry Pi Pico W pouze zařízení připojená k vaší WiFi síti. Tato stránka je velmi jednoduchou ukázkou toho, co je možné. Chceš-li se dozvědět více o kódování HTML a tvorbě webových stránek, podívej se na některé z našich [dalších projektů na tomto webu!] (https://projects.raspberrypi.org/en/collections/html_and_css)
 
