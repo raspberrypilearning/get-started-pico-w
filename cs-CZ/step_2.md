@@ -2,64 +2,64 @@
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-Connect your Raspberry Pi Pico W and set up MicroPython.
+Připoj svůj Raspberry Pi Pico W a nastav MicroPython.
 </div>
 </div>
 
 <p style='border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;'>
-<span style="color: #0faeb0">MicroPython</span> is a version of the Python programming language for microcontrollers, such as your Raspberry Pi Pico W. MicroPython lets you use your Python knowledge to write code to interact with electronics components.</p>
+<span style="color: #0faeb0">MicroPython</span> je verze programovacího jazyka Pythonu pro mikrořadiče, jako je například váš Raspberry Pi Pico W. MicroPython ti umožní použít znalosti Pythonu k psaní kódu pro interakci s elektronickými komponenty.</p>
 
 \--- task ---
 
-Download the latest version of Raspberry Pi Pico W firmware at [https://rpf.io/pico-w-firmware](https://rpf.io/pico-w-firmware)
+Stáhni si nejnovější verzi Raspberry Pi Pico W firmware na [https://rpf.io/pico-w-firmware](https://rpf.io/pico-w-firmware)
 
 \--- /task ---
 
 \--- task ---
 
-**Connect** the small end of your micro USB cable to the Raspberry Pi Pico W.
+**Připoj** menší konec kabelu micro USB k Raspberry Pi Pico W.
 
-![A Raspberry Pi Pico W connected to the small end of a micro USB cable.](images/pico-top-plug.png)
-
-\--- /task ---
-
-\--- task ---
-
-Hold down the **BOOTSEL** button on your Raspberry Pi Pico W.
-
-![A Raspberry Pi Pico W with the BOOTSEL button highlighted](images/bootsel.png)
+![Raspberry Pi Pico W připojen k malému konci micro USB kabelu.](images/pico-top-plug.png)
 
 \--- /task ---
 
 \--- task ---
 
-**Connect** the other end to your desktop computer, laptop, or Raspberry Pi.
+Podrž stisknuté tlačítko **BOOTSEL** na Raspberry Pi Pico W.
 
-![A Raspberry Pi Pico W connected to a laptop via a micro USB cable.](images/plug-in-pico.png)
-
-\--- /task ---
-
-\--- task ---
-
-Your file manager should open up, with Raspberry Pi Pico being show as an externally connected drive. Drag and drop the firmware file you downloaded into the file manager. Your Raspberry Pi Pico should disconnect and the file manager will close.
-
-![image of the Windows file manager opened, showing Raspberry Pi Pico connected as an external drive](images/file_manager.png)
+![Raspberry Pi Pico W s tlačítkem BOOTSEL zvýrazněno](images/bootsel.png)
 
 \--- /task ---
 
 \--- task ---
 
-Open the Thonny editor.
+**Připoj** druhý konec tvého stolního počítače, notebooku nebo Raspberry Pi.
+
+![Raspberry Pi Pico W připojen k laptopu přes micro USB cable.](images/plug-in-pico.png)
 
 \--- /task ---
 
 \--- task ---
 
-Look at the text in the bottom right-hand corner of the Thonny editor. It will show you the version of Python that is being used.
+Měl by se otevřít správce souborů, kde by se Raspberry Pi Pico mělo zobrazit jako externě připojený disk. Přetáhni stažený soubor firmwaru do správce souborů. Raspberry Pi Pico by se mělo odpojit a správce souborů by se měl zavřít.
 
-If it does **not** say 'MicroPython (Raspberry Pi Pico)' there, then click on the text and select 'MicroPython (Raspberry Pi Pico)' from the options.
+![obrázek otevřeného správce souborů ve Windows, zobrazující Raspberry Pi Pico připojené jako externí disk](images/file_manager.png)
 
-![MicroPython selected as the interpreter for Thonny.](images/thonny-select-interpreter.png)
+\--- /task ---
+
+\--- task ---
+
+Otevři editor Thonny.
+
+\--- /task ---
+
+\--- task ---
+
+Podívej se na text v pravém dolním rohu editoru Thonny. Zobrazí se ti používaná verze Pythonu.
+
+Pokud tam **není** uvedeno „MicroPython (Raspberry Pi Pico)“, klikni na text a z možností vyber „MicroPython (Raspberry Pi Pico)“.
+
+![MicroPython vybrán jako interpret pro Thonny.](images/thonny-select-interpreter.png)
 
 \--- /task ---
 
@@ -69,60 +69,60 @@ If it does **not** say 'MicroPython (Raspberry Pi Pico)' there, then click on th
 
 ## --- collapse ---
 
-## title: I don't know if the firmware is installed and cannot connect to my Pico
+## title: Nevím, jestli je firmware nainstalovaný a nemohu se připojit k mému Picu
 
-Make sure your Raspberry Pi Pico W is connected to your computer with a micro USB cable. Click on the list in the bottom right-hand corner of your Thonny window. A pop-up menu will appear, which lists the available interpreters.
+Ujisti se, že je Raspberry Pi Pico W připojeno k počítači pomocí micro USB kabelu. Klikněte na seznam v pravém dolním rohu okna Thonny. Zobrazí se vyskakovací menu, která obsahuje seznam dostupných interpretů.
 
-![A pop-up menu that shows an option saying configure interpreter.](images/no-pico-interpreter.png)
+![Vyskakovací nabídka s možností konfigurace interpretu.](images/no-pico-interpreter.png)
 
-If you cannot see Pico in the list (as shown in the picture), you need to reconnect your Raspberry Pi Pico W while holding the BOOTSEL button to mount it as a storage volume, and then reinstall the firmware by following the instructions in the section above.
+Pokud Pico v seznamu nevidíš (jak je znázorněno na obrázku), je třeba Raspberry Pi Pico W znovu připojit, přičemž podrž tlačítko BOOTSEL, abys jej připojil jako úložný svazek, a poté znovu nainstalovat firmware podle pokynů ve výše uvedené části.
 
 \--- /collapse ---
 
 ## --- collapse ---
 
-## title: Firmware is installed but I still cannot connect to my Pico
+## Titulek: Firmware je nainstalován, ale stále se nemohu připojit k Picu
 
-You may be using the wrong kind of micro USB cable. Your current micro USB cable may be damaged, or designed to only carry power to devices and not transfer data. Try swapping your cable for another if nothing else has worked.
+Možná používáš nesprávný typ micro USB kabelu. Tvůj současný micro USB kabel může být poškozen nebo navržen pouze pro přenos energie do zařízení, nikoli pro přenos dat. Zkus vyměnit svůj kabel za jiný, pokud nic nefunguje.
 
-If your Pico still won't connect after trying all these things, it may **itself** be damaged and unable to connect.
+Pokud se Pico po pokusu o všechny tyto věci stále nepřipojí, může být **samo** poškozeno a proto se nemůže připojit.
 
 \--- /collapse ---
 
 \--- /task ---
 
-For newcomers to Raspberry Pi Pico, `picozero` is a MicroPython library that's beginner-friendly.
+Pro nováčky s Raspberry Pi Pico je tu knihovna `picozero` v MicroPythonu, která je vhodná pro začátečníky.
 
 \--- task ---
 
-To complete the projects in this path, you need to install the `picozero` library as a Thonny package.
+Pro dokončení projektů v této cestě je třeba nainstalovat knihovnu `picozero` jako balíček Thonny.
 
-In Thonny, choose **Tools** > **Manage packages**.
+V Thonny zvol **Nástroje** > **Spravovat balíky**.
 
-![The Thonny Tools menu with Manage packages highlighted.](images/thonny-manage-packages.jpg)
+![Thonny Tools menu se Správou zvýrazněných balíčků.](images/thonny-manage-packages.jpg)
 
 \--- /task ---
 
 \--- task ---
 
-In the pop-up 'Manage packages for Raspberry Pi Pico' window, type `picozero` and click **Search on PyPi**.
+Ve vyskakovacím okně "Spravovat balíčky pro Raspberry Pi Pico" zadejte "picozero" a klikněte na **Hledat na PyPi**.
 
-![Thonny plugins search results showing picozero.](images/thonny-packages-picozero.jpg)
+![Výsledky vyhledávání pluginů Thonny zobrazují picozero.](images/thonny-packages-picozero.jpg)
 
 \--- /task ---
 
 \--- task ---
 
-Click on **picozero** in the search results.
+Klikněte na **picozero** ve výsledcích vyhledávání.
 
-Click on **Install**.
+Klikni na **Instalovat**.
 
-![The picozero information with 'Install' button highlighted.](images/thonny-install-package.jpg)
+![Informace o picozeru se zvýrazněným tlačítkem „Instalovat“.](images/thonny-install-package.jpg)
 
-When installation has completed, close the package window, then quit and reopen Thonny.
+Po dokončení instalace zavři okno balíku, poté zavři a znovu otevři Thonny.
 
 \--- /task ---
 
-If you have difficulties installing the `picozero` library in Thonny, you can download the library file and save it to your Raspberry Pi Pico W.
+Pokud máš potíže s instalací knihovny `picozero` v Thonny, můžeš stáhnout soubor knihovny a uložit jej do svého Raspberry Pi Pico W.
 
 [[[picozero-offline-install]]]
