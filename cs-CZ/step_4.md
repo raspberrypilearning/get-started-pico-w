@@ -1,26 +1,26 @@
-## Open a socket
+## Otevři soket
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will use the connection to your WLAN to open a socket.
+V tomto kroku použijete připojení k WLAN k otevření socketu.
 </div>
 <div>
-![MicroPython shell showing the connection to a WLAN and a socket connection.](images/socket.png){:width="300px"}
+![Shell MicroPythonu zobrazující připojení k WLAN a socketové připojení.](images/socket.png){:width="300px"}
 </div>
 </div>
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 10px;">
-<div style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px; display:flex; margin-bottom: 27px;"><p><span style="color: #0faeb0">A socket</span> is the way a **server** can listen for a **client** that wants to connect to it. The webpage you are currently looking at is hosted on Raspberry Pi Foundation servers. These servers have an open socket that waits for your web browser to make a connection, at which point the contents of the webpage are sent to your computer. In this case, your server is going to be your Raspberry Pi Pico W and the client will be a web browser on another computer.</p>
+<div style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px; display:flex; margin-bottom: 27px;"><p><span style="color: #0faeb0">Soket</span> je způsob, jakým může **server** naslouchat **klientovi**, který se k němu chce připojit. Webová stránka, kterou si právě prohlížíš, je hostována na serverech Raspberry Pi Foundation. Tyto servery mají otevřený socket, který čeká na připojení tvého webového prohlížeče, načež je obsah webové stránky odeslán do tvého počítače. V tomto případě bude serverem Raspberry Pi Pico W a klientem bude webový prohlížeč na jiném počítači.</p>
 </div>
 </div>
 </div>
 
-To open a socket, you need to provide the IP address and a port number. Port numbers are used by computers to identify where requests should be sent. For instance, port `80` is normally used for web traffic; Stardew Valley uses port `24642` when you're playing a multiplayer game. As you are setting up a web server, you will be using port `80`.
+Pro otevření socketu je nutné zadat IP adresu a číslo portu. Čísla portů používají počítače k identifikaci, kam by měly být požadavky odesílány. Například port `80` se obvykle používá pro webový provoz; Stardew Valley používá port `24642`, když hraješ hru pro více hráčů. Při nastavování webového serveru budete používat port `80`.
 
 \--- task ---
 
-Create a new function that can be called to open a socket. Start by giving the socket an IP address and a port number.
+Vytvoř novou funkci, kterou lze zavolat pro otevření socketu. Začni tím, že socketu přidělíš IP adresu a číslo portu.
 
 ## --- code ---
 
@@ -43,7 +43,7 @@ connect()
 
 \--- task ---
 
-Now create your socket, and then have it listen for requests on port `80`. Don't forget to call your function at the bottom of your code.
+Nyní vytvoř socket a nech ho naslouchat požadavkům na portu `80`. Nezapomeň zavolat funkci na konci kódu.
 
 ## --- code ---
 
@@ -71,7 +71,7 @@ open_socket(ip)
 
 \--- task ---
 
-**Test:** Run your code, and you should see an output that looks something like this.
+**Test:** Spusť kód a měl bys vidět výstup, který vypadá nějak takto.
 
 ## --- code ---
 
@@ -94,13 +94,13 @@ line_highlights:
 
 \--- /code ---
 
-`socket state=1` tells you that your socket is working.
+`socket state=1` ti říká, že tvůj socket funguje.
 
 \--- /task ---
 
 \--- task ---
 
-Lastly, replace your `print` with a `return` and then store the returned socket connection as a variable.
+Nakonec nahraď `print` `return` a poté ulož vrácené socketové připojení jako proměnnou.
 
 ## --- code ---
 
@@ -126,6 +126,6 @@ connection = open_socket(ip)
 
 \--- /task ---
 
-You now have your Raspberry Pi Pico W listening for connections to its IP address on port `80`. This means that it is ready to start serving HTML code, so that a connected web browser can see a webpage.
+Nyní Raspberry Pi Pico W naslouchá připojením na své IP adrese na portu `80`. To znamená, že je připraven začít zobrazovat HTML kód, aby připojený webový prohlížeč mohl zobrazit webovou stránku.
 
 \--- save ---
