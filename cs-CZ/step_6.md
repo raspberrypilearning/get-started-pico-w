@@ -1,17 +1,17 @@
-## Serve your webpage
+## Poskytni svou webovou stránku
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will start up your web server so that a client can connect to it, and control your LED and read the temperature.
+V tomto kroku spustíš webový server, aby se k němu mohl připojit klient, ovládat LED diodu a odečítat teplotu.
 </div>
 <div>
-![Screenshot from Chrome showing a webpage with two buttons for turning an LED on and off.](images/web_light_on.png)
+![Snímek obrazovky z Chromu zobrazující webovou stránku se dvěma tlačítky pro zapínání a vypínání LED diody a s několika stručnými popisky.](images/web_light_on.png)
 </div>
 </div>
 
 \--- task ---
 
-Create a function that will start your web server, using the `connection` object you saved as a parameter. The `state` and `temperature` variables need to be set for your HTML data. The state is going to start as being set to `'OFF'`, and the temperature to `0`, which means you should also ensure that the LED is off when the server starts.
+Vytvoř funkci, která spustí webový server, pomocí objektu `connection` uloženého jako parametr. Proměnné `state` a `teplota` musí být nastaveny pro HTML data. Stav začne tak, že bude nastaven na `'OFF'', a na `0\`, což znamená, že bys měl také zajistit, že LED bude vypnuta při startu serveru.
 
 ## --- code ---
 
@@ -32,11 +32,11 @@ temperature = 0
 
 \--- /task ---
 
-When your web browser asks for a connection to your Raspberry Pi Pico W, the connection needs to be accepted. After that, the data that is sent from your web browser must be done in specific chunks (in this case, 1024 bytes). You also need to know what request your web browser is making — is it asking for just a simple page? Is it asking for a page that doesn't exist?
+Pokud webový prohlížeč požádá o připojení k tvému Raspberry Pi Pico W, připojení musí být přijato. Poté musí být data odesílaná z webového prohlížeče odeslána v určitých částech (v tomto případě 1024 bajtů). Také potřebuješ vědět, jaký požadavek tvůj webový prohlížeč odesílá – žádá jen o jednoduchou stránku? Žádá o stránku, která neexistuje?
 
 \--- task ---
 
-You want to keep the web server up and listening all the time, so that any client can connect to it. You can do this by adding a `while True:` loop. Add these five lines of code so that you can accept a request, and `print()` to see what the request was. Add a call to your `serve` function in your calls at the bottom of your code.
+Chceš, aby webový server byl neustále v provozu a naslouchal, aby se k němu mohl připojit jakýkoli klient. Toho lze dosáhnout přidáním smyčky `while True:`. Přidej těchto pět řádků kódu, abys mohl přijmout požadavek, a pomocí funkce `print()` zjistit, o jaký požadavek se jednalo. Přidej volání funkce `serve` do volání na konci kódu.
 
 ## --- code ---
 
@@ -67,11 +67,11 @@ serve(connection)
 
 \--- /task ---
 
-**Test:** Run your program and then type in the IP address into a web browser's address bar on your computer.
+**Test:** Spusť program a poté zadej IP adresu do adresního řádku webového prohlížeče v počítači.
 
-![A browser address bar with the IP of the Pico typed in.](images/browser_ip.png)
+![Adresní řádek prohlížeče se zadanou IP adresou Pica.](images/browser_ip.png)
 
-You should see something like this in the shell output in Thonny.
+Ve výstupu shellu v Thony bys měl vidět něco podobného.
 
 ```python
 >>> %Run -c $EDITOR_CONTENT
@@ -85,7 +85,7 @@ b'GET /favicon.ico HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (W
 
 \--- task ---
 
-Next, you need to send the HTML code you have written to the client web browser.
+Dále je třeba odeslat napsaný HTML kód do webového prohlížeče klienta.
 
 ## --- code ---
 
@@ -120,13 +120,13 @@ serve(connection)
 
 \--- task ---
 
-Refresh your page when you've run the code again. Click on the buttons that are displayed. In Thonny, you should then see that there are two different outputs from your shell.
+Po opětovném spuštění kódu obnov stránku. Klikni na zobrazená tlačítka. V Thonny bys pak měl vidět, že z tvého shellu existují dva různé výstupy.
 
 ```python
 b'GET /lighton? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8\r\nAccept-Language: en-GB,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\nConnection: keep-alive\r\nReferer: http://192.168.1.143/\r\nUpgrade-Insecure-Requests: 1\r\n\r\n'
 ```
 
-and
+a
 
 ```python
 b'GET /lightoff? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8\r\nAccept-Language: en-GB,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\nConnection: keep-alive\r\nReferer: http://192.168.1.143/lighton?\r\nUpgrade-Insecure-Requests: 1\r\n\r\n'
@@ -134,13 +134,13 @@ b'GET /lightoff? HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Win
 
 \--- /task ---
 
-Notice that you have `/lighton?`, `lightoff?`, and `close?` in the requests. These can be used to control the onboard LED of your Raspberry Pi Pico W and close your server.
+Všimni si, že v požadavcích máš `/lighton?`, `lightoff?` a `close?`. Tyto prvky lze použít k ovládání integrované LED diody vašeho Raspberry Pi Pico W a k vypnutí serveru.
 
 \--- task ---
 
-Split the request string and then fetch the first item in the list. Sometimes the request string might not be able to be split, so it's best to handle this in a `try`/`except`.
+Rozděl řetězec požadavku a poté načti první položku v seznamu. Někdy nemusí být možné řetězec požadavku rozdělit, takže je nejlepší to řešit pomocí `try`/`except`.
 
-If the first item in the split is `lighton?` then you can switch the LED on. If it is `lightoff?` then you can switch the LED off. If it is `close?` you can perform a `sys.exit()`
+Pokud je první položka v rozdělení `lighton?`, pak můžeš LED diodu rozsvítit. Pokud je to „lightoff?“, můžeš LED diodu vypnout. Pokud je to `close?`, můžeš provést `sys.exit()`
 
 ## --- code ---
 
@@ -180,13 +180,13 @@ client.close()
 
 \--- task ---
 
-Run your code again. This time, when you refresh your browser window and click on the buttons, the onboard LED should turn on and off. If you click on the **Stop Server** button, your server should shutdown.
+Spusť svůj kód znovu. Tentokrát, když obnovíš okno prohlížeče a klikneš na tlačítka, měla by se integrovaná LED rozsvítit a zhasnout. Pokud klikneš na tlačítko **Stop Server**, tvůj server by se měl vypnout.
 
 \--- /task ---
 
 \--- task ---
 
-You can also tell the user of the webpage what the state of the LED is.
+Můžeš také uživateli webové stránky sdělit, jaký je stav LED.
 
 ## --- code ---
 
@@ -224,13 +224,13 @@ client.close()
 
 \--- /code ---
 
-Now when you run the code, the text for the state of the LED should also change on the refreshed webpage.
+Nyní, když spustíš kód, měl by se na aktualizované webové stránce změnit i text pro stav LED diody.
 
 \--- /task ---
 
 \--- task ---
 
-Lastly, you can use the onboard temperature sensor to get an approximate reading of the CPU temperature, and display that on your webpage as well.
+Nakonec můžeš pomocí integrovaného teplotního senzoru získat přibližnou hodnotu teploty procesoru a zobrazit ji také na své webové stránce.
 
 ## --- code ---
 
@@ -273,7 +273,7 @@ client.close()
 
 \--- task ---
 
-**Test:** You can hold your hand over your Raspberry Pi Pico W to increase its temperature, then refresh the webpage on your computer to see the new value that is displayed.
+**Test:** Můžeš podržet ruku nad Raspberry Pi Pico W, abys zvýšil jeho teplotu, a poté aktualizovat webovou stránku v počítači, abys viděl nově zobrazenou hodnotu.
 
 \--- /task ---
 
