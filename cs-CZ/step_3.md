@@ -112,7 +112,7 @@ sleep(1)
 
 \--- task ---
 
-Nyní si vytiskni konfiguraci WLAN a vše otestuj. You'll need to call your function. Keep all your function calls at the bottom of your file, so they are the last lines of code that are run.
+Nyní si vytiskni konfiguraci WLAN a vše otestuj. Budeš muset zavolat svou funkci. Všechna volání funkcí uchovávej na konci souboru, takže se jedná o poslední řádky kódu, které se spustí.
 
 ## --- code ---
 
@@ -141,7 +141,7 @@ connect()
 
 \--- task ---
 
-**Test:** Save and run your code. You should see some output in the shell that looks something like this, although the specific IP addresses will be different.
+**Test:** Ulož a spusť kód. V shellu bys měl vidět výstup, který vypadá nějak takto, i když konkrétní IP adresy se budou lišit.
 
 ## --- code ---
 
@@ -155,7 +155,7 @@ line_highlights:
 Waiting for connection...
 Waiting for connection...
 Waiting for connection...
-Waiting for connection...
+Čekání na připojení...
 Waiting for connection...
 ('192.168.1.143', '255.255.255.0', '192.168.1.254', '192.168.1.254')
 
@@ -167,17 +167,17 @@ Waiting for connection...
 
 ---
 
-## title: The Raspberry Pi Pico W won't connect
+## Název: Raspberry Pi Pico W se nepřipojí
 
-1. Make sure that you are using the correct SSID and password.
-2. If you are on a school or work WLAN, unauthorised devices might not be permitted access to the WiFi.
-3. Unplug your Raspberry Pi Pico W from your computer to power it off, then plug it back in. This can be a problem when you have connected once, and then try to connect again.
+1. Ujisti se, že používáš správné SSID a heslo.
+2. Pokud jsi ve školní nebo pracovní síti WLAN, neoprávněným zařízením nemusí být povolen přístup k WiFi.
+3. Odpoj Raspberry Pi Pico W od počítače, abys jej vypnul, a poté jej znovu zapoj. To může být problém, pokud se jednou připojíš a pak se o připojení pokusíš znovu.
 
 \--- /collapse ---
 
 \--- task ---
 
-You don't need all the information provided by `wlan.ifconfig()`. The key information you need is the IP address of the Raspberry Pi Pico W, which is the first piece of information. You can use an **fstring** to output the **IP address**. By placing an `f` in front of your string, variables can be printed when they are surrounded by `{}`.
+Nepotřebuješ všechny informace poskytované funkcí `wlan.ifconfig()`. Klíčovou informací, kterou potřebuješ, je IP adresa Raspberry Pi Pico W, což je první údaj. Pro výpis **IP adresy** můžeš použít **fstring**. Umístěním znaku `f` před řetězec lze proměnné vypsat, pokud jsou obklopeny znakem `{}`. (tzv. "f-string")
 
 ## --- code ---
 
@@ -207,7 +207,7 @@ connect()
 
 \--- task ---
 
-You can now return the value for the IP address of your Raspberry Pi Pico W, and store it when you call your function.
+Nyní můžeš vrátit hodnotu IP adresy tvého Raspberry Pi Pico W a uložit ji při volání funkce.
 
 ## --- code ---
 
@@ -235,11 +235,11 @@ ip = connect()
 
 \--- /task ---
 
-You might want to run this file without using Thonny, which will be covered later in this project. It would be useful to have some indication that the the Raspberry Pi Pico has connected to the WLAN, and also to be able to quit the program without having to have the Raspberry Pi Pico connected to a computer.
+Možná budeš chtít spustit tento soubor bez použití Thonny, který bude později zahrnut do tohoto projektu. Bylo by užitečné mít nějakou indikaci, že se Raspberry Pi Pico připojilo k WLAN, a také mít možnost ukončit program, aniž by bylo nutné mít Raspberry Pi Pico připojené k počítači.
 
 \--- task ---
 
-Add a condition, where if the bootsel button is pressed, the program will quit.
+Přidej podmínku, kdy se program ukončí po stisknutí tlačítka bootsel.
 
 ## --- code ---
 
