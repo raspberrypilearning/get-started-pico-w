@@ -1,22 +1,22 @@
-## Connect your Raspberry Pi Pico W to a WLAN
+## Připoj Raspberry Pi Pico W k WLAN síti
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-Here, you will learn to use MicroPython to connect your Raspberry Pi Pico W to a wireless local area network (WLAN), more commonly known as a WiFi network.
+Zde se naučíš používat MicroPython k připojení Raspberry Pi Pico W k bezdrátové lokální síti (WLAN), častěji známá jako WiFi síť.
 </div>
 <div>
-![MicroPython shell showing connection to a WLAN.](images/WiFi_connect.png){:width="300px"}
+![Shell MicroPythonu zobrazující připojení k WLAN.](images/WiFi_connect.png){:width="300px"}
 </div>
 </div>
 
 <p style='border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;'>
-<span style="color: #0faeb0">Passwords</span> need to be kept securely and privately. In this step, you will add your WiFi password into your Python file. Make sure you don't share your file with anyone that you wouldn't want to tell your password to.</p>
+<span style="color: #0faeb0">Hesla</span> je třeba uchovávat bezpečně a v soukromí. V tomto kroku přidáš heslo k WiFi do souboru Pythonu. Ujisti se, že svůj soubor nesdílíš s nikým, komu nechceš sdělit své heslo.</p>
 
-To connect to a WiFi network, you will need to know your service set identifier (SSID). This is the name of your WiFi network. You will also need your WiFi password. These can usually be found written on your wireless router, although you should have changed the default password to something unique.
+Chceš-li se připojit k síti WiFi, musíš znát identifikátor své služby (SSID). Toto je název WiFi sítě. Také budeš potřebovat heslo k WiFi. Tyto kódy obvykle najdeš napsané na bezdrátovém routeru, i když byste měli změnit výchozí heslo na něco jedinečného.
 
 \--- task ---
 
-In Thonny, import the packages you will need to connect to your WiFi network, read the onboard temperature sensor, and light the onboard light-emitting diode (LED).
+V Thonny importuješ balíčky, které budeš potřebovat pro připojení k WiFi síti, načtení integrovaného teplotního senzoru a rozsvícení integrované LED diody.
 
 ## --- code ---
 
@@ -37,13 +37,13 @@ import sys
 
 \--- /code ---
 
-Save this code now, and choose the option to save to **This computer**
+Ulož si tento kód a vyber možnost uložení do **Tento počítač**
 
 \--- /task ---
 
 \--- task ---
 
-Next, set up your Raspberry Pi Pico W to use the onboard LED, and additionally add in the SSID and password for your network.
+Dále nastav Raspberry Pi Pico W tak, aby používalo integrovanou LED diodu, a navíc přidej SSID a heslo pro vaši síť.
 
 ## --- code ---
 
@@ -54,8 +54,8 @@ line_number_start: 9
 line_highlights:
 -----------------------------------------------------
 
-ssid = 'NAME OF YOUR WIFI NETWORK'
-password = 'YOUR SECRET PASSWORD'
+ssid = 'NÁZEV VAŠÍ WIFI SÍTĚ'
+password = 'VAŠE TAJNÉ HESLO'
 
 \--- /code ---
 
@@ -63,7 +63,7 @@ password = 'YOUR SECRET PASSWORD'
 
 \--- task ---
 
-Now, begin to build a function to connect to your WLAN. You need to set up a `wlan` object, activate the wireless, and provide the object with your `ssid` and `password`.
+Nyní začni vytvářet funkci pro připojení k vaší WLAN síti. Je třeba nastavit objekt `wlan`, aktivovat bezdrátové připojení a poskytnout objektu vaše `ssid` a `password`.
 
 ## --- code ---
 
@@ -86,7 +86,7 @@ wlan.connect(ssid, password)
 
 \--- task ---
 
-If you've ever connected a device to a WiFi network, you will know that it doesn't happen instantly. Your device will send requests to your WiFi router to connect, and when the router responds, they will perform what is called a handshake to establish a connection. To do this with Python, you can set up a loop that will keep sending requests each second until the connection handshake has been performed.
+Pokud jsi někdy připojil zařízení k síti WiFi, budeš vědět, že se to nestane okamžitě. Tvé zařízení bude odesílat žádosti na WiFi router pro připojení a po odpovědi routeru, vykoná to, čemu se říká ruční zatřesení, aby navázaly spojení. Abys toho v Pythonu dosáhl, můžete nastavit smyčku, která bude odesílat požadavky každou sekundu, dokud nebude provedeno navázání spojení.
 
 ## --- code ---
 
@@ -112,7 +112,7 @@ sleep(1)
 
 \--- task ---
 
-Now print out your WLAN configuration, and test it all. You'll need to call your function. Keep all your function calls at the bottom of your file, so they are the last lines of code that are run.
+Nyní si vytiskni konfiguraci WLAN a vše otestuj. You'll need to call your function. Keep all your function calls at the bottom of your file, so they are the last lines of code that are run.
 
 ## --- code ---
 
