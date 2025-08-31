@@ -1,25 +1,25 @@
-## Create a webpage
+## Vytvoř webovou stránku
 
 <div style="display: flex; flex-wrap: wrap">
 <div style="flex-basis: 200px; flex-grow: 1; margin-right: 15px;">
-In this step, you will create a webpage that the web server, running on your Raspberry Pi Pico W, can send to a client web browser. You're going to test the webpage on your computer first though, to make sure it displays as it should. In the next step, you can add the code to your Python script, so that your Raspberry Pi Pico W can serve the webpage.
+V tomto kroku vytvoříš webovou stránku, kterou může webový server běžící na tvém Raspberry Pi Pico W odeslat do klientského webového prohlížeče. Nejprve si ale webovou stránku otestuj na počítači, ať víš, že se zobrazuje tak, jak má. V dalším kroku můžeš přidat kód do svého skriptu v Pythonu, aby Raspberry Pi Pico W mohlo webovou stránku zobrazovat.
 </div>
 <div>
-![Screenshot from Chrome showing a webpage with two buttons for turning an LED on and off, and some boiler plate text.](images/index.png)
+![Snímek obrazovky z Chromu zobrazující webovou stránku se dvěma tlačítky pro zapínání a vypínání LED diody a s několika stručnými popisky.](images/index.png)
 </div>
 </div>
 
-A webpage can be as simple as some text, formatted in such a way that a web browser will render it and provide some interactivity. Although Thonny is not designed to write HTML, it can be used for this purpose. However, you can use your preferred text editor if you like, be that VSCode, TextEdit, or Notepad.
+Webová stránka může být tak jednoduchá, jako nějaký text, formátovaný tak, aby ji webový prohlížeč vykreslil a poskytoval určitou interaktivitu. Ačkoliv Thonny není určen pro psaní HTML, lze jej k tomuto účelu použít. Můžeš však použít svůj preferovaný textový editor, pokud chceš, ať už je to VSCode, TextEdit nebo Poznámkový blok.
 
 \--- task ---
 
-In your text editor or in Thonny, create a new file. You can call it whatever you like, but `index.html` is the standard name for the first page that a user interacts with. Make sure you add the `.html` file extension. If using Thonny, make sure to save to **This computer**.
+V textovém editoru nebo v Thonny vytvoř nový soubor. Můžeš jej nazvat, jak chceš, ale `index.html` je standardní název pro první stránku, se kterou uživatel interaguje. Nezapomeň přidat příponu souboru `.html`. Pokud používáš Thonny, nezapomeň soubor uložit do složky **Tento počítač**.
 
 \--- /task ---
 
 \--- task ---
 
-There is some standard HTML code that you will need to include to begin with.
+Existuje určitý standard pro HTML kód, který budeš muset respektovat.
 
 ## --- code ---
 
@@ -43,7 +43,7 @@ line_highlights:
 
 \--- task ---
 
-Next, you can create a button that will be used to turn the onboard LED on or off.
+Dále můžeš vytvořit tlačítko, které bude sloužit k zapnutí nebo vypnutí integrované LED diody.
 
 ## --- code ---
 
@@ -70,15 +70,15 @@ line_highlights: 4-6
 
 \--- task ---
 
-Save your file and then find it in your file manager. When you double click the file, it should open in your default web browser. Here is what the webpage looks like in Google Chrome.
+Ulož soubor a poté jej vyhledej ve správci souborů. Po dvojitém kliknutí na soubor by se měl otevřít ve výchozím webovém prohlížeči. Takto vypadá webová stránka v prohlížeči Google Chrome.
 
-![Google Chrome showing a page with a single button labelled Light on.](images/button.png)
+![Google Chrome zobrazuje stránku s jediným tlačítkem s označením Zapnout světlo.](images/button.png)
 
 \--- /task ---
 
 \--- task ---
 
-Add a second button to turn the LED off.
+Přidej druhé tlačítko pro vypnutí LED diody.
 
 ## --- code ---
 
@@ -108,7 +108,7 @@ line_highlights: 7-9
 
 \--- task ---
 
-An additional button can be added to close the webserver, without having to use Thonny.
+Lze přidat další tlačítko pro zavření webového serveru, aniž bys musel používat Thonny.
 
 ## --- code ---
 
@@ -141,7 +141,7 @@ line_highlights: 10-12
 
 \--- task ---
 
-To finish off the webpage, you can add in some extra data, such as the state of the LED and the temperature of your Raspberry Pi Pico W.
+Pro dokončení webové stránky můžeš přidat další data, jako je stav LED diody a teplota tvého Raspberry Pi Pico W.
 
 ## --- code ---
 
@@ -165,24 +165,24 @@ line_highlights: 13-14
 <form action="./close">
 <input type="submit" value="Stop server" />
 </form>
-<p>LED is {state}</p>
-<p>Temperature is {temperature}</p>
+<p>LED dioda je {state}</p>
+<p>Teplota je {temperature}</p>
 </body>
 </html>
 
 \--- /code ---
 
-Your webpage should look like this:
+Tvá webová stránka by měla vypadat takto:
 
-![Webpage in Google Chrome showing two buttons and text regarding the LED's state and the Pico's temperature.](images/button_and_state.png)
+![Webová stránka v prohlížeči Google Chrome zobrazující dvě tlačítka a text týkající se stavu LED diod a teploty Pica.](images/button_and_state.png)
 
 \--- /task ---
 
-Now that you have a working webpage, you can add this code into your Python script. You'll need to switch back to your Python code in Thonny first.
+Nyní, když máš funkční webovou stránku, můžeš přidat tento kód do skriptu Pythonu. Nejdříve se budeš muset přepnout zpět na kód Pythonu v Thonny.
 
 \--- task ---
 
-Create a new function called `webpage`, that has two parameters. These are `temperature` and `state`.
+Vytvoř novou funkci s názvem `webpage`, která má dva parametry. These are `temperature` and `state`.
 
 ## --- code ---
 
