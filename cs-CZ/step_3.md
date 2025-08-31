@@ -269,7 +269,7 @@ return ip
 
 \--- task ---
 
-Then make the onboard LED blink each time it attempts a connection, and then stay on once connected.
+Pak nech integrovanou LED diodu blikat při každém pokusu o připojení a po připojení zůstaňte rozsvícená.
 
 ## --- code ---
 
