@@ -10,20 +10,20 @@ password = 'psk_here'
 
 
 def connect():
-    #Connect to WLAN
+    # Připojení k WLAN
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
     wlan.connect(ssid, password)
     while wlan.isconnected() == False:
-        print('Waiting for connection...')
+        print('Čekání na připojení...')
         sleep(1)
     ip = wlan.ifconfig()[0]
-    print(f'Connected on {ip}')
+    print(f'Připojeno k {ip}')
     return ip
     
 
 def open_socket(ip):
-    # Open a socket
+    # Otevři soket
     address = (ip, 80)
     connection = socket.socket()
     connection.bind(address)
@@ -42,8 +42,8 @@ def webpage(temperature, state):
             <form action="./lightoff">
             <input type="submit" value="Light off" />
             </form>
-            <p>LED is {state}</p>
-            <p>Temperature is {temperature}</p>
+            <p>LED dioda je {state}</p>
+            <p>Teplota je {temperature}</p>
             </body>
             </html>
             """
@@ -51,7 +51,7 @@ def webpage(temperature, state):
 
 
 def serve(connection):
-    #Start a webserver
+    # Spuštění webového serveru
     state = 'OFF'
     pico_led.off()
     while True:
