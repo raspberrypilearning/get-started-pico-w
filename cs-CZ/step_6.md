@@ -75,9 +75,9 @@ Ve výstupu shellu v Thony bys měl vidět něco podobného.
 
 ```python
 >>> %Run -c $EDITOR_CONTENT
-Waiting for connection...
-Waiting for connection...
-Waiting for connection...
+Čekání na připojení...
+Čekání na připojení...
+Čekání na připojení...
 Connected on 192.168.1.143
 b'GET / HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8\r\nAccept-Language: en-GB,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\n\r\n'
 b'GET /favicon.ico HTTP/1.1\r\nHost: 192.168.1.143\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0\r\nAccept: image/avif,image/webp,*/*\r\nAccept-Language: en-GB,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\nConnection: keep-alive\r\nReferer: http://192.168.1.143/\r\n\r\n'
@@ -169,7 +169,7 @@ pico_led.on()
 elif request =='/lightoff?':
 pico_led.off()
 elif request == '/close?':
-sys.exit()\
+sys.exit()  
 html = webpage(temperature, state)
 client.send(html)
 client.close()
