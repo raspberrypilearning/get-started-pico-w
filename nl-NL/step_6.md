@@ -169,7 +169,7 @@ pico_led.on()
 elif verzoek =='/lightoff?':
 pico_led.off()
 elif verzoek == '/close?':
-sys.exit()\
+sys.exit()  
 html = webpagina(temperatuur, status)
 client.send(html)
 client.close()
