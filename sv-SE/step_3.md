@@ -132,7 +132,7 @@ print('Waiting for connection...')
 sleep(1)
 print(wlan.ifconfig())
 
-try:\
+try:  
 connect()
 except KeyboardInterrupt:
 machine.reset()
