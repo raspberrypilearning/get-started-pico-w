@@ -172,7 +172,7 @@ pico_led.on()
 elif request =='/lightoff?':
 pico_led.off()
 elif request == '/close?':
-sys.exit()\
+sys.exit()  
 html = webpage(temperature, state)
 client.send(html)
 client.close()
